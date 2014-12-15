@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'X' do
     pod 'ParseUI'
     pod 'Parse'
+    pod 'BMYCircularProgressPullToRefresh'
 end
 
 target 'XTests' do

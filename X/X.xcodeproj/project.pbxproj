@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */; };
+		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
+		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
+		0D9FCBD31A3E7E0800F576D9 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD01A3E7E0800F576D9 /* light_circle.png */; };
 		9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */; };
 		9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */; };
 		9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */; };
-		9A6F0EB21A3E67BA00CE14B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB11A3E67BA00CE14B4 /* ViewController.swift */; };
+		9A6F0EB21A3E67BA00CE14B4 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB11A3E67BA00CE14B4 /* TimelineViewController.swift */; };
 		9A6F0EB51A3E67BA00CE14B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB31A3E67BA00CE14B4 /* Main.storyboard */; };
 		9A6F0EB71A3E67BA00CE14B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB61A3E67BA00CE14B4 /* Images.xcassets */; };
 		9A6F0EBA1A3E67BA00CE14B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB81A3E67BA00CE14B4 /* LaunchScreen.xib */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "X-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
+		0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_circle.png; sourceTree = "<group>"; };
+		0D9FCBD01A3E7E0800F576D9 /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_circle.png; sourceTree = "<group>"; };
 		1522274757228CDEAB54DB6B /* Pods-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.release.xcconfig"; sourceTree = "<group>"; };
 		27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.debug.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.debug.xcconfig"; sourceTree = "<group>"; };
 		9253DF238FFC5B24472F5C72 /* libPods-X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +46,7 @@
 		9A6F0EAB1A3E67BA00CE14B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6F0EAF1A3E67BA00CE14B4 /* X.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = X.xcdatamodel; sourceTree = "<group>"; };
-		9A6F0EB11A3E67BA00CE14B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A6F0EB11A3E67BA00CE14B4 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		9A6F0EB41A3E67BA00CE14B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A6F0EB61A3E67BA00CE14B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9A6F0EB91A3E67BA00CE14B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -66,6 +74,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D9FCBC91A3E709000F576D9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
+				9A6F0EB11A3E67BA00CE14B4 /* TimelineViewController.swift */,
+				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		0D9FCBCA1A3E70C600F576D9 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				9A6F0EB61A3E67BA00CE14B4 /* Images.xcassets */,
+				9A6F0EB81A3E67BA00CE14B4 /* LaunchScreen.xib */,
+				9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		0D9FCBCD1A3E7DF600F576D9 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FCBCE1A3E7E0800F576D9 /* bicon.png */,
+				0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */,
+				0D9FCBD01A3E7E0800F576D9 /* light_circle.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		931EE49D6EF43A4370BDFECE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +135,13 @@
 		9A6F0EA91A3E67BA00CE14B4 /* X */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FCBCD1A3E7DF600F576D9 /* image */,
+				0D9FCBC91A3E709000F576D9 /* ViewController */,
 				9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */,
-				9A6F0EB11A3E67BA00CE14B4 /* ViewController.swift */,
-				9A6F0EB31A3E67BA00CE14B4 /* Main.storyboard */,
-				9A6F0EB61A3E67BA00CE14B4 /* Images.xcassets */,
-				9A6F0EB81A3E67BA00CE14B4 /* LaunchScreen.xib */,
-				9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */,
-				9A6F0EAA1A3E67BA00CE14B4 /* Supporting Files */,
 				0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */,
-				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
+				9A6F0EB31A3E67BA00CE14B4 /* Main.storyboard */,
+				0D9FCBCA1A3E70C600F576D9 /* Other */,
+				9A6F0EAA1A3E67BA00CE14B4 /* Supporting Files */,
 			);
 			path = X;
 			sourceTree = "<group>";
@@ -228,7 +264,10 @@
 			files = (
 				9A6F0EB51A3E67BA00CE14B4 /* Main.storyboard in Resources */,
 				9A6F0EBA1A3E67BA00CE14B4 /* LaunchScreen.xib in Resources */,
+				0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */,
 				9A6F0EB71A3E67BA00CE14B4 /* Images.xcassets in Resources */,
+				0D9FCBD31A3E7E0800F576D9 /* light_circle.png in Resources */,
+				0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
-				9A6F0EB21A3E67BA00CE14B4 /* ViewController.swift in Sources */,
+				9A6F0EB21A3E67BA00CE14B4 /* TimelineViewController.swift in Sources */,
+				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
 				9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */,
 				9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */,
 			);
