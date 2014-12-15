@@ -41,6 +41,7 @@
 		1522274757228CDEAB54DB6B /* Pods-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.release.xcconfig"; sourceTree = "<group>"; };
 		27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.debug.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.debug.xcconfig"; sourceTree = "<group>"; };
 		9253DF238FFC5B24472F5C72 /* libPods-X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A02BC681A3E6EDE00460D3C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A6F0EA71A3E67BA00CE14B4 /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F0EAB1A3E67BA00CE14B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -318,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A02BC691A3E6EDE00460D3C /* HomeViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
 				9A6F0EB21A3E67BA00CE14B4 /* TimelineViewController.swift in Sources */,
 				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
