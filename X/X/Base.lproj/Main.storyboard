@@ -59,7 +59,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7r7-Cu-LLu" kind="show" id="Whw-xd-Nm6"/>
+                                    <segue destination="Kjd-Zh-rY6" kind="show" id="Whw-xd-Nm6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,6 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-81" y="136"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="4Ok-Of-pZg">
@@ -107,7 +108,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mse-Tu-EU6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mse-Tu-EU6">
                                 <rect key="frame" x="0.0" y="102" width="600" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -117,6 +118,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugi-I5-f2E" id="SJc-be-efS">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ZCf-lo-wGi" kind="show" id="6y9-EY-ztZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -124,30 +128,41 @@
                                     <outlet property="delegate" destination="7r7-Cu-LLu" id="tCV-cp-mXG"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-LL-Lek">
-                                <rect key="frame" x="545" y="35" width="30" height="30"/>
-                                <state key="normal" title="+">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="postClicked:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="2Ts-ny-xzX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xW7-LL-Lek" firstAttribute="top" secondItem="Yd0-0n-vZZ" secondAttribute="bottom" constant="15" id="5MK-Zh-4mo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xW7-LL-Lek" secondAttribute="trailing" constant="9" id="wRO-Tn-njr"/>
-                            <constraint firstItem="mse-Tu-EU6" firstAttribute="top" secondItem="xW7-LL-Lek" secondAttribute="bottom" constant="37" id="xPf-1L-Z55"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ff4-Ui-vzz">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="aBG-DJ-SfO">
+                            <connections>
+                                <action selector="postClicked:" destination="7r7-Cu-LLu" id="eFS-Yi-sIX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="mse-Tu-EU6" id="ic2-7p-dXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wna-Tl-dMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="136"/>
+            <point key="canvasLocation" x="1641" y="136"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="e98-Kr-CDQ">
+            <objects>
+                <viewController id="ZCf-lo-wGi" customClass="MessageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CWx-3h-l7u"/>
+                        <viewControllerLayoutGuide type="bottom" id="tg8-6c-be6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3yw-o7-vXo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2405" y="136"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="Xjm-ZT-H2O">
@@ -196,7 +211,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUA-Le-o90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="136"/>
+            <point key="canvasLocation" x="801" y="-593"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JUA-WV-TPo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kjd-Zh-rY6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ce-ny-5DN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7r7-Cu-LLu" kind="relationship" relationship="rootViewController" id="af2-Mw-fsq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGy-Hz-Ign" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="136"/>
         </scene>
     </scenes>
 </document>

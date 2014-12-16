@@ -12,5 +12,8 @@
 #import <Parse.h>
 #import <ParseUI.h>
 #import <BMYCircularProgressPullToRefresh.h>
+#import <SLKTextViewController.h>
+#import "MessageViewController.h"
+
 
 #endif

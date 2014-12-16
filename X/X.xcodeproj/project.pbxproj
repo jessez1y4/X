@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587D81A402105009AD4F0 /* DetailViewController.swift */; };
+		0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DC1A402638009AD4F0 /* MessageViewController.m */; };
+		0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */; };
 		0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */; };
 		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D5587D81A402105009AD4F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0D5587DB1A402638009AD4F0 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		0D5587DC1A402638009AD4F0 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		0D5587DD1A402638009AD4F0 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "X-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
@@ -76,13 +84,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D5587DA1A40260A009AD4F0 /* MessageViewLib */ = {
+			isa = PBXGroup;
+			children = (
+				0D5587DB1A402638009AD4F0 /* MessageViewController.h */,
+				0D5587DC1A402638009AD4F0 /* MessageViewController.m */,
+				0D5587DD1A402638009AD4F0 /* MessageTableViewCell.h */,
+				0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */,
+			);
+			name = MessageViewLib;
+			sourceTree = "<group>";
+		};
 		0D9FCBC91A3E709000F576D9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
 				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
 				9A6F0EB11A3E67BA00CE14B4 /* TimelineViewController.swift */,
 				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
 				0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */,
+				0D5587D81A402105009AD4F0 /* DetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -323,10 +344,13 @@
 			files = (
 				0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
+				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
 				9A6F0EB21A3E67BA00CE14B4 /* TimelineViewController.swift in Sources */,
 				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
 				9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */,
 				9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */,
+				0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */,
+				0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
