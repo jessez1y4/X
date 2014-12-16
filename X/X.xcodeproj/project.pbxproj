@@ -11,6 +11,7 @@
 		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
 		0D9FCBD31A3E7E0800F576D9 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD01A3E7E0800F576D9 /* light_circle.png */; };
+		0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */; };
 		9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */; };
 		9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */; };
 		9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
 		0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_circle.png; sourceTree = "<group>"; };
 		0D9FCBD01A3E7E0800F576D9 /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_circle.png; sourceTree = "<group>"; };
+		0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1522274757228CDEAB54DB6B /* Pods-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.release.xcconfig"; sourceTree = "<group>"; };
 		27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.debug.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.debug.xcconfig"; sourceTree = "<group>"; };
 		9253DF238FFC5B24472F5C72 /* libPods-X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
 				9A6F0EB11A3E67BA00CE14B4 /* TimelineViewController.swift */,
 				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
+				0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
 				9A6F0EB21A3E67BA00CE14B4 /* TimelineViewController.swift in Sources */,
 				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
@@ -446,9 +450,11 @@
 			baseConfigurationReference = 27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = X/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "X/X-Bridging-Header.h";
 			};
 			name = Debug;
@@ -458,9 +464,11 @@
 			baseConfigurationReference = 1522274757228CDEAB54DB6B /* Pods-X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = X/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "X/X-Bridging-Header.h";
 			};
 			name = Release;

@@ -68,6 +68,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
 
+    @IBAction func postClicked(sender: AnyObject) {
+        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
+        
+        self.presentViewController(postViewController, animated: true, completion: nil)
+    }
 
 
 }

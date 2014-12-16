@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -106,7 +107,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mse-Tu-EU6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mse-Tu-EU6">
                                 <rect key="frame" x="0.0" y="102" width="600" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -123,8 +124,22 @@
                                     <outlet property="delegate" destination="7r7-Cu-LLu" id="tCV-cp-mXG"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xW7-LL-Lek">
+                                <rect key="frame" x="545" y="35" width="30" height="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postClicked:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="2Ts-ny-xzX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xW7-LL-Lek" firstAttribute="top" secondItem="Yd0-0n-vZZ" secondAttribute="bottom" constant="15" id="5MK-Zh-4mo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xW7-LL-Lek" secondAttribute="trailing" constant="9" id="wRO-Tn-njr"/>
+                            <constraint firstItem="mse-Tu-EU6" firstAttribute="top" secondItem="xW7-LL-Lek" secondAttribute="bottom" constant="37" id="xPf-1L-Z55"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="mse-Tu-EU6" id="ic2-7p-dXO"/>
@@ -133,6 +148,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wna-Tl-dMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="801" y="136"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="Xjm-ZT-H2O">
+            <objects>
+                <viewController storyboardIdentifier="post_view_controller" id="wje-4i-BmV" customClass="PostViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oP5-HD-1vj"/>
+                        <viewControllerLayoutGuide type="bottom" id="SXa-Q4-Ndx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oev-d8-IcX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What happened?" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-Dd-H2Y">
+                                <rect key="frame" x="0.0" y="87" width="600" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wje-4i-BmV" id="B9O-ym-Ciz"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giV-fQ-fcd">
+                                <rect key="frame" x="523" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneClicked:" destination="wje-4i-BmV" eventType="touchUpInside" id="PWS-gk-Iin"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leading" id="270-Nr-2Dg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="giV-fQ-fcd" secondAttribute="trailing" constant="24" id="GGs-0D-v3Z"/>
+                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="oev-d8-IcX" secondAttribute="topMargin" constant="87" id="Uu0-hO-a1a"/>
+                            <constraint firstItem="giV-fQ-fcd" firstAttribute="top" secondItem="oP5-HD-1vj" secondAttribute="bottom" constant="8" id="dbk-qi-LAL"/>
+                            <constraint firstItem="SXa-Q4-Ndx" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="bottom" constant="270" id="del-06-NbD"/>
+                            <constraint firstAttribute="trailing" secondItem="BGs-Dd-H2Y" secondAttribute="trailing" id="zku-Hb-lOv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="BGs-Dd-H2Y" id="aCz-0t-y1O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUA-Le-o90" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="136"/>
         </scene>
     </scenes>
 </document>

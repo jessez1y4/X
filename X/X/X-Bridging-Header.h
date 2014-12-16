@@ -13,5 +13,4 @@
 #import <ParseUI.h>
 #import <BMYCircularProgressPullToRefresh.h>
 
-
 #endif
