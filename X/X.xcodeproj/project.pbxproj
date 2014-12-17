@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9A02BC691A3E6EDE00460D3C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC681A3E6EDE00460D3C /* HomeViewController.swift */; };
+		9A02BC6C1A3E720200460D3C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6B1A3E720200460D3C /* User.swift */; };
+		9A02BC6E1A3E727200460D3C /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6D1A3E727200460D3C /* College.swift */; };
+		9A02BC701A3E72AA00460D3C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6F1A3E72AA00460D3C /* Post.swift */; };
 		9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */; };
 		9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */; };
 		9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */; };
@@ -35,6 +38,9 @@
 		27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.debug.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.debug.xcconfig"; sourceTree = "<group>"; };
 		9253DF238FFC5B24472F5C72 /* libPods-X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A02BC681A3E6EDE00460D3C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9A02BC6B1A3E720200460D3C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9A02BC6D1A3E727200460D3C /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		9A02BC6F1A3E72AA00460D3C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A6F0EA71A3E67BA00CE14B4 /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F0EAB1A3E67BA00CE14B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +82,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9A02BC6A1A3E71F300460D3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A02BC6B1A3E720200460D3C /* User.swift */,
+				9A02BC6D1A3E727200460D3C /* College.swift */,
+				9A02BC6F1A3E72AA00460D3C /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		9A6F0E9E1A3E67BA00CE14B4 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +115,7 @@
 		9A6F0EA91A3E67BA00CE14B4 /* X */ = {
 			isa = PBXGroup;
 			children = (
+				9A02BC6A1A3E71F300460D3C /* Models */,
 				9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */,
 				9A6F0EB11A3E67BA00CE14B4 /* ViewController.swift */,
 				9A6F0EB31A3E67BA00CE14B4 /* Main.storyboard */,
@@ -284,7 +301,10 @@
 			files = (
 				9A02BC691A3E6EDE00460D3C /* HomeViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
+				9A02BC6C1A3E720200460D3C /* User.swift in Sources */,
+				9A02BC701A3E72AA00460D3C /* Post.swift in Sources */,
 				9A6F0EB21A3E67BA00CE14B4 /* ViewController.swift in Sources */,
+				9A02BC6E1A3E727200460D3C /* College.swift in Sources */,
 				9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */,
 				9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */,
 			);

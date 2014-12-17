@@ -17,6 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.setApplicationId("oJuMJrIRSZ8t5QjbJ0yrsdbcnf8XWKjYvUDUqCLP", clientKey: "IiADo5bmRiIiPiy6GASUay9eAlyNj8CVJdIGr0FO")
+        
+        // Enable anonymous user automatically
+        User.enableAutomaticUser()
+        
+//        if User.currentUser().college != nil {
+//            // Show home page
+//        }
+        
         return true
     }
 
