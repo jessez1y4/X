@@ -12,7 +12,14 @@ class College : PFObject, PFSubclassing {
         return "College"
     }
     
-    func getPosts() {
+    func getPosts(callback: ([Post]!, NSError!) -> Void) -> Void {
+        let q = Post.query()
         
+        q.whereKey("college", equalTo: self)
+        q.orderByDescending("createdAt")
+        
+        q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            callback(results as? [Post], error)
+        }
     }
 }

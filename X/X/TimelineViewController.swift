@@ -12,6 +12,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
+    var college = User.currentUser().college
+    var posts: [Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +28,18 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             // reload data ...
-            sleep(3)
+        
             self.tableView.reloadData()
             pullToRefreshView.stopAnimating()
-            //            self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
-            //                if error == nil && items.first?.objectId != self.items.first?.objectId {
-            //                    self.items = items
-            //                    self.collectionView.reloadData()
-            //                }
-            //                pullToRefreshView.stopAnimating()
-            //            })
+            
+            User.currentUser().college.getPosts({ (posts, err) -> Void in
+                if err == nil && posts.first?.objectId != self.posts.first?.objectId {
+                    self.posts = posts
+                    self.tableView.reloadData()
+                }
+                pullToRefreshView.stopAnimating()
+
+            })
         })
         
         tableView.pullToRefreshView.preserveContentInset = true
@@ -55,13 +59,15 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.posts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
         
-        cell.textLabel!.text = "test!:):)"
+        let post = self.posts[indexPath.row]
+        
+        cell.textLabel!.text = post.content
         return cell
     }
     
