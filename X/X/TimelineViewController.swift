@@ -9,7 +9,7 @@
 import UIKit
 
 class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -25,25 +25,25 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
             
             
-        // reload data ...
+            // reload data ...
             sleep(3)
             self.tableView.reloadData()
             pullToRefreshView.stopAnimating()
-//            self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
-//                if error == nil && items.first?.objectId != self.items.first?.objectId {
-//                    self.items = items
-//                    self.collectionView.reloadData()
-//                }
-//                pullToRefreshView.stopAnimating()
-//            })
+            //            self.page = self.circle.getItems(0, per: self.per, callback: { (items, error) -> Void in
+            //                if error == nil && items.first?.objectId != self.items.first?.objectId {
+            //                    self.items = items
+            //                    self.collectionView.reloadData()
+            //                }
+            //                pullToRefreshView.stopAnimating()
+            //            })
         })
         
         tableView.pullToRefreshView.preserveContentInset = true
         tableView.pullToRefreshView.setProgressView(progressView)
         
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,19 +60,19 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-
-        cell.textLabel.text = "test!:):)"
+        
+        cell.textLabel!.text = "test!:):)"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
-
+    
     @IBAction func postClicked(sender: AnyObject) {
         let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
         
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
-
+    
 }
 

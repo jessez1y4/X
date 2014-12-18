@@ -38,7 +38,13 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func doneClicked(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let post = Post.initWithContent(textView.text)
+        
+        post.saveInBackgroundWithBlock { (success, err) -> Void in
+            if (success) {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
 
     /*
