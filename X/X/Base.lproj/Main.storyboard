@@ -107,7 +107,7 @@
         <!--Timeline View Controller-->
         <scene sceneID="4Ok-Of-pZg">
             <objects>
-                <viewController id="7r7-Cu-LLu" customClass="TimelineViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeline_view_controller" id="7r7-Cu-LLu" customClass="TimelineViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yd0-0n-vZZ"/>
                         <viewControllerLayoutGuide type="bottom" id="VaQ-uy-C6c"/>
@@ -127,7 +127,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ZCf-lo-wGi" kind="show" id="6y9-EY-ztZ"/>
+                                            <segue destination="ZCf-lo-wGi" kind="show" identifier="show_post_detail" id="6y9-EY-ztZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -155,10 +155,11 @@
             </objects>
             <point key="canvasLocation" x="2453" y="136"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="e98-Kr-CDQ">
             <objects>
-                <viewController id="ZCf-lo-wGi" customClass="MessageViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ZCf-lo-wGi" customClass="PostDetailViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CWx-3h-l7u"/>
                         <viewControllerLayoutGuide type="bottom" id="tg8-6c-be6"/>
@@ -169,7 +170,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3217" y="136"/>
         </scene>

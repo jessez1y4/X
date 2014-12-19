@@ -38,7 +38,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func doneClicked(sender: AnyObject) {
-        let post = Post.initWithContent(textView.text)
+        let post = Post.initWith(textView.text)
         
         post.saveInBackgroundWithBlock { (success, err) -> Void in
             if (success) {

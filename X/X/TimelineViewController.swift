@@ -28,11 +28,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             // reload data ...
-        
-            self.tableView.reloadData()
-            pullToRefreshView.stopAnimating()
             
-            User.currentUser().college.getPosts({ (posts, err) -> Void in
+            self.college.getPosts({ (posts, err) -> Void in
                 if err == nil && posts.first?.objectId != self.posts.first?.objectId {
                     self.posts = posts
                     self.tableView.reloadData()
@@ -45,7 +42,13 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.pullToRefreshView.preserveContentInset = true
         tableView.pullToRefreshView.setProgressView(progressView)
         
-        
+        // initial load
+        self.college.getPosts({ (posts, err) -> Void in
+            if err == nil {
+                self.posts = posts
+                self.tableView.reloadData()
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,6 +75,14 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "show_post_detail") {
+            let pdvc = segue.destinationViewController as PostDetailViewController
+            let idxPath = self.tableView.indexPathForSelectedRow()
+            pdvc.post = self.posts[idxPath!.row]
+        }
     }
     
     @IBAction func postClicked(sender: AnyObject) {

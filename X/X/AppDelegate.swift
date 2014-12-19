@@ -23,9 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable anonymous user automatically
         User.enableAutomaticUser()
         
-//        if User.currentUser().college != nil {
-//            // Show home page
-//        }
+        if (User.currentUser().objectId != nil) {
+            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("timeline_view_controller") as TimelineViewController
+            (self.window?.rootViewController as UINavigationController).pushViewController(homeVC, animated: false)
+        }
         
         return true
     }
