@@ -29,13 +29,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             
             // reload data ...
             
-            self.college.getPosts({ (posts, err) -> Void in
-                if err == nil && posts.first?.objectId != self.posts.first?.objectId {
-                    self.posts = posts
-                    self.tableView.reloadData()
-                }
+            self.reloadPosts({ () -> Void in
                 pullToRefreshView.stopAnimating()
-
             })
         })
         
@@ -43,12 +38,21 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.pullToRefreshView.setProgressView(progressView)
         
         // initial load
+        self.reloadPosts(nil)
+    }
+    
+    func reloadPosts(afterLoad: (() -> Void)?) {
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil {
                 self.posts = posts
                 self.tableView.reloadData()
             }
+            
+            if let f = afterLoad {
+                f()
+            }
         })
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,7 +74,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         
         let post = self.posts[indexPath.row]
         
-        cell.textLabel!.text = post.content
+        println(post.likes)
+        
+        cell.textLabel!.text = "\(post.content)[\(post.likes)]"
         return cell
     }
     
@@ -91,5 +97,30 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
     
+    @IBAction func upvote(sender: AnyObject) {
+        let btn = sender as UIButton
+        let cell = btn.superview?.superview as UITableViewCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let post = self.posts[indexPath!.row]
+        post.incrementKey("likes")
+        post.saveInBackgroundWithBlock { (success, err) -> Void in
+            if success {
+                self.reloadPosts(nil)
+            }
+        }
+    }
+    
+    @IBAction func downvote(sender: AnyObject) {
+        let btn = sender as UIButton
+        let cell = btn.superview?.superview as UITableViewCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let post = self.posts[indexPath!.row]
+        post.incrementKey("likes", byAmount: -1)
+        post.saveInBackgroundWithBlock { (success, err) -> Void in
+            if success {
+                self.reloadPosts(nil)
+            }
+        }
+    }
 }
 
