@@ -14,6 +14,11 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        domainText.becomeFirstResponder()
+    }
+    
     
     @IBAction func loginBtnClicked(sender: AnyObject) {
         if domainText.text.isEmpty {

@@ -80,5 +80,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
     
+    @IBAction func profileClicked(sender: AnyObject) {
+    }
 }
 
