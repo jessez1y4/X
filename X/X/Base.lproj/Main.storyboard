@@ -142,7 +142,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="downvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="6ON-6J-eJH"/>
+                                                        <action selector="downvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="N5P-OC-nev"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -317,10 +317,9 @@
             </objects>
             <point key="canvasLocation" x="3915" y="880"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="e98-Kr-CDQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZCf-lo-wGi" customClass="PostDetailViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CWx-3h-l7u"/>
@@ -332,6 +331,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3217" y="136"/>
         </scene>

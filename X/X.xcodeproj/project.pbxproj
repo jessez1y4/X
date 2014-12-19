@@ -136,6 +136,8 @@
 				0D1F2E431A43E21100C0C465 /* EditViewController.swift */,
 				0D1F2E471A43E25500C0C465 /* InputViewController.swift */,
 				0D1F2E451A43E22400C0C465 /* VerifyViewController.swift */,
+				9A62E3D61A412E62008FF9AC /* TimelineViewController.swift */,
+				9A698F501A43CF5D000314E8 /* PostDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

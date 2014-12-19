@@ -97,7 +97,33 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
     
+    @IBAction func upvote(sender: AnyObject) {
+        let btn = sender as UIButton
+        let cell = btn.superview?.superview as UITableViewCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let post = self.posts[indexPath!.row]
+        post.incrementKey("likes")
+        post.saveInBackgroundWithBlock { (success, err) -> Void in
+            if success {
+                self.reloadPosts(nil)
+            }
+        }
+    }
+    
     @IBAction func profileClicked(sender: AnyObject) {
+    }
+    
+    @IBAction func downvote(sender: AnyObject) {
+        let btn = sender as UIButton
+        let cell = btn.superview?.superview as UITableViewCell
+        let indexPath = self.tableView.indexPathForCell(cell)
+        let post = self.posts[indexPath!.row]
+        post.incrementKey("likes", byAmount: -1)
+        post.saveInBackgroundWithBlock { (success, err) -> Void in
+            if success {
+                self.reloadPosts(nil)
+            }
+        }
     }
 }
 
