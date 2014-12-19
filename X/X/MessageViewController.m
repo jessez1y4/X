@@ -261,12 +261,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 {
     // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
     
-    NSString *message = [self.textView.text copy];
-    
-    [self.messages removeObjectAtIndex:0];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView reloadData];
-    
     [super didCommitTextEditing:sender];
 }
 

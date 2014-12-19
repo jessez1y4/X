@@ -27,6 +27,9 @@
 		9A02BC701A3E72AA00460D3C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6F1A3E72AA00460D3C /* Post.swift */; };
 		9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */; };
 		9A62E3D71A412E62008FF9AC /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62E3D61A412E62008FF9AC /* TimelineViewController.swift */; };
+		9A698F4F1A43CB16000314E8 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A698F4E1A43CB16000314E8 /* Reply.swift */; };
+		9A698F511A43CF5D000314E8 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A698F501A43CF5D000314E8 /* PostDetailViewController.swift */; };
+		9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */; };
 		9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */; };
 		9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A6F0EAE1A3E67BA00CE14B4 /* X.xcdatamodeld */; };
 		9A6F0EB51A3E67BA00CE14B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6F0EB31A3E67BA00CE14B4 /* Main.storyboard */; };
@@ -73,6 +76,9 @@
 		9A02BC6F1A3E72AA00460D3C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A62E3D61A412E62008FF9AC /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		9A698F4E1A43CB16000314E8 /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
+		9A698F501A43CF5D000314E8 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyTableViewCell.swift; sourceTree = "<group>"; };
 		9A6F0EA71A3E67BA00CE14B4 /* X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = X.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6F0EAB1A3E67BA00CE14B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A6F0EAC1A3E67BA00CE14B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,8 +175,18 @@
 				9A02BC6B1A3E720200460D3C /* User.swift */,
 				9A02BC6D1A3E727200460D3C /* College.swift */,
 				9A02BC6F1A3E72AA00460D3C /* Post.swift */,
+				9A698F4E1A43CB16000314E8 /* Reply.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9A698F521A43D578000314E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
+				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		9A6F0E9E1A3E67BA00CE14B4 = {
@@ -196,6 +212,7 @@
 		9A6F0EA91A3E67BA00CE14B4 /* X */ = {
 			isa = PBXGroup;
 			children = (
+				9A698F521A43D578000314E8 /* Views */,
 				9A02BC6A1A3E71F300460D3C /* Models */,
 				0D9FCBCD1A3E7DF600F576D9 /* Images */,
 				0D9FCBC91A3E709000F576D9 /* ViewControllers */,
@@ -382,12 +399,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */,
+				9A698F511A43CF5D000314E8 /* PostDetailViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
 				9A02BC6C1A3E720200460D3C /* User.swift in Sources */,
 				0D1F2E421A43DDD900C0C465 /* ProfileTableViewCell.swift in Sources */,
 				9A02BC701A3E72AA00460D3C /* Post.swift in Sources */,
 				9A02BC6E1A3E727200460D3C /* College.swift in Sources */,
+				9A698F4F1A43CB16000314E8 /* Reply.swift in Sources */,
 				9A62E3D71A412E62008FF9AC /* TimelineViewController.swift in Sources */,
+				9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */,
 				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
 				0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */,
 				0D1F2E481A43E25500C0C465 /* InputViewController.swift in Sources */,

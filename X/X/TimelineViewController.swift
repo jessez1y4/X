@@ -28,24 +28,31 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             // reload data ...
-        
-            self.tableView.reloadData()
-            pullToRefreshView.stopAnimating()
             
-            User.currentUser().college.getPosts({ (posts, err) -> Void in
-                if err == nil && posts.first?.objectId != self.posts.first?.objectId {
-                    self.posts = posts
-                    self.tableView.reloadData()
-                }
+            self.reloadPosts({ () -> Void in
                 pullToRefreshView.stopAnimating()
-
             })
         })
         
         tableView.pullToRefreshView.preserveContentInset = true
         tableView.pullToRefreshView.setProgressView(progressView)
         
-        
+        // initial load
+        self.reloadPosts(nil)
+    }
+    
+    func reloadPosts(afterLoad: (() -> Void)?) {
+        self.college.getPosts({ (posts, err) -> Void in
+            if err == nil {
+                self.posts = posts
+                self.tableView.reloadData()
+            }
+            
+            if let f = afterLoad {
+                f()
+            }
+        })
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,11 +74,21 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         
         let post = self.posts[indexPath.row]
         
-        cell.textLabel!.text = post.content
+        println(post.likes)
+        
+        cell.textLabel!.text = "\(post.content)[\(post.likes)]"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "show_post_detail") {
+            let pdvc = segue.destinationViewController as PostDetailViewController
+            let idxPath = self.tableView.indexPathForSelectedRow()
+            pdvc.post = self.posts[idxPath!.row]
+        }
     }
     
     @IBAction func postClicked(sender: AnyObject) {
