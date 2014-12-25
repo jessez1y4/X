@@ -53,6 +53,8 @@
 		0D5D62FB1A4BE9AF00619F4C /* Icon_Profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D62D71A4BE9AF00619F4C /* Icon_Profile@3x.png */; };
 		0D5D62FC1A4BE9AF00619F4C /* Icon_Setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D62D81A4BE9AF00619F4C /* Icon_Setting@3x.png */; };
 		0D5D62FD1A4BE9AF00619F4C /* Icon_Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D62D91A4BE9AF00619F4C /* Icon_Settings@2x.png */; };
+		0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */; };
+		0D5D63011A4C008D00619F4C /* mushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D63001A4C008D00619F4C /* mushi.jpg */; };
 		0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */; };
 		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
@@ -134,6 +136,8 @@
 		0D5D62D71A4BE9AF00619F4C /* Icon_Profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_Profile@3x.png"; sourceTree = "<group>"; };
 		0D5D62D81A4BE9AF00619F4C /* Icon_Setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_Setting@3x.png"; sourceTree = "<group>"; };
 		0D5D62D91A4BE9AF00619F4C /* Icon_Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_Settings@2x.png"; sourceTree = "<group>"; };
+		0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
+		0D5D63001A4C008D00619F4C /* mushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mushi.jpg; sourceTree = "<group>"; };
 		0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "X-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
@@ -241,17 +245,16 @@
 			children = (
 				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
 				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
-				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
 				0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */,
 				0D5587D81A402105009AD4F0 /* DetailViewController.swift */,
 				0D1F2E3B1A43DB3300C0C465 /* ProfileViewController.swift */,
-				0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */,
 				0D1F2E3D1A43DB4500C0C465 /* InboxViewController.swift */,
 				0D1F2E431A43E21100C0C465 /* EditViewController.swift */,
 				0D1F2E471A43E25500C0C465 /* InputViewController.swift */,
 				0D1F2E451A43E22400C0C465 /* VerifyViewController.swift */,
 				9A62E3D61A412E62008FF9AC /* TimelineViewController.swift */,
 				9A698F501A43CF5D000314E8 /* PostDetailViewController.swift */,
+				0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 		0D9FCBCD1A3E7DF600F576D9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0D5D63001A4C008D00619F4C /* mushi.jpg */,
 				0D1F2E3F1A43DC4900C0C465 /* dota2.jpg */,
 				0D9FCBCE1A3E7E0800F576D9 /* bicon.png */,
 				0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */,
@@ -299,6 +303,8 @@
 		9A698F521A43D578000314E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
+				0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */,
 				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
 			);
 			name = Views;
@@ -495,6 +501,7 @@
 				0D5D62F01A4BE9AF00619F4C /* Icon_Arrow@2x.png in Resources */,
 				0D5D62F11A4BE9AF00619F4C /* Icon_Arrow@3x.png in Resources */,
 				0D5D62F41A4BE9AF00619F4C /* Icon_Clock@2x.png in Resources */,
+				0D5D63011A4C008D00619F4C /* mushi.jpg in Resources */,
 				0D5D62F21A4BE9AF00619F4C /* Icon_BG_Pic@2x.png in Resources */,
 				0D5D62DE1A4BE9AF00619F4C /* Badge_Verified@2x.png in Resources */,
 				0D5D62E41A4BE9AF00619F4C /* Button_Dislike@2x.png in Resources */,
@@ -558,6 +565,7 @@
 				9A02BC701A3E72AA00460D3C /* Post.swift in Sources */,
 				9A02BC6E1A3E727200460D3C /* College.swift in Sources */,
 				9A698F4F1A43CB16000314E8 /* Reply.swift in Sources */,
+				0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */,
 				9A62E3D71A412E62008FF9AC /* TimelineViewController.swift in Sources */,
 				9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */,
 				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
