@@ -21,14 +21,20 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginBtnClicked(sender: AnyObject) {
-        if domainText.text.isEmpty {
+        let domain = domainText.text
+        
+        if domain.isEmpty {
             return
         }
         
-        PFCloud.callFunctionInBackground("getCollege", withParameters: ["domain": domainText.text]) { (res, err) -> Void in
+        PFCloud.callFunctionInBackground("getCollege", withParameters: ["domain": domain]) { (res, err) -> Void in
             if err == nil {
                 if let id = res as? String {
-                    User.currentUser().college = College(withoutDataWithObjectId: id)
+                    let user = User.currentUser()
+                    user.college = College(withoutDataWithObjectId: id)
+                    user.domain = domain
+                    user.voteWeight = 1
+                    
                     User.currentUser().saveInBackgroundWithBlock(nil)
                     self.performSegueWithIdentifier("show_home", sender: self)
                 }

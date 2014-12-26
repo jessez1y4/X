@@ -11,6 +11,8 @@ import UIKit
 class InputViewController: UIViewController {
 
     @IBOutlet weak var codeText: UITextField!
+    var code: Int!
+    var email: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,18 @@ class InputViewController: UIViewController {
     }
     
     @IBAction func doneClicked(sender: AnyObject) {
+        if String(self.code) == codeText.text {
+            println("verified")
+            
+            let user = User.currentUser()
+            user.email = self.email
+            user.verified = true
+            user.saveInBackgroundWithBlock({ (success, err) -> Void in
+                if success {
+                    println("saved user in cloud")
+                }
+            })
+        }
     }
 
 

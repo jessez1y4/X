@@ -103,6 +103,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let indexPath = self.tableView.indexPathForCell(cell)
         let post = self.posts[indexPath!.row]
         post.incrementKey("likes")
+        post.incrementKey("life", byAmount: User.currentUser().voteWeight)
         post.saveInBackgroundWithBlock { (success, err) -> Void in
             if success {
                 self.reloadPosts(nil)
@@ -119,6 +120,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let indexPath = self.tableView.indexPathForCell(cell)
         let post = self.posts[indexPath!.row]
         post.incrementKey("likes", byAmount: -1)
+        post.incrementKey("life", byAmount: 0 - User.currentUser().voteWeight)
         post.saveInBackgroundWithBlock { (success, err) -> Void in
             if success {
                 self.reloadPosts(nil)
