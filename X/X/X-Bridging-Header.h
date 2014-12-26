@@ -13,7 +13,9 @@
 #import <ParseUI.h>
 #import <BMYCircularProgressPullToRefresh.h>
 #import <SLKTextViewController.h>
+#import <OpenSans/UIFont+OpenSans.h>
 #import "MessageTableViewCell.h"
+
 
 
 #endif

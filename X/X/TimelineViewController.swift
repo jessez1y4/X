@@ -42,6 +42,14 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.reloadPosts(nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        // make the navigation bar transparent 
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+    }
+    
     func reloadPosts(afterLoad: (() -> Void)?) {
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil {
