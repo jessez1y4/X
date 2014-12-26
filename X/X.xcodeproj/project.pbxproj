@@ -14,6 +14,7 @@
 		0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E431A43E21100C0C465 /* EditViewController.swift */; };
 		0D1F2E461A43E22400C0C465 /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E451A43E22400C0C465 /* VerifyViewController.swift */; };
 		0D1F2E481A43E25500C0C465 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E471A43E25500C0C465 /* InputViewController.swift */; };
+		0D41B6061A4CEC0400320A1E /* BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D41B6051A4CEC0400320A1E /* BG.png */; };
 		0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587D81A402105009AD4F0 /* DetailViewController.swift */; };
 		0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DC1A402638009AD4F0 /* MessageViewController.m */; };
 		0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */; };
@@ -95,6 +96,7 @@
 		0D1F2E431A43E21100C0C465 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		0D1F2E451A43E22400C0C465 /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		0D1F2E471A43E25500C0C465 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		0D41B6051A4CEC0400320A1E /* BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BG.png; sourceTree = "<group>"; };
 		0D5587D81A402105009AD4F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D5587DB1A402638009AD4F0 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		0D5587DC1A402638009AD4F0 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			children = (
 				0D5D62B61A4BE9AF00619F4C /* Badge_Non_Verified@2x.png */,
 				0D5D62B71A4BE9AF00619F4C /* Badge_Non_Verified@3x.png */,
+				0D41B6051A4CEC0400320A1E /* BG.png */,
 				0D5D62B81A4BE9AF00619F4C /* Badge_Non_Verified_Large@2x.png */,
 				0D5D62B91A4BE9AF00619F4C /* Badge_Non_Verified_Large@3x.png */,
 				0D5D62BA1A4BE9AF00619F4C /* Badge_Verified@2x.png */,
@@ -468,6 +471,7 @@
 				0D5D62FD1A4BE9AF00619F4C /* Icon_Settings@2x.png in Resources */,
 				0D5D62EF1A4BE9AF00619F4C /* Icon_About@3x.png in Resources */,
 				0D5D62DA1A4BE9AF00619F4C /* Badge_Non_Verified@2x.png in Resources */,
+				0D41B6061A4CEC0400320A1E /* BG.png in Resources */,
 				0D5D62E51A4BE9AF00619F4C /* Button_Dislike@3x.png in Resources */,
 				0D5D62DB1A4BE9AF00619F4C /* Badge_Non_Verified@3x.png in Resources */,
 				9A6F0EB51A3E67BA00CE14B4 /* Main.storyboard in Resources */,

@@ -20,11 +20,11 @@ class BackgroundViewController: UIViewController {
         backgroundImageView = UIImageView(frame: view.frame)
         backgroundImageView.image = backgroundImage
         backgroundView = UIView(frame: view.frame)
-        backgroundView.backgroundColor = UIColor(red: 43, green: 43, blue: 50, alpha: 0.8)
+        backgroundView.backgroundColor = UIColor(red: 43, green: 43, blue: 50, alpha: 0.5)
         view.addSubview(backgroundImageView)
         view.addSubview(backgroundView)
-        view.sendSubviewToBack(backgroundImageView)
         view.sendSubviewToBack(backgroundView)
+        view.sendSubviewToBack(backgroundImageView)
     }
 
     override func didReceiveMemoryWarning() {

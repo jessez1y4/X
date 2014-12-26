@@ -19,6 +19,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
         var logoImage = UIImage(named: "bicon.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
