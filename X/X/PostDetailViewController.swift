@@ -59,7 +59,7 @@ class PostDetailViewController: SLKTextViewController {
 
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
         
-        self.tableView.registerClass(ReplyTableViewCell.self, forCellReuseIdentifier: "replyCell")
+        self.tableView.registerClass(MessageTableViewCell.self, forCellReuseIdentifier: "replyCell")
         
         self.textView.placeholder = "What do you think?"
         self.textView.placeholderColor = UIColor.grayColor()
@@ -108,7 +108,7 @@ class PostDetailViewController: SLKTextViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("replyCell") as ReplyTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("replyCell") as MessageTableViewCell
         
         let reply = self.replies[indexPath.row]
         

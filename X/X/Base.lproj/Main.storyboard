@@ -117,8 +117,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mse-Tu-EU6">
-                                <rect key="frame" x="0.0" y="165" width="600" height="435"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="55" id="Ugi-I5-f2E" customClass="TimelineTableViewCell" customModule="X" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -159,6 +161,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="ZCf-lo-wGi" kind="show" identifier="show_post_detail" id="6y9-EY-ztZ"/>
                                         </connections>
@@ -173,8 +176,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mse-Tu-EU6" secondAttribute="trailing" id="0q4-fa-Oxk"/>
-                            <constraint firstItem="mse-Tu-EU6" firstAttribute="top" secondItem="Yd0-0n-vZZ" secondAttribute="bottom" constant="101" id="Yx1-Qu-0lt"/>
                             <constraint firstAttribute="bottom" secondItem="mse-Tu-EU6" secondAttribute="bottom" id="aVc-ex-AWs"/>
+                            <constraint firstItem="mse-Tu-EU6" firstAttribute="top" secondItem="Yd0-0n-vZZ" secondAttribute="bottom" id="hUX-YR-yIm"/>
                             <constraint firstItem="mse-Tu-EU6" firstAttribute="leading" secondItem="UJ1-zf-Osl" secondAttribute="leading" id="s4u-x1-YEp"/>
                         </constraints>
                     </view>
@@ -343,6 +346,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFF-4G-m0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3217" y="880"/>
+        </scene>
+        <!--Background View Controller-->
+        <scene sceneID="pht-7H-fvC">
+            <objects>
+                <viewController id="FxW-aF-0Ve" customClass="BackgroundViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f3M-vu-KKO"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEt-jt-pXj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wkf-B7-7tq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6C7-oE-5iR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2453" y="1607"/>
         </scene>
         <!--Verify View Controller-->
         <scene sceneID="9Ev-4O-GMh">
