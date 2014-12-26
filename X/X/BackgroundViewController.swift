@@ -18,12 +18,14 @@ class BackgroundViewController: UIViewController {
         
         var backgroundImage = UIImage(named: "BG.png")
         backgroundImageView = UIImageView(frame: view.frame)
-//        backgroundImageView.image = backgroundImage
-//        backgroundView = UIView(frame: view.frame)
-//        backgroundView.backgroundColor = UIColor(red: 43, green: 43, blue: 50, alpha: 0.5)
-//        view.addSubview(backgroundImageView)
-//        view.addSubview(backgroundView)
-//        view.sendSubviewToBack(backgroundView)
+        backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
+        backgroundView = UIView(frame: view.frame)
+        backgroundView.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
+        view.addSubview(backgroundImageView)
+        view.addSubview(backgroundView)
+        
+        view.sendSubviewToBack(backgroundImageView)
+        view.sendSubviewToBack(backgroundView)
         
         
         
@@ -59,32 +61,32 @@ class BackgroundViewController: UIViewController {
         
         
         
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
-        
-        let color = UIColor(red: 43, green: 43, blue: 250, alpha: 1)
-//        color.setFill()
-//        let bounds = view.frame
-//        UIRectFill(bounds)
-        
-//        backgroundImage?.drawInRect(bounds, blendMode: kCGBlendModeOverlay, alpha: 0.2)
-        
-        let context = UIGraphicsGetCurrentContext()
-//        CGContextSaveGState(context)
-//        CGContextTranslateCTM(context, 0, -view.frame.size.height);
-//        CGContextScaleCTM(context, 1.0, -1.0);
-
-
-        CGContextSetFillColor(context, CGColorGetComponents(color.CGColor))
-        CGContextFillRect(context, view.frame)
-        
-                CGContextSetBlendMode(context, kCGBlendModeOverlay)
-                CGContextDrawImage(context, view.frame, backgroundImage?.CGImage)
-        
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        backgroundImageView.image = img
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
+//        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, 0.0)
+//        
+//        let color = UIColor(red: 43, green: 43, blue: 250, alpha: 1)
+////        color.setFill()
+////        let bounds = view.frame
+////        UIRectFill(bounds)
+//        
+////        backgroundImage?.drawInRect(bounds, blendMode: kCGBlendModeOverlay, alpha: 0.2)
+//        
+//        let context = UIGraphicsGetCurrentContext()
+////        CGContextSaveGState(context)
+////        CGContextTranslateCTM(context, 0, -view.frame.size.height);
+////        CGContextScaleCTM(context, 1.0, -1.0);
+//
+//
+//        CGContextSetFillColor(context, CGColorGetComponents(color.CGColor))
+//        CGContextFillRect(context, view.frame)
+//        
+//                CGContextSetBlendMode(context, kCGBlendModeOverlay)
+//                CGContextDrawImage(context, view.frame, backgroundImage?.CGImage)
+//        
+//        let img = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        backgroundImageView.image = img
+//        view.addSubview(backgroundImageView)
+//        view.sendSubviewToBack(backgroundImageView)
 //        CGContextRestoreGState(context)
         
     }
@@ -93,5 +95,18 @@ class BackgroundViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func imageWithAlpha(image: UIImage, alpha: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(image.size, false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        let area = CGRectMake(0, 0, image.size.width, image.size.height)
+        CGContextScaleCTM(context, 1, -1)
+        CGContextTranslateCTM(context, 0, -area.size.height)
+        
+        CGContextSetAlpha(context, alpha)
+        CGContextDrawImage(context, area, image.CGImage)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
 }
