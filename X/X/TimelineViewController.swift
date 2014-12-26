@@ -38,6 +38,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         tableView.pullToRefreshView.preserveContentInset = true
         tableView.pullToRefreshView.setProgressView(progressView)
         
+        
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
         // initial load
         self.reloadPosts(nil)
     }
@@ -78,6 +81,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         println(post.likes)
         
         cell.textLabel!.text = "\(post.content)[\(post.likes)]"
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     
