@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (User.currentUser().objectId != nil) {
             let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("timeline_view_controller") as TimelineViewController
             (self.window?.rootViewController as UINavigationController).pushViewController(homeVC, animated: false)
+            
+            User.currentUser().fetch()
         }
         
         return true
