@@ -16,7 +16,7 @@ class BackgroundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var backgroundImage = UIImage(named: "mushi.jpg")
+        var backgroundImage = UIImage(named: "BG.png")
         backgroundImageView = UIImageView(frame: view.frame)
         backgroundImageView.image = backgroundImage
         backgroundView = UIView(frame: view.frame)
