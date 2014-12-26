@@ -82,7 +82,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
         
         let post = self.posts[indexPath.row]
         
