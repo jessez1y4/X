@@ -47,6 +47,15 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         // set title font
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
+        // add post button
+        let postBtn = UIButton(frame: CGRectMake(self.view.frame.width/2-25,self.view.frame.height-75,50,50))
+        let postBtnImage = UIImage(named: "Button_Create@2x.png")
+        postBtn.setBackgroundImage(postBtnImage, forState: UIControlState.Normal)
+        postBtn.addTarget(self, action: "postClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        self.view.addSubview(postBtn)
+        self.view.bringSubviewToFront(postBtn)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -142,7 +151,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         }
     }
     
-    @IBAction func postClicked(sender: AnyObject) {
+    func postClicked() {
         let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
         
         self.presentViewController(postViewController, animated: true, completion: nil)

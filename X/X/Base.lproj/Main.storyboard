@@ -245,9 +245,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Icon_Message.png" id="aBG-DJ-SfO">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="postClicked:" destination="7r7-Cu-LLu" id="eFS-Yi-sIX"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
