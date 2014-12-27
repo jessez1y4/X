@@ -41,6 +41,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         
         self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         // initial load
         self.reloadPosts(nil)
         
