@@ -132,7 +132,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="100" id="Ugi-I5-f2E" customClass="TimelineTableViewCell" customModule="X" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="100" id="Ugi-I5-f2E" customClass="TimelineTableViewCell" customModule="X" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugi-I5-f2E" id="SJc-be-efS">
@@ -188,6 +188,7 @@
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Uco-3I-aF3" firstAttribute="trailing" secondItem="SJc-be-efS" secondAttribute="trailingMargin" constant="-52" id="71h-wA-PI9"/>
                                                 <constraint firstItem="Uco-3I-aF3" firstAttribute="leading" secondItem="Cg2-nN-oRr" secondAttribute="trailing" constant="-72" id="GLL-7h-d9n"/>
