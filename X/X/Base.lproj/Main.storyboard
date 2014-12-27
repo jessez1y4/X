@@ -139,7 +139,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-3I-aF3">
-                                                    <rect key="frame" x="510" y="63" width="30" height="30"/>
+                                                    <rect key="frame" x="510" y="63" width="30" height="30.5"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <state key="normal" image="Button_Dislike.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,11 +178,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-e9-8M4">
-                                                    <rect key="frame" x="21" y="30" width="43" height="43"/>
+                                                    <rect key="frame" x="21" y="30" width="44" height="43"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Badge_Non_Verified.png" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-7y-4Cy">
                                                     <rect key="frame" x="53" y="60" width="18" height="18"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-Qn-X6m">
+                                                    <rect key="frame" x="97" y="99" width="503" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Uco-3I-aF3" firstAttribute="trailing" secondItem="SJc-be-efS" secondAttribute="trailingMargin" constant="-52" id="71h-wA-PI9"/>
