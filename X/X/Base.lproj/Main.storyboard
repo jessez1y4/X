@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
         </mutableArray>
@@ -129,47 +130,56 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="54" id="Ugi-I5-f2E" customClass="TimelineTableViewCell" customModule="X" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" rowHeight="100" id="Ugi-I5-f2E" customClass="TimelineTableViewCell" customModule="X" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugi-I5-f2E" id="SJc-be-efS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-nN-oRr">
-                                                    <rect key="frame" x="208" y="13" width="30" height="30"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <state key="normal" title="Like"/>
-                                                    <connections>
-                                                        <action selector="upvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="3af-Hv-1Pm"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-3I-aF3">
-                                                    <rect key="frame" x="248" y="13" width="33" height="30"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <state key="normal" title="Hate">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-3I-aF3">
+                                                    <rect key="frame" x="559" y="66" width="33" height="33"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="Button_Dislike.png">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="downvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="N5P-OC-nev"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="something happened" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ol-qR-SDq">
+                                                    <rect key="frame" x="109" y="8" width="450.5" height="50"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-nN-oRr">
+                                                    <rect key="frame" x="517" y="66" width="33" height="33"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" image="Button_like.png"/>
+                                                    <connections>
+                                                        <action selector="upvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="3af-Hv-1Pm"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Uco-3I-aF3" firstAttribute="leading" secondItem="Cg2-nN-oRr" secondAttribute="trailing" constant="10" id="3sz-27-9Ww"/>
-                                                <constraint firstItem="Cg2-nN-oRr" firstAttribute="leading" secondItem="SJc-be-efS" secondAttribute="leadingMargin" constant="200" id="70N-V8-22z"/>
-                                                <constraint firstItem="Uco-3I-aF3" firstAttribute="centerY" secondItem="Cg2-nN-oRr" secondAttribute="centerY" id="7kb-Pr-vjw"/>
+                                                <constraint firstItem="Uco-3I-aF3" firstAttribute="trailing" secondItem="SJc-be-efS" secondAttribute="trailingMargin" id="71h-wA-PI9"/>
+                                                <constraint firstItem="Uco-3I-aF3" firstAttribute="leading" secondItem="Cg2-nN-oRr" secondAttribute="trailing" constant="9" id="GLL-7h-d9n"/>
+                                                <constraint firstItem="Uco-3I-aF3" firstAttribute="top" secondItem="SJc-be-efS" secondAttribute="topMargin" constant="58" id="XqN-lu-S6E"/>
+                                                <constraint firstItem="Cg2-nN-oRr" firstAttribute="baseline" secondItem="Uco-3I-aF3" secondAttribute="baseline" constant="-0.5" id="cfV-7X-QKG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Uco-3I-aF3" secondAttribute="trailing" constant="10" id="gnv-Rl-ydF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uco-3I-aF3" secondAttribute="bottom" constant="-5" id="gxF-DW-ulA"/>
                                                 <constraint firstAttribute="centerY" secondItem="Uco-3I-aF3" secondAttribute="centerY" id="sjc-qK-u3R"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="gnv-Rl-ydF"/>
+                                                    <exclude reference="sjc-qK-u3R"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="contentLabel" destination="5ol-qR-SDq" id="I12-aZ-ScA"/>
                                             <segue destination="ZCf-lo-wGi" kind="show" identifier="show_post_detail" id="6y9-EY-ztZ"/>
                                         </connections>
                                     </tableViewCell>
@@ -622,6 +632,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button_Dislike.png" width="33" height="33"/>
+        <image name="Button_like.png" width="33" height="33"/>
         <image name="Icon_Message.png" width="33" height="33"/>
         <image name="Icon_Profile.png" width="33" height="33"/>
     </resources>

@@ -9,7 +9,7 @@
 import UIKit
 
 class TimelineViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource {
-    
+        
     @IBOutlet weak var tableView: UITableView!
     
     var college = User.currentUser().college
@@ -85,15 +85,31 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
         
         let post = self.posts[indexPath.row]
+
+//        // content cell
+//        if indexPath.row == 0 {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+//            cell.contentLabel.text = "\(post.content)[\(post.likes)]"
+//            cell.backgroundColor = UIColor.clearColor()
+//            return cell
+//        }
+//        // time cell
+//        else {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
+//            cell.textLabel!.text = "\(post.content)[\(post.likes)]"
+//            cell.backgroundColor = UIColor.clearColor()
+//            return cell
+//        }
         
-        println(post.likes)
         
-        cell.textLabel!.text = "\(post.content)[\(post.likes)]"
+        // temporary use
+        let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+        cell.contentLabel.text = "\(post.content)[\(post.likes)]"
         cell.backgroundColor = UIColor.clearColor()
         return cell
+
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -127,9 +143,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         }
     }
     
-    @IBAction func profileClicked(sender: AnyObject) {
-    }
-    
     @IBAction func downvote(sender: AnyObject) {
         let btn = sender as UIButton
         let cell = btn.superview?.superview as UITableViewCell
@@ -142,6 +155,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                 self.reloadPosts(nil)
             }
         }
+    }
+    
+    @IBAction func profileClicked(sender: AnyObject) {
     }
 }
 

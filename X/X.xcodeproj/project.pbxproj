@@ -349,9 +349,9 @@
 			isa = PBXGroup;
 			children = (
 				0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */,
+				0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */,
 				0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */,
 				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
-				0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
