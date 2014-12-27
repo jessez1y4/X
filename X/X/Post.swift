@@ -37,6 +37,10 @@ class Post : PFObject, PFSubclassing {
         return "Post"
     }
     
+    func getTTL() -> Int {
+        return 1
+    }
+    
     func getDateStr() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "MM-dd"

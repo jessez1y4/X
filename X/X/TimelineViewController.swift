@@ -42,6 +42,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.separatorInset = UIEdgeInsetsZero
+        self.tableView.layoutMargins = UIEdgeInsetsZero
         // initial load
         self.reloadPosts(nil)
         
@@ -110,7 +112,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // content cell
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-            cell.contentLabel.text = "\(post.content)[\(post.likes)]"
+            cell.contentLabel.text = post.content
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }
