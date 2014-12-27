@@ -25,7 +25,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         var frontCircleImage = UIImage(named: "dark_circle.png")
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
         
-        self.tableView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
+        self.tableView.setPullToRefreshWithHeight(60.0, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
             
             
             // reload data ...
