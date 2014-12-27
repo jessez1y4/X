@@ -11,6 +11,9 @@ import UIKit
 class TimelineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var leftHrLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
