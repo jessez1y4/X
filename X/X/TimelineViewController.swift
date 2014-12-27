@@ -43,6 +43,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.tableView.backgroundColor = UIColor.clearColor()
         // initial load
         self.reloadPosts(nil)
+        
+        // set title font
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
     }
     
     override func viewWillAppear(animated: Bool) {

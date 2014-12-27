@@ -600,7 +600,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Azw-OL-0hv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vTn-H1-Qdv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="vTn-H1-Qdv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="0iZ-a7-obG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
