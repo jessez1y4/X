@@ -36,4 +36,23 @@ class Post : PFObject, PFSubclassing {
     class func parseClassName() -> String! {
         return "Post"
     }
+    
+    func getDateStr() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MM-dd"
+        
+        let calendar = NSCalendar.currentCalendar()
+        let start = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: self.createdAt)
+        let end = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: NSDate())
+        let diff = end - start
+        
+        switch diff {
+        case 0:
+            return "Today"
+        case 1:
+            return "Yesterday"
+        default:
+            return formatter.stringFromDate(self.createdAt)
+        }
+    }
 }

@@ -59,7 +59,21 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     func reloadPosts(afterLoad: (() -> Void)?) {
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil {
-                self.posts = posts
+                self.posts = []
+                
+                let calendar = NSCalendar.currentCalendar()
+                let now = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: NSDate())
+                
+                for post in posts {
+                    let from = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: post.createdAt)
+                    let diff = now - from
+                    
+                    switch diff {
+                    case 0:
+                        
+                    }
+                }
+                
                 self.tableView.reloadData()
             }
             
