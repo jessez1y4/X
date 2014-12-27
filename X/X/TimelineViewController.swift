@@ -122,6 +122,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
             cell.contentLabel.text = post.content
+            cell.contentLabel.preferredMaxLayoutWidth = 280
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }
