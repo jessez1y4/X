@@ -58,20 +58,25 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     func reloadPosts(afterLoad: (() -> Void)?) {
         self.college.getPosts({ (posts, err) -> Void in
-            if err == nil {
+            if err == nil && posts.count > 0 {
                 self.posts = []
                 
                 let calendar = NSCalendar.currentCalendar()
                 let now = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: NSDate())
+                var lastDiff = -1
                 
                 for post in posts {
                     let from = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: post.createdAt)
                     let diff = now - from
                     
-                    switch diff {
-                    case 0:
-                        
+                    if diff != lastDiff {
+                        let placeholder = Post()
+                        placeholder.life = -99
+                        placeholder.content = post.getDateStr()
+                        self.posts.append(placeholder)
+                        lastDiff = diff
                     }
+                    self.posts.append(post)
                 }
                 
                 self.tableView.reloadData()
@@ -99,30 +104,29 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let post = self.posts[indexPath.row]
 
-//        // content cell
-//        if indexPath.row == 0 {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-//            cell.contentLabel.text = "\(post.content)[\(post.likes)]"
-//            cell.backgroundColor = UIColor.clearColor()
-//            return cell
-//        }
-//        // time cell
-//        else {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
-//            cell.textLabel!.text = "\(post.content)[\(post.likes)]"
-//            cell.backgroundColor = UIColor.clearColor()
-//            return cell
-//        }
+        // content cell
+        if post.life != -99 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+            cell.contentLabel.text = "\(post.content)[\(post.likes)]"
+            cell.backgroundColor = UIColor.clearColor()
+            return cell
+        }
+        // time cell
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
+            cell.textLabel!.text = post.content
+            cell.backgroundColor = UIColor.clearColor()
+            return cell
+        }
         
         
-        // temporary use
-        let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-        cell.contentLabel.text = "\(post.content)[\(post.likes)]"
-        cell.backgroundColor = UIColor.clearColor()
-        return cell
+//        // temporary use
+//        let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+//        cell.contentLabel.text = "\(post.content)[\(post.likes)]"
+//        cell.backgroundColor = UIColor.clearColor()
+//        return cell
 
     }
     
