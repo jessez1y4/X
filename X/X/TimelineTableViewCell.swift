@@ -24,5 +24,11 @@ class TimelineTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    func setValues(post: Post) {
+        contentLabel.text = post.content
+        timeLabel.text = post.getPostTime()
+        leftHrLabel.text = post.getTTL()
+    }
 
 }

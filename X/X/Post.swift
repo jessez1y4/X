@@ -37,8 +37,17 @@ class Post : PFObject, PFSubclassing {
         return "Post"
     }
     
-    func getTTL() -> Int {
-        return 1
+    func getTTL() -> String {
+        let diff = NSDate().timeIntervalSinceDate(self.createdAt)
+        let hours = Int(diff / 3600)
+        return "\(self.life - hours)h left"
+    }
+    
+    func getPostTime() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "HH:mm"
+        
+        return formatter.stringFromDate(self.createdAt)
     }
     
     func getDateStr() -> String {
