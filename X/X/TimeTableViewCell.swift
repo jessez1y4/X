@@ -10,6 +10,9 @@ import UIKit
 
 class TimeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var bgView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

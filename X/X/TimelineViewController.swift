@@ -129,7 +129,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // time cell
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
-            cell.textLabel!.text = post.content
+            cell.bgView.layer.cornerRadius = 15.0;
+            cell.bgView.layer.frame = CGRectInset(cell.bgView.frame, 20, 20)
+            cell.timeLabel.text = post.content
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }
