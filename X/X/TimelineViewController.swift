@@ -41,9 +41,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         
         self.tableView.backgroundColor = UIColor.clearColor()
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView.separatorInset = UIEdgeInsetsZero
-        self.tableView.layoutMargins = UIEdgeInsetsZero
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         // initial load
         self.reloadPosts(nil)
         
@@ -121,7 +119,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // content cell
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-            cell.contentLabel.text = post.content
+            cell.setValues(post)
             cell.contentLabel.preferredMaxLayoutWidth = 280
             cell.backgroundColor = UIColor.clearColor()
             return cell
