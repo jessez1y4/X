@@ -9,11 +9,13 @@
 import UIKit
 
 class TimelineViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource {
-        
-    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var timelineTableView: UITableView!
+    @IBOutlet weak var tableMaskView: UIView!
     
     var college = User.currentUser().college
     var posts: [Post] = []
+    var maskLayer: CAGradientLayer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         var frontCircleImage = UIImage(named: "dark_circle.png")
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
         
-        self.tableView.setPullToRefreshWithHeight(60.0, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
+        self.timelineTableView.setPullToRefreshWithHeight(60.0, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
             
             
             // reload data ...
@@ -35,13 +37,14 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             })
         })
         
-        tableView.pullToRefreshView.preserveContentInset = true
-        tableView.pullToRefreshView.setProgressView(progressView)
+        timelineTableView.pullToRefreshView.preserveContentInset = true
+        timelineTableView.pullToRefreshView.setProgressView(progressView)
         
         
         
-        self.tableView.backgroundColor = UIColor.clearColor()
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.timelineTableView.backgroundColor = UIColor.clearColor()
+        self.timelineTableView.rowHeight = UITableViewAutomaticDimension
+        self.timelineTableView.contentInset.bottom = 60
         // initial load
         self.reloadPosts(nil)
         
@@ -64,6 +67,22 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
+        
+        
+        
+        
+
+        super.viewWillAppear(animated)
+        
+        
+        if self.maskLayer == nil {
+            self.maskLayer = CAGradientLayer()
+            self.maskLayer?.colors = [UIColor.whiteColor().CGColor, UIColor.clearColor().CGColor]
+            self.maskLayer?.locations = [0.85, 1]
+            self.maskLayer?.bounds = CGRectMake(0, 0, self.timelineTableView.frame.size.width, self.timelineTableView.frame.size.height)
+            self.maskLayer?.anchorPoint = CGPointZero
+            self.tableMaskView.layer.mask = self.maskLayer
+        }
     }
     
     func reloadPosts(afterLoad: (() -> Void)?) {
@@ -89,7 +108,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                     self.posts.append(post)
                 }
                 
-                self.tableView.reloadData()
+                self.timelineTableView.reloadData()
             }
             
             if let f = afterLoad {
@@ -147,7 +166,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_post_detail") {
             let pdvc = segue.destinationViewController as PostDetailViewController
-            let idxPath = self.tableView.indexPathForSelectedRow()
+            let idxPath = self.timelineTableView.indexPathForSelectedRow()
             pdvc.post = self.posts[idxPath!.row]
         }
     }
@@ -161,7 +180,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     @IBAction func upvote(sender: AnyObject) {
         let btn = sender as UIButton
         let cell = btn.superview?.superview as UITableViewCell
-        let indexPath = self.tableView.indexPathForCell(cell)
+        let indexPath = self.timelineTableView.indexPathForCell(cell)
         let post = self.posts[indexPath!.row]
         post.incrementKey("likes")
         post.incrementKey("life", byAmount: User.currentUser().voteWeight)
@@ -175,7 +194,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     @IBAction func downvote(sender: AnyObject) {
         let btn = sender as UIButton
         let cell = btn.superview?.superview as UITableViewCell
-        let indexPath = self.tableView.indexPathForCell(cell)
+        let indexPath = self.timelineTableView.indexPathForCell(cell)
         let post = self.posts[indexPath!.row]
         post.incrementKey("likes", byAmount: -1)
         post.incrementKey("life", byAmount: 0 - User.currentUser().voteWeight)
