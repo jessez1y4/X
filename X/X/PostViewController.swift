@@ -47,6 +47,9 @@ class PostViewController: UIViewController, UITextViewDelegate {
         }
     }
 
+    @IBAction func cancelClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

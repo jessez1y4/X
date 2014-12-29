@@ -70,7 +70,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         
         
-        
+
 
         super.viewWillAppear(animated)
         
@@ -146,7 +146,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // time cell
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
-            cell.bgView.layer.cornerRadius = 15.0;
+            cell.bgView.layer.cornerRadius = 15.0
             cell.bgView.layer.frame = CGRectInset(cell.bgView.frame, 20, 20)
             cell.timeLabel.text = post.content
             cell.backgroundColor = UIColor.clearColor()
@@ -208,6 +208,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func profileClicked(sender: AnyObject) {
+        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("profile_view_controller") as ProfileViewController
+        self.presentViewController(postViewController, animated: true, completion: nil)
     }
 }
 
