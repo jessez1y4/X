@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostViewController: UIViewController, UITextViewDelegate {
+class PostViewController: BackgroundViewController, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
     
