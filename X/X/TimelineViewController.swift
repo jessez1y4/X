@@ -44,9 +44,10 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         self.timelineTableView.backgroundColor = UIColor.clearColor()
         self.timelineTableView.rowHeight = UITableViewAutomaticDimension
-        self.timelineTableView.contentInset.bottom = 60
-        // initial load
-        self.reloadPosts(nil)
+        self.timelineTableView.estimatedRowHeight = 100
+//        self.timelineTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.timelineTableView.contentInset.bottom = 100
+
         
         // set title font
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
@@ -83,9 +84,13 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             self.maskLayer?.anchorPoint = CGPointZero
             self.tableMaskView.layer.mask = self.maskLayer
         }
+        
+        // initial load
+        self.reloadPosts(nil)
     }
     
     func reloadPosts(afterLoad: (() -> Void)?) {
+        println("reloading")
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil && posts.count > 0 {
                 self.posts = []
@@ -139,7 +144,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
             cell.setValues(post)
-            cell.contentLabel.preferredMaxLayoutWidth = 280
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }

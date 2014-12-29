@@ -183,16 +183,20 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="18:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uW-b5-CJG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="18:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uW-b5-CJG">
                                                             <rect key="frame" x="28" y="18" width="41" height="22"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-e9-8M4">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-e9-8M4">
                                                             <rect key="frame" x="28" y="45" width="40" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="2ec-Ch-Ceu"/>
+                                                                <constraint firstAttribute="width" constant="40" id="ByR-wE-vvh"/>
+                                                            </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Badge_Non_Verified.png" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-7y-4Cy">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Badge_Non_Verified.png" translatesAutoresizingMaskIntoConstraints="NO" id="WPE-7y-4Cy">
                                                             <rect key="frame" x="54" y="72" width="19" height="19"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Icon_Clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="H4G-RO-A1n">
@@ -233,6 +237,7 @@
                                                         <constraint firstItem="WPE-7y-4Cy" firstAttribute="top" secondItem="4uW-b5-CJG" secondAttribute="bottom" constant="32" id="dSz-OI-Yqf"/>
                                                         <constraint firstItem="H4G-RO-A1n" firstAttribute="centerY" secondItem="KkB-gC-DZ4" secondAttribute="centerY" id="drC-jU-ey3"/>
                                                         <constraint firstItem="Cg2-nN-oRr" firstAttribute="leading" secondItem="Uco-3I-aF3" secondAttribute="trailing" constant="10" id="evp-Aj-dPT"/>
+                                                        <constraint firstItem="WPE-7y-4Cy" firstAttribute="bottom" secondItem="ReX-e9-8M4" secondAttribute="bottom" constant="10" id="fZn-hv-qmY"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="Uco-3I-aF3" secondAttribute="trailing" constant="10" id="gnv-Rl-ydF"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="Uco-3I-aF3" secondAttribute="bottom" constant="-1.5" id="gxF-DW-ulA"/>
                                                         <constraint firstItem="4uW-b5-CJG" firstAttribute="top" secondItem="SJc-be-efS" secondAttribute="topMargin" constant="10" id="hRZ-Oi-2aS"/>
@@ -251,6 +256,7 @@
                                                         <mask key="constraints">
                                                             <exclude reference="C1Y-dY-FWd"/>
                                                             <exclude reference="I9x-3C-6Jp"/>
+                                                            <exclude reference="dSz-OI-Yqf"/>
                                                             <exclude reference="yVb-sh-RBq"/>
                                                             <exclude reference="xZj-og-nBp"/>
                                                             <exclude reference="5j3-Vt-ee3"/>
@@ -270,6 +276,7 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
+                                                    <outlet property="avatarImageView" destination="ReX-e9-8M4" id="jos-d7-O7G"/>
                                                     <outlet property="contentLabel" destination="5ol-qR-SDq" id="I12-aZ-ScA"/>
                                                     <outlet property="leftHrLabel" destination="KkB-gC-DZ4" id="bfB-KK-YMd"/>
                                                     <outlet property="timeLabel" destination="4uW-b5-CJG" id="FSu-zf-lxR"/>
