@@ -1,18 +1,15 @@
 //
-//  TimeCell.swift
+//  SettingTableViewCell.swift
 //  X
 //
-//  Created by yue zheng on 12/25/14.
+//  Created by yue zheng on 12/28/14.
 //  Copyright (c) 2014 PPC. All rights reserved.
 //
 
 import UIKit
 
-class TimeTableViewCell: UITableViewCell {
+class SettingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var bgView: UIView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

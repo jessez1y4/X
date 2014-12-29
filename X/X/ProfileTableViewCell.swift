@@ -10,9 +10,14 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var verifyImageView: UIImageView!
+    @IBOutlet weak var verifyBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

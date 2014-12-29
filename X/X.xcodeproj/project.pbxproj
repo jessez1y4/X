@@ -73,6 +73,8 @@
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
 		0D9FCBD31A3E7E0800F576D9 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD01A3E7E0800F576D9 /* light_circle.png */; };
 		0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */; };
+		0DEFE11C1A50C0E7003ADC93 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFE11B1A50C0E7003ADC93 /* RecordTableViewCell.swift */; };
+		0DEFE11E1A50C0F7003ADC93 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEFE11D1A50C0F7003ADC93 /* SettingTableViewCell.swift */; };
 		9A02BC6C1A3E720200460D3C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6B1A3E720200460D3C /* User.swift */; };
 		9A02BC6E1A3E727200460D3C /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6D1A3E727200460D3C /* College.swift */; };
 		9A02BC701A3E72AA00460D3C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A02BC6F1A3E72AA00460D3C /* Post.swift */; };
@@ -170,6 +172,8 @@
 		0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_circle.png; sourceTree = "<group>"; };
 		0D9FCBD01A3E7E0800F576D9 /* light_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_circle.png; sourceTree = "<group>"; };
 		0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		0DEFE11B1A50C0E7003ADC93 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		0DEFE11D1A50C0F7003ADC93 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		1522274757228CDEAB54DB6B /* Pods-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.release.xcconfig"; sourceTree = "<group>"; };
 		27E0C18A11664981188565B1 /* Pods-X.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-X.debug.xcconfig"; path = "Pods/Target Support Files/Pods-X/Pods-X.debug.xcconfig"; sourceTree = "<group>"; };
 		9253DF238FFC5B24472F5C72 /* libPods-X.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-X.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +356,8 @@
 				0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */,
 				0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */,
 				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
+				0DEFE11B1A50C0E7003ADC93 /* RecordTableViewCell.swift */,
+				0DEFE11D1A50C0F7003ADC93 /* SettingTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D9FCBD51A3FED0C00F576D9 /* PostViewController.swift in Sources */,
+				0DEFE11E1A50C0F7003ADC93 /* SettingTableViewCell.swift in Sources */,
 				9A698F511A43CF5D000314E8 /* PostDetailViewController.swift in Sources */,
 				9A1DCC6D1A3E6C6300075F39 /* LoginViewController.swift in Sources */,
 				0D33C6651A4D2B4B006800FF /* TimeTableViewCell.swift in Sources */,
@@ -630,6 +637,7 @@
 				9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */,
 				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
 				0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */,
+				0DEFE11C1A50C0E7003ADC93 /* RecordTableViewCell.swift in Sources */,
 				0D1F2E481A43E25500C0C465 /* InputViewController.swift in Sources */,
 				0D1F2E3E1A43DB4500C0C465 /* InboxViewController.swift in Sources */,
 				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
