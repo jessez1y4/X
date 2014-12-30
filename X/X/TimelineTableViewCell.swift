@@ -14,6 +14,8 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var leftHrLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var unlikeBtn: UIButton!
+    @IBOutlet weak var likeBtn: UIButton!
     
     
     override func awakeFromNib() {
