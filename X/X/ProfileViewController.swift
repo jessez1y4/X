@@ -14,6 +14,9 @@ class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
 
         // Do any additional setup after loading the view.
     }
@@ -29,7 +32,7 @@ class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITa
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -44,6 +47,14 @@ class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITa
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("SettingCell") as SettingTableViewCell
+            
+            if indexPath.row == 2 {
+                cell.nameImageView.image = UIImage(named: "Icon_Settings@2x.png")
+                cell.nameLabel.text = "Settings"
+            } else if indexPath.row == 3 {
+                cell.nameImageView.image = UIImage(named: "Icon_About@2x.png")
+                cell.nameLabel.text = "About"
+            }
             return cell
         }
         
