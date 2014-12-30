@@ -9,6 +9,7 @@ target 'X' do
     pod 'BMYCircularProgressPullToRefresh'
     pod 'SlackTextViewController'
     pod 'OpenSans'
+    pod 'DateTools'
 end
 
 target 'XTests' do

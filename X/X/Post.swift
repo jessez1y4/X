@@ -55,9 +55,15 @@ class Post : PFObject, PFSubclassing {
         formatter.dateFormat = "MM-dd"
         
         let calendar = NSCalendar.currentCalendar()
-        let start = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: self.createdAt)
-        let end = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: NSDate())
-        let diff = end - start
+        calendar.timeZone = NSTimeZone.localTimeZone()
+        
+        let fromComponents = calendar.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: self.createdAt)
+        let from = calendar.dateFromComponents(fromComponents)
+        
+        let toComponents = calendar.components(NSCalendarUnit.YearCalendarUnit | NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: NSDate())
+        let to = calendar.dateFromComponents(toComponents)
+
+        let diff = from!.daysEarlierThan(to!)
         
         switch diff {
         case 0:
