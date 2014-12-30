@@ -94,21 +94,18 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil && posts.count > 0 {
                 self.posts = []
-                
-                let calendar = NSCalendar.currentCalendar()
-                let now = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: NSDate())
-                var lastDiff = -1
+    
+                var lastDateStr = ""
                 
                 for post in posts {
-                    let from = calendar.ordinalityOfUnit(NSCalendarUnit.DayCalendarUnit, inUnit: NSCalendarUnit.EraCalendarUnit, forDate: post.createdAt)
-                    let diff = now - from
+                    let dateStr = post.getDateStr()
                     
-                    if diff != lastDiff {
+                    if dateStr != lastDateStr {
                         let placeholder = Post()
                         placeholder.life = -99
-                        placeholder.content = post.getDateStr()
+                        placeholder.content = dateStr
                         self.posts.append(placeholder)
-                        lastDiff = diff
+                        lastDateStr = dateStr
                     }
                     self.posts.append(post)
                 }
