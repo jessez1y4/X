@@ -27,6 +27,8 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -992,11 +994,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What happened?" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-Dd-H2Y">
-                                <rect key="frame" x="0.0" y="87" width="600" height="243"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="What happened?" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-Dd-H2Y">
+                                <rect key="frame" x="25" y="87" width="550" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="wje-4i-BmV" id="B9O-ym-Ciz"/>
                                 </connections>
@@ -1010,33 +1013,82 @@
                                     <action selector="doneClicked:" destination="wje-4i-BmV" eventType="touchUpInside" id="PWS-gk-Iin"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6N-4F-izG">
-                                <rect key="frame" x="25" y="28" width="45" height="30"/>
-                                <state key="normal" title="cancel">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6N-4F-izG">
+                                <rect key="frame" x="25" y="28" width="33" height="33"/>
+                                <state key="normal" image="Icon_Close.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelClicked:" destination="wje-4i-BmV" eventType="touchUpInside" id="fqW-pX-kLc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-1k-Y3w">
+                                <rect key="frame" x="40" y="333" width="500" height="43"/>
+                                <color key="backgroundColor" red="0.8784313725490196" green="0.33725490196078434" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8YG-ug-hqc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <state key="normal" title="POST">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h4A-bD-wxk">
+                                <rect key="frame" x="0.0" y="307" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1P0-px-oXH"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7w-dR-Mpo">
+                                <rect key="frame" x="0.0" y="253" width="600" height="1"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="5oV-ba-UjE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leading" id="270-Nr-2Dg"/>
+                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leading" constant="25" id="270-Nr-2Dg"/>
+                            <constraint firstItem="q7w-dR-Mpo" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="-16" id="DNR-qX-Hga"/>
                             <constraint firstAttribute="trailingMargin" secondItem="giV-fQ-fcd" secondAttribute="trailing" constant="24" id="GGs-0D-v3Z"/>
-                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="oev-d8-IcX" secondAttribute="topMargin" constant="87" id="Uu0-hO-a1a"/>
+                            <constraint firstItem="Q9K-1k-Y3w" firstAttribute="top" secondItem="h4A-bD-wxk" secondAttribute="bottom" constant="20" id="HdC-a5-ko9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q9K-1k-Y3w" secondAttribute="trailing" constant="30" id="Nau-Hb-dfZ"/>
+                            <constraint firstItem="q7w-dR-Mpo" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="bottom" constant="10" id="Pes-Xs-Oot"/>
+                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="p6N-4F-izG" secondAttribute="bottom" constant="26" id="RDF-6k-YDH"/>
+                            <constraint firstItem="h4A-bD-wxk" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="-16" id="RPG-VZ-4Zv"/>
+                            <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="oev-d8-IcX" secondAttribute="topMargin" constant="40" id="Uu0-hO-a1a"/>
+                            <constraint firstItem="q7w-dR-Mpo" firstAttribute="centerX" secondItem="h4A-bD-wxk" secondAttribute="centerX" id="V45-hu-KQ9"/>
+                            <constraint firstItem="p6N-4F-izG" firstAttribute="top" secondItem="oP5-HD-1vj" secondAttribute="bottom" constant="8" id="WEH-Vs-COW"/>
                             <constraint firstItem="giV-fQ-fcd" firstAttribute="top" secondItem="oP5-HD-1vj" secondAttribute="bottom" constant="8" id="dbk-qi-LAL"/>
                             <constraint firstItem="SXa-Q4-Ndx" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="bottom" constant="270" id="del-06-NbD"/>
-                            <constraint firstAttribute="trailing" secondItem="BGs-Dd-H2Y" secondAttribute="trailing" id="zku-Hb-lOv"/>
+                            <constraint firstItem="p6N-4F-izG" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" id="ghg-lP-ZVe"/>
+                            <constraint firstItem="Q9K-1k-Y3w" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="bottom" constant="5" id="haf-pr-1Aw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="q7w-dR-Mpo" secondAttribute="trailing" constant="-16" id="odh-Nm-UVb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h4A-bD-wxk" secondAttribute="trailing" constant="-16" id="pfi-Z2-Tuw"/>
+                            <constraint firstItem="h4A-bD-wxk" firstAttribute="top" secondItem="q7w-dR-Mpo" secondAttribute="bottom" constant="53" id="rIK-gr-E65"/>
+                            <constraint firstItem="Q9K-1k-Y3w" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="30" id="vL3-Rf-XE4"/>
+                            <constraint firstItem="SXa-Q4-Ndx" firstAttribute="top" secondItem="Q9K-1k-Y3w" secondAttribute="bottom" id="yKD-cr-QJR"/>
+                            <constraint firstAttribute="trailing" secondItem="BGs-Dd-H2Y" secondAttribute="trailing" constant="25" id="zku-Hb-lOv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uu0-hO-a1a"/>
+                                <exclude reference="haf-pr-1Aw"/>
+                                <exclude reference="del-06-NbD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstrain" destination="yKD-cr-QJR" id="Z7O-oT-jmP"/>
                         <outlet property="textView" destination="BGs-Dd-H2Y" id="aCz-0t-y1O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUA-Le-o90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3217" y="-563"/>
+            <point key="canvasLocation" x="3217" y="-562"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Azw-OL-0hv">
@@ -1069,7 +1121,7 @@
         <image name="Button_like.png" width="33" height="33"/>
         <image name="Empty_Photo.png" width="40" height="40"/>
         <image name="Icon_BG_Pic.png" width="33" height="33"/>
-        <image name="Icon_Clock.png" width="16" height="16"/>
+        <image name="Icon_Clock.png" width="12" height="17"/>
         <image name="Icon_Close.png" width="33" height="33"/>
         <image name="Icon_Message.png" width="33" height="33"/>
         <image name="Icon_Profile.png" width="33" height="33"/>
