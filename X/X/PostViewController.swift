@@ -10,11 +10,19 @@ import UIKit
 
 class PostViewController: BackgroundViewController, UITextViewDelegate {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: SAMTextView!
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
+    @IBOutlet weak var postButton: UIButton!
+    @IBOutlet weak var countLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        postButton.layer.cornerRadius = 5.0
+        postButton.layer.frame = CGRectInset(postButton.frame, 1, 1)
+        
+        textView.placeholder = "What happened?"
 
         // Do any additional setup after loading the view.
     }
@@ -62,8 +70,26 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // Limit the charactor to 140
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text.utf16Count == 0 {
+            if textView.text.utf16Count != 0 {
+                return true
+            } else {
+                return false
+            }
+        } else if textView.text.utf16Count > 139
+        {
+            return false
+        }
+        return true
+    }
+
+    
     func textViewDidChange(textView: UITextView) {
-        println("changed!")
+        
+        let count = 140 - textView.text.utf16Count
+        countLabel.text = "\(count) left"
     }
     
     func textViewDidEndEditing(textView: UITextView) {
@@ -75,8 +101,9 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         super.viewDidAppear(animated)
         textView.becomeFirstResponder()
     }
-    
-    @IBAction func doneClicked(sender: AnyObject) {
+
+
+    @IBAction func postClicked(sender: AnyObject) {
         let post = Post.initWith(textView.text)
         
         post.saveInBackgroundWithBlock { (success, err) -> Void in
@@ -85,18 +112,9 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
             }
         }
     }
-
+    
     @IBAction func cancelClicked(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

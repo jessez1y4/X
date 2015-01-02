@@ -15,5 +15,6 @@
 #import <SLKTextViewController.h>
 #import "MessageTableViewCell.h"
 #import <DateTools.h>
+#import <SAMTextView.h>
 
 #endif
