@@ -407,7 +407,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Stanford University" id="ff4-Ui-vzz">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Icon_Profile.png" id="7Yv-F9-Zo8">
+                        <barButtonItem key="leftBarButtonItem" image="Icon_Profile.png" id="7Yv-F9-Zo8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="profileClicked:" destination="7r7-Cu-LLu" id="aSO-yK-ZuC"/>
@@ -1106,9 +1106,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC">
-                        <barButtonItem key="backBarButtonItem" title=" " id="IfR-8n-X0u"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
