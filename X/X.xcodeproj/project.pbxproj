@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D1F2E3C1A43DB3300C0C465 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E3B1A43DB3300C0C465 /* ProfileViewController.swift */; };
-		0D1F2E3E1A43DB4500C0C465 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E3D1A43DB4500C0C465 /* InboxViewController.swift */; };
+		0D1F2E3E1A43DB4500C0C465 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */; };
 		0D1F2E401A43DC4900C0C465 /* dota2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D1F2E3F1A43DC4900C0C465 /* dota2.jpg */; };
 		0D1F2E421A43DDD900C0C465 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */; };
 		0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1F2E431A43E21100C0C465 /* EditViewController.swift */; };
@@ -26,6 +26,7 @@
 		0D2D41701A4D192A003F24CB /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D41651A4D192A003F24CB /* OpenSans-Semibold.ttf */; };
 		0D2D41711A4D192A003F24CB /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D2D41661A4D192A003F24CB /* OpenSans-SemiboldItalic.ttf */; };
 		0D33C6651A4D2B4B006800FF /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */; };
+		0D43F4691A5679E400BAED37 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D43F4681A5679E400BAED37 /* ActivityTableViewCell.swift */; };
 		0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587D81A402105009AD4F0 /* DetailViewController.swift */; };
 		0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DC1A402638009AD4F0 /* MessageViewController.m */; };
 		0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */; };
@@ -116,7 +117,7 @@
 
 /* Begin PBXFileReference section */
 		0D1F2E3B1A43DB3300C0C465 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0D1F2E3D1A43DB4500C0C465 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		0D1F2E3F1A43DC4900C0C465 /* dota2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dota2.jpg; sourceTree = "<group>"; };
 		0D1F2E411A43DDD900C0C465 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		0D1F2E431A43E21100C0C465 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		0D2D41651A4D192A003F24CB /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		0D2D41661A4D192A003F24CB /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		0D43F4681A5679E400BAED37 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0D5587D81A402105009AD4F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D5587DB1A402638009AD4F0 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		0D5587DC1A402638009AD4F0 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
@@ -277,7 +279,7 @@
 				0D9FCBD41A3FED0C00F576D9 /* PostViewController.swift */,
 				0D5587D81A402105009AD4F0 /* DetailViewController.swift */,
 				0D1F2E3B1A43DB3300C0C465 /* ProfileViewController.swift */,
-				0D1F2E3D1A43DB4500C0C465 /* InboxViewController.swift */,
+				0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */,
 				0D1F2E431A43E21100C0C465 /* EditViewController.swift */,
 				0D1F2E471A43E25500C0C465 /* InputViewController.swift */,
 				0D1F2E451A43E22400C0C465 /* VerifyViewController.swift */,
@@ -394,6 +396,7 @@
 				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
 				0DEFE11B1A50C0E7003ADC93 /* RecordTableViewCell.swift */,
 				0DEFE11D1A50C0F7003ADC93 /* SettingTableViewCell.swift */,
+				0D43F4681A5679E400BAED37 /* ActivityTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -682,12 +685,13 @@
 				9A698F4F1A43CB16000314E8 /* Reply.swift in Sources */,
 				0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */,
 				9A62E3D71A412E62008FF9AC /* TimelineViewController.swift in Sources */,
+				0D43F4691A5679E400BAED37 /* ActivityTableViewCell.swift in Sources */,
 				9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */,
 				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
 				0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */,
 				0DEFE11C1A50C0E7003ADC93 /* RecordTableViewCell.swift in Sources */,
 				0D1F2E481A43E25500C0C465 /* InputViewController.swift in Sources */,
-				0D1F2E3E1A43DB4500C0C465 /* InboxViewController.swift in Sources */,
+				0D1F2E3E1A43DB4500C0C465 /* ActivityViewController.swift in Sources */,
 				0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */,
 				0D1F2E461A43E22400C0C465 /* VerifyViewController.swift in Sources */,
 				9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */,
