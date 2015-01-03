@@ -1137,7 +1137,13 @@
                             <constraint firstItem="yDi-Z2-82C" firstAttribute="top" secondItem="3sE-yZ-eus" secondAttribute="bottom" id="vUx-ql-XnJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC"/>
+                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="vYI-wG-5e5">
+                            <connections>
+                                <action selector="backClicked:" destination="29h-gB-Oc9" id="KKx-gG-96R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

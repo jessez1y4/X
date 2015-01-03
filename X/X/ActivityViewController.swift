@@ -50,6 +50,9 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         return cell
     }
     
+    @IBAction func backClicked(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     /*
     // MARK: - Navigation
