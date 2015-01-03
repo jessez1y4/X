@@ -42,6 +42,11 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell") as ActivityTableViewCell
+        
+        cell.contentLabel.text = "sdifhdiuhgdfghdfiughdfjghdfgdfjgdkfjghdjkfgdfhjkbgdkfgbdkfjgdfg"
+        cell.numberView.layer.cornerRadius = 10.0
+        cell.numberView.layer.frame = CGRectInset(cell.numberView.frame, 20, 20)
+        
         return cell
     }
     
