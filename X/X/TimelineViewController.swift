@@ -43,7 +43,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         
         self.timelineTableView.backgroundColor = UIColor.clearColor()
-        self.timelineTableView.rowHeight = UITableViewAutomaticDimension
+       // self.timelineTableView.rowHeight = UITableViewAutomaticDimension
         self.timelineTableView.estimatedRowHeight = 100
 //        self.timelineTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.timelineTableView.contentInset.bottom = 100
@@ -60,6 +60,12 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         self.view.addSubview(postBtn)
         self.view.bringSubviewToFront(postBtn)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.reloadPosts(nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -85,8 +91,16 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             self.tableMaskView.layer.mask = self.maskLayer
         }
         
-        // initial load
-        self.reloadPosts(nil)
+//        // initial load
+//        self.reloadPosts { () -> Void in
+//            let num = self.posts.count
+//            var idxPaths: [NSIndexPath] = []
+//            
+//            for i in 1...4 {
+//                idxPaths.append(NSIndexPath(forRow: i-1, inSection: 0))
+//            }
+////            self.timelineTableView.reloadRowsAtIndexPaths(idxPaths, withRowAnimation: UITableViewRowAnimation.None)
+//        }
     }
     
     func reloadPosts(afterLoad: (() -> Void)?) {
