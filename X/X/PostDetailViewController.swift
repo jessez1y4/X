@@ -71,6 +71,9 @@ class PostDetailViewController: SLKTextViewController {
         
         self.tableView.registerClass(MessageTableViewCell.self, forCellReuseIdentifier: "replyCell")
         
+        // add constraints for tableView
+        
+        
         self.textView.placeholder = "What do you think?"
         self.textView.placeholderColor = UIColor.grayColor()
 //        self.textView.layer.borderColor = [UIColor colorWithRed:217.0/255.0 green:217.0/255.0 blue:217.0/255.0 alpha:1.0].CGColor;

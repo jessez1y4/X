@@ -24,7 +24,7 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-
+        contentLabel.sizeToFit()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
