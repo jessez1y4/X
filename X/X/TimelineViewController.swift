@@ -75,9 +75,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
         
-        
-        
-
 
         super.viewWillAppear(animated)
         
