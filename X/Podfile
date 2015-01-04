@@ -11,6 +11,7 @@ target 'X' do
     pod 'OpenSans'
     pod 'DateTools'
     pod 'SAMTextView'
+    pod 'LoremIpsum', '~> 1.0'
 end
 
 target 'XTests' do

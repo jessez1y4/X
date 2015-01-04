@@ -48,6 +48,16 @@ class PostDetailViewController: SLKTextViewController {
 //        
 //        tableView.pullToRefreshView.preserveContentInset = true
 //        tableView.pullToRefreshView.setProgressView(progressView)
+
+        let backgroundImage = UIImage(named: "BG.png")
+        let backgroundImageView = UIImageView(frame: view.frame)
+        backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
+        view.addSubview(backgroundImageView)
+        
+        view.sendSubviewToBack(backgroundImageView)
+        view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
         
         
         
@@ -89,6 +99,21 @@ class PostDetailViewController: SLKTextViewController {
         self.reloadReplies()
         
     }
+
+    func imageWithAlpha(image: UIImage, alpha: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(image.size, false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        let area = CGRectMake(0, 0, image.size.width, image.size.height)
+        CGContextScaleCTM(context, 1, -1)
+        CGContextTranslateCTM(context, 0, -area.size.height)
+        
+        CGContextSetAlpha(context, alpha)
+        CGContextDrawImage(context, area, image.CGImage)
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return result
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -109,7 +134,7 @@ class PostDetailViewController: SLKTextViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("replyCell") as MessageTableViewCell
-        
+        cell.backgroundColor = UIColor.clearColor()
         let reply = self.replies[indexPath.row]
         
         cell.textLabel!.text = reply.content

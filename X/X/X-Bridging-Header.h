@@ -16,5 +16,6 @@
 #import "MessageTableViewCell.h"
 #import <DateTools.h>
 #import <SAMTextView.h>
+#import <LoremIpsum.h>
 
 #endif
