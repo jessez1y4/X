@@ -9,6 +9,7 @@
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
         </mutableArray>
         <mutableArray key="OpenSans-Light.ttf">
             <string>OpenSans-Light</string>
@@ -20,8 +21,11 @@
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
             <string>OpenSans-Light</string>
+            <string>OpenSans-Light</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -481,6 +485,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="verifySchoolClicked:" destination="WEM-We-JrS" eventType="touchUpInside" id="xHM-h2-TNa"/>
+                                                        <segue destination="upE-5x-8LX" kind="show" identifier="show_verify" id="Kb5-2d-pAD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -816,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6C7-oE-5iR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2453" y="1607"/>
+            <point key="canvasLocation" x="1620" y="1720"/>
         </scene>
         <!--Verify View Controller-->
         <scene sceneID="9Ev-4O-GMh">
@@ -830,24 +835,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter you school or company email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuS-oE-7Ql">
-                                <rect key="frame" x="0.0" y="0.0" width="325" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IW5-9K-vqc">
-                                <rect key="frame" x="66" y="102" width="130" height="25"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IW5-9K-vqc">
+                                <rect key="frame" x="119" y="196" width="222" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9hB-Qs-srB"/>
                                     <constraint firstAttribute="width" constant="130" id="JAG-iM-PLa"/>
                                     <constraint firstAttribute="height" constant="25" id="jyP-ig-Jfs"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JAG-iM-PLa"/>
+                                        <exclude reference="jyP-ig-Jfs"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86u-U7-gFF">
-                                <rect key="frame" x="70" y="163" width="37" height="30"/>
-                                <state key="normal" title="verify">
+                                <rect key="frame" x="119" y="279" width="358" height="30"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.33725490200000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6hk-JR-5eS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                <state key="normal" title="send code">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -855,40 +870,117 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=".edu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctu-lC-Deu">
-                                <rect key="frame" x="204" y="104" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="358" y="198" width="78" height="21"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJO-IY-ojM">
+                                <rect key="frame" x="38" y="28" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="EpI-3C-SZ6"/>
+                                    <constraint firstAttribute="width" constant="33" id="SxC-vo-mxA"/>
+                                </constraints>
+                                <state key="normal" image="Icon_Close.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EpI-3C-SZ6"/>
+                                        <exclude reference="SxC-vo-mxA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="cancelClicked:" destination="upE-5x-8LX" eventType="touchUpInside" id="g8H-me-9YP"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="78l-Bi-PLL">
+                                <rect key="frame" x="176" y="31" width="200" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="ByW-Cg-ksK"/>
+                                    <constraint firstAttribute="width" constant="200" id="RSX-5X-7xW"/>
+                                    <constraint firstAttribute="height" constant="28" id="aGA-Om-r1w"/>
+                                    <constraint firstAttribute="height" constant="25" id="xmC-85-eG4"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="school"/>
+                                    <segment title="company"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aGA-Om-r1w"/>
+                                        <exclude reference="xmC-85-eG4"/>
+                                    </mask>
+                                </variation>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter your school email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuS-oE-7Ql">
+                                <rect key="frame" x="124" y="131" width="304" height="20.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ctu-lC-Deu" firstAttribute="leading" secondItem="IW5-9K-vqc" secondAttribute="trailing" constant="8" symbolic="YES" id="2g2-VN-yTG"/>
+                            <constraint firstItem="78l-Bi-PLL" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="5" id="5TN-8F-Ktn"/>
+                            <constraint firstAttribute="centerX" secondItem="78l-Bi-PLL" secondAttribute="centerX" id="5bC-wU-IAr"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="leading" secondItem="IP6-Fg-k5V" secondAttribute="leadingMargin" constant="50" id="6v4-yq-lG9"/>
                             <constraint firstItem="l8x-Ma-bjV" firstAttribute="top" secondItem="ctu-lC-Deu" secondAttribute="bottom" constant="431" id="7xr-78-Yef"/>
+                            <constraint firstItem="86u-U7-gFF" firstAttribute="top" secondItem="IW5-9K-vqc" secondAttribute="bottom" constant="40" id="8Ka-yj-eu1"/>
+                            <constraint firstItem="HuS-oE-7Ql" firstAttribute="top" secondItem="78l-Bi-PLL" secondAttribute="bottom" constant="50" id="BXg-7W-QuT"/>
+                            <constraint firstItem="IW5-9K-vqc" firstAttribute="leading" secondItem="IP6-Fg-k5V" secondAttribute="leadingMargin" constant="20" id="DfK-bG-3Y4"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="centerY" secondItem="ctu-lC-Deu" secondAttribute="centerY" id="GKd-vR-Lxw"/>
                             <constraint firstItem="86u-U7-gFF" firstAttribute="leading" secondItem="IP6-Fg-k5V" secondAttribute="leading" constant="70" id="KEO-0e-z7v"/>
+                            <constraint firstAttribute="centerX" secondItem="HuS-oE-7Ql" secondAttribute="centerX" id="OIg-dU-WfM"/>
+                            <constraint firstItem="ctu-lC-Deu" firstAttribute="trailing" secondItem="86u-U7-gFF" secondAttribute="trailing" id="OLb-jh-SK4"/>
+                            <constraint firstAttribute="centerX" secondItem="86u-U7-gFF" secondAttribute="centerX" id="PIK-d3-app"/>
+                            <constraint firstItem="IW5-9K-vqc" firstAttribute="leading" secondItem="86u-U7-gFF" secondAttribute="leading" id="Qj3-cd-1cS"/>
                             <constraint firstItem="86u-U7-gFF" firstAttribute="leading" secondItem="IP6-Fg-k5V" secondAttribute="leadingMargin" constant="246" id="T7s-uD-qRb"/>
+                            <constraint firstItem="lJO-IY-ojM" firstAttribute="leading" secondItem="IP6-Fg-k5V" secondAttribute="leadingMargin" id="VQ2-iJ-zaL"/>
                             <constraint firstItem="86u-U7-gFF" firstAttribute="top" secondItem="IW5-9K-vqc" secondAttribute="bottom" constant="36" id="cwo-HX-pgs"/>
+                            <constraint firstItem="l8x-Ma-bjV" firstAttribute="top" secondItem="86u-U7-gFF" secondAttribute="bottom" id="fhz-MH-adQ"/>
+                            <constraint firstItem="lJO-IY-ojM" firstAttribute="centerY" secondItem="78l-Bi-PLL" secondAttribute="centerY" id="gEj-5R-Kqx"/>
+                            <constraint firstItem="86u-U7-gFF" firstAttribute="top" secondItem="IW5-9K-vqc" secondAttribute="bottom" constant="50" id="iUe-BS-YCh"/>
                             <constraint firstItem="ctu-lC-Deu" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="40" id="jBz-b6-8U4"/>
+                            <constraint firstAttribute="centerY" secondItem="lJO-IY-ojM" secondAttribute="centerY" id="jil-TT-HSY"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="38" id="kpd-oy-fTi"/>
+                            <constraint firstItem="IW5-9K-vqc" firstAttribute="top" secondItem="HuS-oE-7Ql" secondAttribute="bottom" constant="20" id="l6H-SG-fhu"/>
+                            <constraint firstItem="lJO-IY-ojM" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="5" id="sK7-12-99h"/>
+                            <constraint firstItem="IW5-9K-vqc" firstAttribute="leading" secondItem="86u-U7-gFF" secondAttribute="leading" id="whz-wK-vwC"/>
+                            <constraint firstAttribute="centerY" secondItem="78l-Bi-PLL" secondAttribute="centerY" id="zDN-Lt-W47"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="jil-TT-HSY"/>
+                                <exclude reference="5TN-8F-Ktn"/>
+                                <exclude reference="zDN-Lt-W47"/>
+                                <exclude reference="BXg-7W-QuT"/>
+                                <exclude reference="6v4-yq-lG9"/>
+                                <exclude reference="kpd-oy-fTi"/>
+                                <exclude reference="whz-wK-vwC"/>
+                                <exclude reference="8Ka-yj-eu1"/>
+                                <exclude reference="KEO-0e-z7v"/>
+                                <exclude reference="T7s-uD-qRb"/>
+                                <exclude reference="cwo-HX-pgs"/>
                                 <exclude reference="jBz-b6-8U4"/>
                                 <exclude reference="7xr-78-Yef"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstrain" destination="fhz-MH-adQ" id="1Wb-Ft-YXa"/>
                         <outlet property="domainLabel" destination="ctu-lC-Deu" id="Vtl-BB-PGr"/>
                         <outlet property="emailText" destination="IW5-9K-vqc" id="4xg-Qq-Gde"/>
+                        <outlet property="sendButton" destination="86u-U7-gFF" id="jXz-2f-htl"/>
                         <segue destination="CUO-md-P9N" kind="show" identifier="show_code_input" id="QuE-S6-4Kw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojl-RH-SbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125" y="1838"/>
+            <point key="canvasLocation" x="2457" y="1744"/>
         </scene>
         <!--Input View Controller-->
         <scene sceneID="lTK-Bk-ubX">
@@ -947,7 +1039,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fu8-a2-JMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4065" y="1850"/>
+            <point key="canvasLocation" x="3314" y="1711"/>
         </scene>
         <!--Details-->
         <scene sceneID="e98-Kr-CDQ">
