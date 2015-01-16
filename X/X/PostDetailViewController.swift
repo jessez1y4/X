@@ -104,6 +104,11 @@ class PostDetailViewController: SLKTextViewController {
         // initial load
         self.reloadReplies()
         
+        if post.user.objectId == User.currentUser().objectId {
+            post.unread = 0
+            post.saveEventually()
+        }
+        
     }
 
     func imageWithAlpha(image: UIImage, alpha: CGFloat) -> UIImage {
@@ -167,9 +172,15 @@ class PostDetailViewController: SLKTextViewController {
             if success {
                 self.textView.text = ""
                 self.reloadReplies()
+                
+                if self.post.user.objectId != User.currentUser().objectId {
+                    self.post.incrementKey("unread")
+                    self.post.saveEventually()
+                }
             }
         }
     }
+    
     @IBAction func backClicked(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
 
