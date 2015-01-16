@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InputViewController: UIViewController {
+class InputViewController: BackgroundViewController, UITextFieldDelegate {
 
     @IBOutlet weak var codeText: UITextField!
     var code: Int!
@@ -17,6 +17,10 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var spacerView = UIView(frame:CGRect(x:0, y:0, width:10, height:10))
+//        codeText.leftViewMode = UITextFieldViewMode.Always
+//        codeText.leftView = spacerView
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +33,16 @@ class InputViewController: UIViewController {
         super.viewDidAppear(animated)
         codeText.becomeFirstResponder()
     }
+    
+//    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+//        <#code#>
+//    }
+//    
+//    - (void)selectTextInTextField:(UITextField *)textField range:(NSRange)range {
+//    UITextPosition *from = [textField positionFromPosition:[textField beginningOfDocument] offset:range.location];
+//    UITextPosition *to = [textField positionFromPosition:from offset:range.length];
+//    [textField setSelectedTextRange:[textField textRangeFromPosition:from toPosition:to]];
+//    }
     
     @IBAction func doneClicked(sender: AnyObject) {
         if String(self.code) == codeText.text {
@@ -45,5 +59,9 @@ class InputViewController: UIViewController {
         }
     }
 
+    @IBAction func cancelClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
 
 }

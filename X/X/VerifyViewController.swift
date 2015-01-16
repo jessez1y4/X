@@ -20,6 +20,12 @@ class VerifyViewController: BackgroundViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // set border color
+        emailText.layer.cornerRadius = 4.0
+        emailText.layer.masksToBounds = true
+        emailText.layer.borderColor = UIColor.grayColor().CGColor
+        emailText.layer.borderWidth = 1
 
         sendButton.layer.cornerRadius = 5.0
         sendButton.layer.frame = CGRectInset(sendButton.frame, 1, 1)
