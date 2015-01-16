@@ -60,12 +60,14 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         self.view.addSubview(postBtn)
         self.view.bringSubviewToFront(postBtn)
+        
+        self.reloadPosts(nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.reloadPosts(nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,6 +89,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             self.maskLayer?.anchorPoint = CGPointZero
             self.tableMaskView.layer.mask = self.maskLayer
         }
+        
+//        self.reloadPosts(nil)
         
 //        // initial load
 //        self.reloadPosts { () -> Void in
