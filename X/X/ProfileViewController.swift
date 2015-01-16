@@ -71,5 +71,19 @@ class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITa
 
     @IBAction func verifySchoolClicked(sender: AnyObject) {
     }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if(segue.identifier == "show_post_detail") {
+//            let pdvc = segue.destinationViewController as PostDetailViewController
+//            let idxPath = self.timelineTableView.indexPathForSelectedRow()
+//            pdvc.post = self.posts[idxPath!.row]
+//        }
+//    }
+//    
+//    func postClicked() {
+//        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
+//        
+//        self.presentViewController(postViewController, animated: true, completion: nil)
+//    }
 
 }

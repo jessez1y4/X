@@ -76,6 +76,9 @@ class PostDetailViewController: SLKTextViewController {
         
         self.textView.placeholder = "What do you think?"
         self.textView.placeholderColor = UIColor.grayColor()
+        
+
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
 //        self.textView.layer.borderColor = [UIColor colorWithRed:217.0/255.0 green:217.0/255.0 blue:217.0/255.0 alpha:1.0].CGColor;
 //        self.textView.pastableMediaTypes = SLKPastableMediaTypeAll|SLKPastableMediaTypePassbook;
         
@@ -141,6 +144,9 @@ class PostDetailViewController: SLKTextViewController {
         let reply = self.replies[indexPath.row]
         
         cell.textLabel!.text = reply.content
+        cell.textLabel!.textColor = UIColor.whiteColor()
+        cell.textLabel!.font = UIFont(name: "OpenSans-light", size: 15)
+        
         return cell
 
     }
