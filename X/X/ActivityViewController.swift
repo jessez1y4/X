@@ -12,6 +12,9 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
 
     @IBOutlet weak var tableView: UITableView!
     
+    var user = User.currentUser()
+    var posts: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +27,8 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.tableView.contentInset.bottom = 100
         
         // Do any additional setup after loading the view.
+        
+        self.reloadPosts(nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,19 +36,34 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
+    func reloadPosts(afterLoad: (() -> Void)?) {
+        
+        self.user.getPosts({ (posts, err) -> Void in
+            self.posts = posts
+            self.tableView.reloadData()
+            
+            if let f = afterLoad {
+                f()
+            }
+        })
+        
+    }
+
+    
     func tableView(tableView: UITableView) -> Int {
         return 1
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.posts.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ActivityCell") as ActivityTableViewCell
+        let post = self.posts[indexPath.row]
         
-        cell.contentLabel.text = "sdifhdiuhgdfghdfiughdfjghdfgdfjgdkfjghdjkfgdfhjkbgdkfgbdkfjgdfg"
+        cell.setValues(post)
         cell.numberView.layer.cornerRadius = 10.0
         cell.numberView.layer.frame = CGRectInset(cell.numberView.frame, 20, 20)
         

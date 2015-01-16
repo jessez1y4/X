@@ -14,4 +14,15 @@ class User : PFUser {
     override class func currentUser() -> User! {
         return super.currentUser() as User!
     }
+    
+    func getPosts(callback: ([Post]!, NSError!) -> Void) -> Void {
+        let q = Post.query()
+        
+        q.whereKey("user", equalTo: self)
+        q.orderByDescending("createdAt")
+        
+        q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            callback(results as? [Post], error)
+        }
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var numberView: UIView!
     @IBOutlet weak var contentLabel: UILabel!
     override func awakeFromNib() {
@@ -22,6 +23,11 @@ class ActivityTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setValues(post: Post) {
+        contentLabel.text = post.content
+        lifeLabel.text = post.getTTL()
     }
 
 }
