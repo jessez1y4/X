@@ -28,6 +28,11 @@ class ActivityTableViewCell: UITableViewCell {
     func setValues(post: Post) {
         contentLabel.text = post.content
         lifeLabel.text = post.getTTL()
+        numberLabel.text = "\(post.unread)"
+        
+        if post.unread == 0 {
+            numberView.hidden = true
+        }
     }
 
 }

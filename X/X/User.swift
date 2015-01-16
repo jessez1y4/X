@@ -20,6 +20,8 @@ class User : PFUser {
         
         q.whereKey("user", equalTo: self)
         q.orderByDescending("createdAt")
+        q.orderByDescending("unread")
+        
         
         q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             callback(results as? [Post], error)

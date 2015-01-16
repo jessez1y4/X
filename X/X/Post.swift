@@ -7,6 +7,7 @@ class Post : PFObject, PFSubclassing {
     @NSManaged var content: String
     @NSManaged var life: Int
     @NSManaged var likes: Int
+    @NSManaged var unread: Int
     
     override class func load() {
         self.registerSubclass()
@@ -19,6 +20,7 @@ class Post : PFObject, PFSubclassing {
         post.life = 24
         post.content = content
         post.likes = 0
+        post.unread = 0
         return post
     }
     
