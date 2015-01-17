@@ -70,6 +70,18 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if(segue.identifier == "show_post_detail") {
+            let pdvc = segue.destinationViewController as PostDetailViewController
+            let idxPath = self.tableView.indexPathForSelectedRow()
+            pdvc.post = self.posts[idxPath!.row]
+        }
+    }
+    
+    
     @IBAction func backClicked(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
