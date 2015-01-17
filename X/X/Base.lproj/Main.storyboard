@@ -1357,7 +1357,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-1k-Y3w">
                                 <rect key="frame" x="40" y="333" width="500" height="43"/>
-                                <color key="backgroundColor" red="0.8784313725490196" green="0.33725490196078434" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8YG-ug-hqc"/>
                                 </constraints>
