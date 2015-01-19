@@ -84,8 +84,11 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         if self.maskLayer == nil {
             self.maskLayer = CAGradientLayer()
             self.maskLayer?.colors = [UIColor.whiteColor().CGColor, UIColor.clearColor().CGColor]
-            self.maskLayer?.locations = [0.85, 1]
-            self.maskLayer?.bounds = CGRectMake(0, 0, self.timelineTableView.frame.size.width, self.timelineTableView.frame.size.height)
+            self.maskLayer?.locations = [0.63, 0.78]
+            self.maskLayer?.bounds = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+            println(self.timelineTableView.bounds.size.width)
+            println(self.maskLayer?.bounds)
+            println(self.view.bounds)
             self.maskLayer?.anchorPoint = CGPointZero
             self.tableMaskView.layer.mask = self.maskLayer
         }
