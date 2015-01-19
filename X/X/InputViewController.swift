@@ -10,7 +10,16 @@ import UIKit
 
 class InputViewController: BackgroundViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var codeText: UITextField!
+    @IBOutlet weak var msgLabel: UILabel!
+    @IBOutlet weak var codeInput: UITextField!
+
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    
+    
+    var labels: [UILabel!] = []
     var code: Int!
     var email: String!
     
@@ -22,6 +31,8 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
 //        codeText.leftView = spacerView
         
         // Do any additional setup after loading the view.
+        msgLabel.text = "Please enter the 4-digit number we just sent to \(self.email)"
+        self.labels = [self.label1, self.label2, self.label3, self.label4]
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,9 +42,52 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        codeText.becomeFirstResponder()
+        codeInput.becomeFirstResponder()
     }
     
+    @IBAction func codeInputChanged(sender: AnyObject) {
+        
+        
+        let array = Array(codeInput.text)
+        var len = array.count
+        
+        if len > 4 {
+            len = 4
+            codeInput.text = (codeInput.text as NSString).substringToIndex(4)
+            return
+        }
+        
+        if len > 0 {
+            for idx in 0...len - 1 {
+                labels[idx]!.text = String(array[idx])
+            }
+        }
+        
+        if len == 4 {
+            if String(self.code) == codeInput.text {
+                println("verified")
+                
+                let user = User.currentUser()
+                user.email = self.email
+                user.verified = true
+                user.saveInBackgroundWithBlock({ (success, err) -> Void in
+                    if success {
+                        println("saved user in cloud")
+                    }
+                })
+            } else {
+                println("wrong code")
+            }
+        }
+        
+        if len < 4 {
+            for idx in len...3 {
+                labels[idx]!.text = ""
+            }
+        }
+        
+        println(codeInput.text)
+    }
 //    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 //        <#code#>
 //    }
@@ -45,7 +99,7 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
 //    }
     
     @IBAction func doneClicked(sender: AnyObject) {
-        if String(self.code) == codeText.text {
+        if String(self.code) == codeInput.text {
             println("verified")
             
             let user = User.currentUser()
