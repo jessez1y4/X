@@ -476,6 +476,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="naG-Ei-88j">
                                                     <rect key="frame" x="265" y="0.0" width="70" height="70"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="MlX-sZ-1BE"/>
                                                         <constraint firstAttribute="height" constant="70" id="kqt-o7-xKv"/>
@@ -702,6 +703,9 @@
                                 <state key="normal" backgroundImage="Icon_BG_Pic.png">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeBGClicked:" destination="WEM-We-JrS" eventType="touchUpInside" id="kjt-aD-ywK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-kl-IJc">
                                 <rect key="frame" x="16" y="25" width="33" height="33"/>
@@ -981,8 +985,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rD8-3s-wee"/>
                                         <exclude reference="Zat-1H-ykT"/>
+                                        <exclude reference="rD8-3s-wee"/>
                                     </mask>
                                 </variation>
                             </segmentedControl>
@@ -1006,8 +1010,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="epm-VX-13b"/>
                                         <exclude reference="6kl-aP-2ZF"/>
+                                        <exclude reference="epm-VX-13b"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1524,8 +1528,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="R7x-Or-WSQ"/>
                                         <exclude reference="4Oh-go-Ca0"/>
+                                        <exclude reference="R7x-Or-WSQ"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1561,8 +1565,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Rfm-Cp-JK7"/>
                                         <exclude reference="KhW-Go-UkF"/>
+                                        <exclude reference="Rfm-Cp-JK7"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1633,13 +1637,13 @@
                                 <exclude reference="jPO-9d-Bjj"/>
                                 <exclude reference="vA1-OK-q1u"/>
                                 <exclude reference="gF3-ZG-QAx"/>
-                                <exclude reference="nnk-xn-PdL"/>
                                 <exclude reference="Ere-of-wwo"/>
                                 <exclude reference="OR8-TW-qWd"/>
-                                <exclude reference="rPD-Pn-pKH"/>
-                                <exclude reference="cm2-A5-czf"/>
+                                <exclude reference="nnk-xn-PdL"/>
                                 <exclude reference="Rdi-U6-pPi"/>
                                 <exclude reference="ZuV-xR-xXs"/>
+                                <exclude reference="cm2-A5-czf"/>
+                                <exclude reference="rPD-Pn-pKH"/>
                                 <exclude reference="b0p-3k-M2u"/>
                                 <exclude reference="Kia-sr-vRO"/>
                             </mask>
@@ -1682,8 +1686,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="xgB-Gt-7MU"/>
                                         <exclude reference="NuP-Wy-2bf"/>
+                                        <exclude reference="xgB-Gt-7MU"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -1719,8 +1723,8 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="k3M-tj-HEY"/>
                                         <exclude reference="Ycc-QH-MSh"/>
+                                        <exclude reference="k3M-tj-HEY"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1743,8 +1747,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="adZ-s2-Whq"/>
                                         <exclude reference="DEj-05-pad"/>
+                                        <exclude reference="adZ-s2-Whq"/>
                                     </mask>
                                 </variation>
                             </segmentedControl>
@@ -1903,8 +1907,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="MRb-RW-9yt"/>
                                         <exclude reference="HJG-ET-GUS"/>
+                                        <exclude reference="MRb-RW-9yt"/>
                                     </mask>
                                 </variation>
                             </segmentedControl>
@@ -1955,9 +1959,9 @@
                                 <exclude reference="ZIZ-ZY-xOV"/>
                                 <exclude reference="t80-cB-sTk"/>
                                 <exclude reference="7Y0-Ix-m39"/>
-                                <exclude reference="zfX-qC-TdT"/>
-                                <exclude reference="e5P-V1-RsY"/>
                                 <exclude reference="Xqv-VL-8WY"/>
+                                <exclude reference="e5P-V1-RsY"/>
+                                <exclude reference="zfX-qC-TdT"/>
                                 <exclude reference="3Zo-ek-hDi"/>
                                 <exclude reference="LRw-L9-uoA"/>
                             </mask>
@@ -2000,8 +2004,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="hUj-Ne-Lfr"/>
                                         <exclude reference="Xfj-OU-hUF"/>
+                                        <exclude reference="hUj-Ne-Lfr"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2109,13 +2113,13 @@
                                 <exclude reference="MTP-Nz-fAg"/>
                                 <exclude reference="Qek-7e-43B"/>
                                 <exclude reference="ON5-dN-i2V"/>
-                                <exclude reference="Vhn-HG-gez"/>
                                 <exclude reference="I1n-tS-HW2"/>
+                                <exclude reference="Vhn-HG-gez"/>
                                 <exclude reference="h2r-Ot-lGy"/>
                                 <exclude reference="0xS-oj-gJJ"/>
-                                <exclude reference="zMj-1I-Ahs"/>
-                                <exclude reference="t2Q-sA-xz9"/>
                                 <exclude reference="eqa-DL-KM8"/>
+                                <exclude reference="t2Q-sA-xz9"/>
+                                <exclude reference="zMj-1I-Ahs"/>
                                 <exclude reference="cIv-1D-TQ0"/>
                                 <exclude reference="UD7-hx-9lu"/>
                             </mask>
@@ -2158,8 +2162,8 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rtC-pY-AEX"/>
                                         <exclude reference="lMO-yj-Xeh"/>
+                                        <exclude reference="rtC-pY-AEX"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2267,13 +2271,13 @@
                                 <exclude reference="Tfn-Ba-VwO"/>
                                 <exclude reference="X6J-m4-510"/>
                                 <exclude reference="nIx-nB-HY9"/>
-                                <exclude reference="fvS-k4-Ztk"/>
                                 <exclude reference="Hj8-K3-BBv"/>
                                 <exclude reference="O0M-k7-IWx"/>
-                                <exclude reference="IHP-F1-hMC"/>
-                                <exclude reference="zv1-tT-Y7p"/>
+                                <exclude reference="fvS-k4-Ztk"/>
                                 <exclude reference="6pJ-7B-Jhv"/>
                                 <exclude reference="ANe-kj-qHU"/>
+                                <exclude reference="IHP-F1-hMC"/>
+                                <exclude reference="zv1-tT-Y7p"/>
                                 <exclude reference="jcf-n5-1jQ"/>
                                 <exclude reference="CYe-YO-Y82"/>
                             </mask>
@@ -2305,6 +2309,6 @@
         <image name="Icon_Settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SXj-fQ-5Jc"/>
+        <segue reference="6y9-EY-ztZ"/>
     </inferredMetricsTieBreakers>
 </document>
