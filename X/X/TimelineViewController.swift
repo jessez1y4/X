@@ -66,8 +66,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -93,24 +91,18 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             self.tableMaskView.layer.mask = self.maskLayer
         }
         
-//        self.reloadPosts(nil)
-        
-//        // initial load
-//        self.reloadPosts { () -> Void in
-//            let num = self.posts.count
-//            var idxPaths: [NSIndexPath] = []
-//            
-//            for i in 1...4 {
-//                idxPaths.append(NSIndexPath(forRow: i-1, inSection: 0))
-//            }
-////            self.timelineTableView.reloadRowsAtIndexPaths(idxPaths, withRowAnimation: UITableViewRowAnimation.None)
-//        }
+        let college = User.currentUser().college
+        if college.objectId != self.college.objectId {
+            println("school changed")
+            self.college = college
+            self.reloadPosts(nil)
+        }
     }
     
     func reloadPosts(afterLoad: (() -> Void)?) {
         println("reloading")
         self.college.getPosts({ (posts, err) -> Void in
-            if err == nil && posts.count > 0 {
+            if err == nil {
                 self.posts = []
     
                 var lastDateStr = ""
