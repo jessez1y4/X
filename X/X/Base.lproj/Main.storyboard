@@ -1288,14 +1288,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="NAe-X5-l81">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="z18-Bn-9z9">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="backClicked:" destination="ZCf-lo-wGi" id="aEI-3L-w6T"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Details" id="NAe-X5-l81"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJq-qy-lwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1451,13 +1444,7 @@
                             <constraint firstItem="yDi-Z2-82C" firstAttribute="top" secondItem="3sE-yZ-eus" secondAttribute="bottom" id="vUx-ql-XnJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC">
-                        <barButtonItem key="leftBarButtonItem" title="back" id="vYI-wG-5e5">
-                            <connections>
-                                <action selector="backClicked:" destination="29h-gB-Oc9" id="KKx-gG-96R"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Activity" id="RQA-9o-fiC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1504,6 +1491,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-1k-Y3w">
                                 <rect key="frame" x="40" y="333" width="500" height="43"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.33725490200000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8YG-ug-hqc"/>
                                 </constraints>
@@ -2452,6 +2440,6 @@
         <image name="Icon_Settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6y9-EY-ztZ"/>
+        <segue reference="SXj-fQ-5Jc"/>
     </inferredMetricsTieBreakers>
 </document>

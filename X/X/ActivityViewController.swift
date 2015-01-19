@@ -17,8 +17,9 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
 
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -82,9 +83,9 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     
-    @IBAction func backClicked(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+//    @IBAction func backClicked(sender: AnyObject) {
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
 
     /*
     // MARK: - Navigation
