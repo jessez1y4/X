@@ -23,6 +23,8 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         // Do any additional setup after loading the view.
     }
 
+
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,11 +76,8 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     @IBAction func verifySchoolClicked(sender: AnyObject) {
     }
     
-    @IBAction func changeBGClicked(sender: AnyObject) {
-        
+    @IBAction func avatarClicked(sender: UITapGestureRecognizer) {
         let cameraController = DBCameraViewController.initWithDelegate(self)
-//        cameraController.setForceQuadCrop(true)
-        
         let container = DBCameraContainerViewController(delegate: self)
         container.setFullScreenMode()
         
@@ -87,11 +86,19 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         self.presentViewController(nav, animated: true, completion: nil)
     }
     
+    @IBAction func changeBGClicked(sender: AnyObject) {
+        
+        let cameraController = DBCameraViewController.initWithDelegate(self)
+        let container = DBCameraContainerViewController(delegate: self)
+        container.setFullScreenMode()
+        let nav = UINavigationController(rootViewController: container)
+        nav.setNavigationBarHidden(true, animated: true)
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
     
+
     
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
-        
-        
         // change background image to image
         
         self.dismissViewControllerAnimated(true, completion: nil)
