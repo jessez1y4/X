@@ -475,6 +475,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="naG-Ei-88j">
                                                     <rect key="frame" x="265" y="0.0" width="70" height="70"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="MlX-sZ-1BE"/>
                                                         <constraint firstAttribute="height" constant="70" id="kqt-o7-xKv"/>
@@ -701,6 +702,9 @@
                                 <state key="normal" backgroundImage="Icon_BG_Pic.png">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeBGClicked:" destination="WEM-We-JrS" eventType="touchUpInside" id="kjt-aD-ywK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yf-kl-IJc">
                                 <rect key="frame" x="16" y="25" width="33" height="33"/>
@@ -2379,6 +2383,6 @@
         <image name="Icon_Settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SXj-fQ-5Jc"/>
+        <segue reference="6y9-EY-ztZ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,8 @@ target 'X' do
     pod 'DateTools'
     pod 'SAMTextView'
     pod 'LoremIpsum', '~> 1.0'
+    pod 'DBCamera', '~> 2.3'
+
 end
 
 target 'XTests' do

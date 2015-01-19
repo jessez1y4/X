@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource  {
-
+class ProfileViewController: BackgroundViewController, DBCameraViewControllerDelegate, UITableViewDelegate, UITableViewDataSource  {
+    
     @IBOutlet weak var tableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
@@ -72,18 +74,32 @@ class ProfileViewController: BackgroundViewController, UITableViewDelegate, UITa
     @IBAction func verifySchoolClicked(sender: AnyObject) {
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        if(segue.identifier == "show_post_detail") {
-//            let pdvc = segue.destinationViewController as PostDetailViewController
-//            let idxPath = self.timelineTableView.indexPathForSelectedRow()
-//            pdvc.post = self.posts[idxPath!.row]
-//        }
-//    }
-//    
-//    func postClicked() {
-//        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
-//        
-//        self.presentViewController(postViewController, animated: true, completion: nil)
-//    }
+    @IBAction func changeBGClicked(sender: AnyObject) {
+        
+        let cameraController = DBCameraViewController.initWithDelegate(self)
+//        cameraController.setForceQuadCrop(true)
+        
+        let container = DBCameraContainerViewController(delegate: self)
+        container.setFullScreenMode()
+        
+        let nav = UINavigationController(rootViewController: container)
+        nav.setNavigationBarHidden(true, animated: true)
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    
+    
+    func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
+        
+        
+        // change background image to image
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func dismissCamera(cameraViewController: AnyObject!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
 
 }
