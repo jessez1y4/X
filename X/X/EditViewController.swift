@@ -74,7 +74,25 @@ class EditViewController: BackgroundViewController {
     
 
     @IBAction func changeClicked(sender: AnyObject) {
+        let domain = newDomainText.text
         
+        if domain.isEmpty {
+            return
+        }
+        
+        PFCloud.callFunctionInBackground("getCollege", withParameters: ["domain": domain]) { (res, err) -> Void in
+            if err == nil {
+                if let id = res as? String {
+                    let user = User.currentUser()
+                    user.college = College(withoutDataWithObjectId: id)
+                    user.domain = domain
+                    
+                    User.currentUser().saveInBackgroundWithBlock(nil)
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
+        }
+    
     }
     
     @IBAction func cancelClicked(sender: AnyObject) {

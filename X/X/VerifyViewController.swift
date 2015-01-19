@@ -110,6 +110,7 @@ class VerifyViewController: BackgroundViewController {
             let vc = segue.destinationViewController as InputViewController
             vc.code = self.code
             vc.email = self.email
+            vc.parent = self
         }
     }
 

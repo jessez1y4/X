@@ -22,6 +22,7 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
     var labels: [UILabel!] = []
     var code: Int!
     var email: String!
+    var parent: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
         
         // Do any additional setup after loading the view.
         msgLabel.text = "Please enter the 4-digit number we just sent to \(self.email)"
+        println(self.code)
         self.labels = [self.label1, self.label2, self.label3, self.label4]
     }
 
@@ -70,11 +72,11 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
                 let user = User.currentUser()
                 user.email = self.email
                 user.verified = true
-                user.saveInBackgroundWithBlock({ (success, err) -> Void in
-                    if success {
-                        println("saved user in cloud")
-                    }
-                })
+                user.saveEventually()
+                
+                
+                self.dismissViewControllerAnimated(false, completion: nil)
+                self.parent.dismissViewControllerAnimated(false, completion: nil)
             } else {
                 println("wrong code")
             }
