@@ -87,13 +87,11 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
 
     
     func textViewDidChange(textView: UITextView) {
-        
         let count = 140 - textView.text.utf16Count
         countLabel.text = "\(count) left"
     }
     
     func textViewDidEndEditing(textView: UITextView) {
-        println("end!")
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -21,14 +21,12 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
         var logoImage = UIImage(named: "bicon.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
         
         self.timelineTableView.setPullToRefreshWithHeight(60.0, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
-            
             
             // reload data ...
             
@@ -43,10 +41,10 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         
         self.timelineTableView.backgroundColor = UIColor.clearColor()
-       // self.timelineTableView.rowHeight = UITableViewAutomaticDimension
         self.timelineTableView.estimatedRowHeight = 100
-//        self.timelineTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.timelineTableView.contentInset.bottom = 100
+        // self.timelineTableView.rowHeight = UITableViewAutomaticDimension
+        // self.timelineTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         
         // set title font
@@ -57,7 +55,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         let postBtnImage = UIImage(named: "Button_Create@2x.png")
         postBtn.setBackgroundImage(postBtnImage, forState: UIControlState.Normal)
         postBtn.addTarget(self, action: "postClicked", forControlEvents: UIControlEvents.TouchUpInside)
-        
         self.view.addSubview(postBtn)
         self.view.bringSubviewToFront(postBtn)
         
@@ -75,9 +72,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
         
-
         super.viewWillAppear(animated)
-        
         
         if self.maskLayer == nil {
             self.maskLayer = CAGradientLayer()
@@ -92,15 +87,17 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         }
         
         let college = User.currentUser().college
+        
         if college.objectId != self.college.objectId {
-            println("school changed")
+            
             self.college = college
             self.reloadPosts(nil)
+            
         }
     }
     
     func reloadPosts(afterLoad: (() -> Void)?) {
-        println("reloading")
+
         self.college.getPosts({ (posts, err) -> Void in
             if err == nil {
                 self.posts = []
@@ -150,7 +147,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // content cell
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
+            
             cell.setValues(post)
+            cell.avatarImageView.image = UIImage(named: "jt.jpg")
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }

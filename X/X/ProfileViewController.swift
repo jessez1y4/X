@@ -12,10 +12,8 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
@@ -42,22 +40,30 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+            
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as ProfileTableViewCell
             cell.verifyBtn.layer.cornerRadius = 20
             cell.verifyBtn.layer.frame = CGRectInset(cell.verifyBtn.frame, 20, 20)
             return cell
+            
         } else if indexPath.row == 1 {
+            
             let cell = tableView.dequeueReusableCellWithIdentifier("RecordCell") as RecordTableViewCell
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("SettingCell") as SettingTableViewCell
             
+        } else {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("SettingCell") as SettingTableViewCell
             if indexPath.row == 2 {
+                
                 cell.nameImageView.image = UIImage(named: "Icon_Settings@2x.png")
                 cell.nameLabel.text = "Settings"
+                
             } else if indexPath.row == 3 {
+                
                 cell.nameImageView.image = UIImage(named: "Icon_About@2x.png")
                 cell.nameLabel.text = "About"
+                
             }
             return cell
         }
@@ -70,20 +76,23 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     
     
     @IBAction func changeSchoolClicked(sender: AnyObject) {
+        
     }
     
 
     @IBAction func verifySchoolClicked(sender: AnyObject) {
+        
     }
     
     @IBAction func avatarClicked(sender: UITapGestureRecognizer) {
+        
         let cameraController = DBCameraViewController.initWithDelegate(self)
         let container = DBCameraContainerViewController(delegate: self)
         container.setFullScreenMode()
-        
         let nav = UINavigationController(rootViewController: container)
         nav.setNavigationBarHidden(true, animated: true)
         self.presentViewController(nav, animated: true, completion: nil)
+        
     }
     
     @IBAction func changeBGClicked(sender: AnyObject) {
@@ -94,18 +103,23 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         let nav = UINavigationController(rootViewController: container)
         nav.setNavigationBarHidden(true, animated: true)
         self.presentViewController(nav, animated: true, completion: nil)
+        
     }
     
 
     
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
+        
         // change background image to image
         
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     func dismissCamera(cameraViewController: AnyObject!) {
+        
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
 
 

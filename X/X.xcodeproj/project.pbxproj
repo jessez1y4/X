@@ -27,10 +27,8 @@
 		0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DC1A402638009AD4F0 /* MessageViewController.m */; };
 		0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */; };
 		0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */; };
-		0D5D63011A4C008D00619F4C /* mushi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D5D63001A4C008D00619F4C /* mushi.jpg */; };
 		0D81031A1A662B480067389D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8103191A662B480067389D /* VerifyViewController.swift */; };
 		0D81031C1A68E5900067389D /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81031B1A68E5900067389D /* InputViewController.swift */; };
-		0D81031E1A68EC9E0067389D /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81031D1A68EC9E0067389D /* InputTextField.swift */; };
 		0D8103201A6A217C0067389D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81031F1A6A217C0067389D /* PostViewController.swift */; };
 		0D8103571A6A408D0067389D /* Badge_Non_Verified@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8103221A6A408D0067389D /* Badge_Non_Verified@2x.png */; };
 		0D8103581A6A408D0067389D /* Badge_Non_Verified@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8103231A6A408D0067389D /* Badge_Non_Verified@3x.png */; };
@@ -87,6 +85,7 @@
 		0D81038B1A6A408D0067389D /* Icon_Twitter_Grey@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D8103561A6A408D0067389D /* Icon_Twitter_Grey@3x.png */; };
 		0D8A18B71A58A84C00B17EBB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A18B61A58A84C00B17EBB /* ActivityTableViewCell.swift */; };
 		0D96F3F21A6C78E60090E232 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */; };
+		0D971CBA1A6E2CF200ACEA79 /* jt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D971CB91A6E2CF200ACEA79 /* jt.jpg */; };
 		0D9FCBCC1A3E779D00F576D9 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */; };
 		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
@@ -143,10 +142,8 @@
 		0D5587DD1A402638009AD4F0 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
-		0D5D63001A4C008D00619F4C /* mushi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mushi.jpg; sourceTree = "<group>"; };
 		0D8103191A662B480067389D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		0D81031B1A68E5900067389D /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		0D81031D1A68EC9E0067389D /* InputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		0D81031F1A6A217C0067389D /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0D8103221A6A408D0067389D /* Badge_Non_Verified@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Badge_Non_Verified@2x.png"; sourceTree = "<group>"; };
 		0D8103231A6A408D0067389D /* Badge_Non_Verified@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Badge_Non_Verified@3x.png"; sourceTree = "<group>"; };
@@ -203,6 +200,7 @@
 		0D8103561A6A408D0067389D /* Icon_Twitter_Grey@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon_Twitter_Grey@3x.png"; sourceTree = "<group>"; };
 		0D8A18B61A58A84C00B17EBB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0D971CB91A6E2CF200ACEA79 /* jt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jt.jpg; sourceTree = "<group>"; };
 		0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "X-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D9FCBCB1A3E779D00F576D9 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };
@@ -344,8 +342,8 @@
 		0D9FCBC91A3E709000F576D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */,
 				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
+				0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */,
 				0DCA84561A6BA4FE0027D80A /* TimelineViewController.swift */,
 				0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */,
 				0D81031F1A6A217C0067389D /* PostViewController.swift */,
@@ -373,7 +371,7 @@
 		0D9FCBCD1A3E7DF600F576D9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0D5D63001A4C008D00619F4C /* mushi.jpg */,
+				0D971CB91A6E2CF200ACEA79 /* jt.jpg */,
 				0D1F2E3F1A43DC4900C0C465 /* dota2.jpg */,
 				0D9FCBCE1A3E7E0800F576D9 /* bicon.png */,
 				0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */,
@@ -411,7 +409,6 @@
 				9A698F531A43D595000314E8 /* ReplyTableViewCell.swift */,
 				0DEFE11B1A50C0E7003ADC93 /* RecordTableViewCell.swift */,
 				0DEFE11D1A50C0F7003ADC93 /* SettingTableViewCell.swift */,
-				0D81031D1A68EC9E0067389D /* InputTextField.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -581,6 +578,7 @@
 				0D81036D1A6A408D0067389D /* Empty_Photo@3x.png in Resources */,
 				0D8103811A6A408D0067389D /* Icon_FB_grey@3x.png in Resources */,
 				0D8103671A6A408D0067389D /* Button_like@3x.png in Resources */,
+				0D971CBA1A6E2CF200ACEA79 /* jt.jpg in Resources */,
 				0D81035E1A6A408D0067389D /* Badge_Verified_Large@3x.png in Resources */,
 				0D2D416E1A4D192A003F24CB /* OpenSans-LightItalic.ttf in Resources */,
 				0D81038A1A6A408D0067389D /* Icon_Twitter_Grey@2x.png in Resources */,
@@ -632,7 +630,6 @@
 				0D8103841A6A408D0067389D /* Icon_Profile@2x.png in Resources */,
 				0D81037F1A6A408D0067389D /* Icon_FB_Blue@3x.png in Resources */,
 				0D8103701A6A408D0067389D /* Icon_Activities@2x.png in Resources */,
-				0D5D63011A4C008D00619F4C /* mushi.jpg in Resources */,
 				0D8103711A6A408D0067389D /* Icon_Activities@3x.png in Resources */,
 				0D8103601A6A408D0067389D /* Button_Create@2x.png in Resources */,
 				0D8103861A6A408D0067389D /* Icon_Setting@3x.png in Resources */,
@@ -707,7 +704,6 @@
 				9A698F4F1A43CB16000314E8 /* Reply.swift in Sources */,
 				0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */,
 				0D8A18B71A58A84C00B17EBB /* ActivityTableViewCell.swift in Sources */,
-				0D81031E1A68EC9E0067389D /* InputTextField.swift in Sources */,
 				9A698F541A43D595000314E8 /* ReplyTableViewCell.swift in Sources */,
 				0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */,
 				0D1F2E441A43E21100C0C465 /* EditViewController.swift in Sources */,
