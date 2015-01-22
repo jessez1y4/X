@@ -15,6 +15,7 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var leftHrLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var upvoteBtn: UIButton!
+    @IBOutlet weak var downvoteBtn: UIButton!
     
     @IBOutlet weak var helperVerticalView: UIView!
     var heightConstraint: NSLayoutConstraint? = nil

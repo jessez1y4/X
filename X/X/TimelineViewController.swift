@@ -190,30 +190,40 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func upvote(sender: AnyObject) {
+        
         let btn = sender as UIButton
-        let cell = btn.superview?.superview as UITableViewCell
-        let indexPath = self.timelineTableView.indexPathForCell(cell)
-        let post = self.posts[indexPath!.row]
-        post.incrementKey("likes")
-        post.incrementKey("life", byAmount: User.currentUser().voteWeight)
-        post.saveInBackgroundWithBlock { (success, err) -> Void in
-            if success {
-                self.reloadPosts(nil)
+        let cell = btn.superview?.superview as TimelineTableViewCell
+
+        if cell.upvoteBtn.enabled == true && cell.downvoteBtn.enabled == true {
+            let indexPath = self.timelineTableView.indexPathForCell(cell)
+            let post = self.posts[indexPath!.row]
+            post.incrementKey("likes")
+            post.incrementKey("life", byAmount: User.currentUser().voteWeight)
+            post.saveInBackgroundWithBlock { (success, err) -> Void in
+                if success {
+                    self.reloadPosts(nil)
+                }
             }
+            cell.upvoteBtn.enabled = false
         }
     }
     
     @IBAction func downvote(sender: AnyObject) {
+        
         let btn = sender as UIButton
-        let cell = btn.superview?.superview as UITableViewCell
-        let indexPath = self.timelineTableView.indexPathForCell(cell)
-        let post = self.posts[indexPath!.row]
-        post.incrementKey("likes", byAmount: -1)
-        post.incrementKey("life", byAmount: 0 - User.currentUser().voteWeight)
-        post.saveInBackgroundWithBlock { (success, err) -> Void in
-            if success {
-                self.reloadPosts(nil)
+        let cell = btn.superview?.superview as TimelineTableViewCell
+        
+        if cell.upvoteBtn.enabled == true && cell.downvoteBtn.enabled == true {
+            let indexPath = self.timelineTableView.indexPathForCell(cell)
+            let post = self.posts[indexPath!.row]
+            post.incrementKey("likes", byAmount: -1)
+            post.incrementKey("life", byAmount: 0 - User.currentUser().voteWeight)
+            post.saveInBackgroundWithBlock { (success, err) -> Void in
+                if success {
+                    self.reloadPosts(nil)
+                }
             }
+            cell.downvoteBtn.enabled = false
         }
     }
     

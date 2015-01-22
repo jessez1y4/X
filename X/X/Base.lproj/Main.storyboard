@@ -196,12 +196,13 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ugi-I5-f2E" id="SJc-be-efS">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-3I-aF3">
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uco-3I-aF3">
                                                             <rect key="frame" x="506" y="50" width="33" height="33"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <state key="normal" image="Button_Dislike.png">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <state key="disabled" image="Button_Dislike_Selected.png"/>
                                                             <state key="selected" image="Button_like_Selected.png"/>
                                                             <connections>
                                                                 <action selector="downvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="N5P-OC-nev"/>
@@ -213,11 +214,11 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-nN-oRr">
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cg2-nN-oRr">
                                                             <rect key="frame" x="549" y="52" width="33" height="32"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <state key="normal" image="Button_like.png"/>
-                                                            <state key="highlighted" image="Button_like_Selected.png"/>
+                                                            <state key="disabled" image="Button_like_Selected.png"/>
                                                             <connections>
                                                                 <action selector="upvote:" destination="7r7-Cu-LLu" eventType="touchUpInside" id="3af-Hv-1Pm"/>
                                                             </connections>
@@ -325,6 +326,7 @@
                                                 <connections>
                                                     <outlet property="avatarImageView" destination="ReX-e9-8M4" id="jos-d7-O7G"/>
                                                     <outlet property="contentLabel" destination="5ol-qR-SDq" id="I12-aZ-ScA"/>
+                                                    <outlet property="downvoteBtn" destination="Uco-3I-aF3" id="jjv-Yq-zYg"/>
                                                     <outlet property="leftHrLabel" destination="KkB-gC-DZ4" id="bfB-KK-YMd"/>
                                                     <outlet property="timeLabel" destination="4uW-b5-CJG" id="FSu-zf-lxR"/>
                                                     <outlet property="upvoteBtn" destination="Cg2-nN-oRr" id="Ry0-sj-btQ"/>
@@ -1107,7 +1109,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-yv-8vr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-yv-8vr">
                                 <constraints>
                                     <constraint firstAttribute="width" id="Fof-Op-6jf"/>
                                     <constraint firstAttribute="height" id="SHH-VK-b36"/>
@@ -2452,6 +2454,7 @@
         <image name="Badge_Non_Verified.png" width="19" height="19"/>
         <image name="Badge_Non_Verified_Large.png" width="29" height="29"/>
         <image name="Button_Dislike.png" width="33" height="33"/>
+        <image name="Button_Dislike_Selected.png" width="33" height="33"/>
         <image name="Button_like.png" width="33" height="33"/>
         <image name="Button_like_Selected.png" width="33" height="33"/>
         <image name="Empty_Photo.png" width="40" height="40"/>
