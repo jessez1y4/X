@@ -181,9 +181,9 @@ class PostDetailViewController: SLKTextViewController {
         }
     }
     
-    @IBAction func backClicked(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-
-    }
+//    @IBAction func backClicked(sender: AnyObject) {
+//        self.navigationController?.popViewControllerAnimated(true)
+//
+//    }
 }
 

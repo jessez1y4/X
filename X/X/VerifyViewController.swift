@@ -27,10 +27,10 @@ class VerifyViewController: BackgroundViewController {
         emailText.layer.borderColor = UIColor.grayColor().CGColor
         emailText.layer.borderWidth = 1
 
+        // set round button
         sendButton.layer.cornerRadius = 5.0
         sendButton.layer.frame = CGRectInset(sendButton.frame, 1, 1)
         
-        // Do any additional setup after loading the view.
         domainLabel.text = "@\(User.currentUser().domain).edu"
         
         // generate code
@@ -61,9 +61,7 @@ class VerifyViewController: BackgroundViewController {
     func keyboardWillHideNotification(notification: NSNotification) {
         updateBottomLayoutConstraintWithNotification(notification)
     }
-    
-    // MARK: - Private
-    
+        
     func updateBottomLayoutConstraintWithNotification(notification: NSNotification) {
         let userInfo = notification.userInfo!
         

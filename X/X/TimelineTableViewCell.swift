@@ -23,7 +23,6 @@ class TimelineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         contentLabel.sizeToFit()
     }
 
@@ -34,7 +33,6 @@ class TimelineTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         contentLabel.sizeToFit()
     }
     
