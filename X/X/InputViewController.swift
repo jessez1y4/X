@@ -18,6 +18,7 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label4: UILabel!
     
+    @IBOutlet weak var codeContainer: UIView!
     
     var labels: [UILabel!] = []
     var code: Int!
@@ -79,6 +80,7 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
                 self.parent.dismissViewControllerAnimated(false, completion: nil)
             } else {
                 println("wrong code")
+                self.shakeView()
             }
         }
         
@@ -90,6 +92,24 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
         
         println(codeInput.text)
     }
+    
+    func shakeView(){
+        var shake:CABasicAnimation = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.1
+        shake.repeatCount = 2
+        shake.autoreverses = true
+        
+        var from_point:CGPoint = CGPointMake(codeContainer.center.x - 6, codeContainer.center.y)
+        var from_value:NSValue = NSValue(CGPoint: from_point)
+        
+        var to_point:CGPoint = CGPointMake(codeContainer.center.x + 6, codeContainer.center.y)
+        var to_value:NSValue = NSValue(CGPoint: to_point)
+        
+        shake.fromValue = from_value
+        shake.toValue = to_value
+        codeContainer.layer.addAnimation(shake, forKey: "position")
+    }
+    
 //    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 //        <#code#>
 //    }
