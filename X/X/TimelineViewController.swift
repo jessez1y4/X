@@ -203,13 +203,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             cell.backgroundColor = UIColor.clearColor()
             return cell
         }
-        
-        
-//        // temporary use
-//        let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-//        cell.contentLabel.text = "\(post.content)[\(post.likes)]"
-//        cell.backgroundColor = UIColor.clearColor()
-//        return cell
 
     }
     
@@ -277,7 +270,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func profileClicked(sender: AnyObject) {
-        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("profile_view_controller") as ProfileViewController
+        let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("profile_nav_controller") as UINavigationController
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
 }

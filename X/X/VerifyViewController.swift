@@ -41,9 +41,12 @@ class VerifyViewController: BackgroundViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        emailText.becomeFirstResponder()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -80,7 +83,7 @@ class VerifyViewController: BackgroundViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        emailText.becomeFirstResponder()
+//        emailText.becomeFirstResponder()
     }
 
     

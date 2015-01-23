@@ -31,6 +31,8 @@ class EditViewController: BackgroundViewController {
         changeBtn.layer.cornerRadius = 5.0
         changeBtn.layer.frame = CGRectInset(changeBtn.frame, 1, 1)
 
+        view.sendSubviewToBack(segmentedControl)
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,15 +41,21 @@ class EditViewController: BackgroundViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        newDomainText.becomeFirstResponder()
+//        newDomainText.becomeFirstResponder()
+//        newDomainText.becomeFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        newDomainText.becomeFirstResponder()
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+
     }
     
     override func viewWillDisappear(animated: Bool) {

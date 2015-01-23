@@ -28,6 +28,17 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        // make the navigation bar transparent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        
+        super.viewWillAppear(animated)
+    }
+    
+    
     func tableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -68,10 +79,6 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
             return cell
         }
         
-    }
-    
-    @IBAction func cancelClicked(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -121,6 +128,14 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    @IBAction func cancelClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
+
+    
+    
 
 
 }

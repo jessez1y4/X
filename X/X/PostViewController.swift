@@ -29,6 +29,8 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        textView.becomeFirstResponder()
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -97,7 +99,6 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     override func viewDidAppear(animated: Bool) {
         println("viewdidappear")
         super.viewDidAppear(animated)
-        textView.becomeFirstResponder()
     }
 
 
