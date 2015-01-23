@@ -78,7 +78,7 @@ class PostDetailViewController: SLKTextViewController {
         self.textView.placeholderColor = UIColor.grayColor()
         
 
-            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         self.rightButton.setTitle("Send", forState: UIControlState.Normal)
         

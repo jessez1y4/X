@@ -47,7 +47,6 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
-            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -506,7 +505,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="changeSchoolClicked:" destination="WEM-We-JrS" eventType="touchUpInside" id="RsT-0N-xnQ"/>
-                                                        <segue destination="RsS-Uh-5jL" kind="presentation" id="Eyq-V2-6xm"/>
+                                                        <segue destination="RsS-Uh-5jL" kind="show" id="Eyq-V2-6xm"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UMN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-SS-kol">
@@ -845,7 +844,7 @@
                             <constraint firstItem="ctu-lC-Deu" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="40" id="jBz-b6-8U4"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="38" id="kpd-oy-fTi"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="top" secondItem="HuS-oE-7Ql" secondAttribute="bottom" constant="20" id="l6H-SG-fhu"/>
-                            <constraint firstItem="HuS-oE-7Ql" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="100" id="tz8-hH-jnC"/>
+                            <constraint firstItem="HuS-oE-7Ql" firstAttribute="top" secondItem="VoB-aB-rRL" secondAttribute="bottom" constant="60" id="tz8-hH-jnC"/>
                             <constraint firstItem="IW5-9K-vqc" firstAttribute="leading" secondItem="86u-U7-gFF" secondAttribute="leading" id="whz-wK-vwC"/>
                         </constraints>
                         <variation key="default">
@@ -887,25 +886,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0M-0S-GVe">
-                                <rect key="frame" x="49" y="28" width="33" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="k2a-LQ-8dP"/>
-                                    <constraint firstAttribute="width" constant="33" id="pfg-kZ-95q"/>
-                                </constraints>
-                                <state key="normal" image="Icon_Close.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="k2a-LQ-8dP"/>
-                                        <exclude reference="pfg-kZ-95q"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="cancelClicked:" destination="RsS-Uh-5jL" eventType="touchUpInside" id="HJs-Kf-VMu"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter your new school" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEL-S3-hYB">
                                 <rect key="frame" x="157" y="142" width="304" height="20.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="17"/>
@@ -927,34 +907,12 @@
                                     <action selector="changeClicked:" destination="RsS-Uh-5jL" eventType="touchUpInside" id="Z6N-0v-r5s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=".edu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-AS-OHv">
-                                <rect key="frame" x="355" y="237" width="78" height="21"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qt5-5q-aVL">
                                 <rect key="frame" x="80" y="237" width="14" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pIn-gh-Pes">
-                                <rect key="frame" x="203" y="20" width="123" height="26"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="QvI-ke-oJW"/>
-                                    <constraint firstAttribute="width" constant="200" id="dJy-Fh-R9S"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="company"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="valueChanged:" destination="RsS-Uh-5jL" eventType="valueChanged" id="7zk-yi-LhC"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="you have to verify if you change your email." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAT-si-fyR">
                                 <rect key="frame" x="75" y="378" width="433" height="21"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
@@ -978,22 +936,19 @@
                                     <mask key="constraints">
                                         <exclude reference="6kl-aP-2ZF"/>
                                         <exclude reference="epm-VX-13b"/>
+                                        <exclude reference="mYe-bp-ITu"/>
                                     </mask>
                                 </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JEL-S3-hYB" firstAttribute="top" secondItem="pIn-gh-Pes" secondAttribute="bottom" constant="60" id="1H8-tj-fKQ"/>
-                            <constraint firstItem="SxG-d0-KcL" firstAttribute="trailing" secondItem="xcf-AS-OHv" secondAttribute="trailing" id="5cZ-k8-0rN"/>
-                            <constraint firstAttribute="centerX" secondItem="pIn-gh-Pes" secondAttribute="centerX" id="6ut-qT-W7f"/>
-                            <constraint firstItem="xcf-AS-OHv" firstAttribute="leading" secondItem="ovq-cv-Lzl" secondAttribute="trailing" constant="10" id="B5C-4J-fuF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ovq-cv-Lzl" secondAttribute="trailing" constant="70" id="58o-Fn-rYw"/>
                             <constraint firstItem="3uX-m3-1DC" firstAttribute="top" secondItem="JAT-si-fyR" secondAttribute="bottom" id="ClN-Mx-eEj"/>
+                            <constraint firstItem="Qt5-5q-aVL" firstAttribute="leading" secondItem="bIZ-nV-EZ4" secondAttribute="leadingMargin" constant="70" id="DNO-9L-MGq"/>
                             <constraint firstItem="ovq-cv-Lzl" firstAttribute="centerY" secondItem="Qt5-5q-aVL" secondAttribute="centerY" id="HZq-wx-9em"/>
-                            <constraint firstItem="n0M-0S-GVe" firstAttribute="leading" secondItem="bIZ-nV-EZ4" secondAttribute="leadingMargin" id="HpV-Kq-plX"/>
                             <constraint firstItem="JAT-si-fyR" firstAttribute="top" secondItem="SxG-d0-KcL" secondAttribute="bottom" constant="10" id="O7H-Lh-kGF"/>
                             <constraint firstItem="SxG-d0-KcL" firstAttribute="leading" secondItem="ovq-cv-Lzl" secondAttribute="leading" id="ROZ-sA-1ec"/>
-                            <constraint firstItem="pIn-gh-Pes" firstAttribute="centerY" secondItem="n0M-0S-GVe" secondAttribute="centerY" id="Uh5-gl-cFY"/>
                             <constraint firstAttribute="centerX" secondItem="JEL-S3-hYB" secondAttribute="centerX" id="UmF-MX-DnB"/>
                             <constraint firstAttribute="centerX" secondItem="SxG-d0-KcL" secondAttribute="centerX" id="X4g-Lt-J94"/>
                             <constraint firstItem="ovq-cv-Lzl" firstAttribute="leading" secondItem="Qt5-5q-aVL" secondAttribute="trailing" constant="10" id="bdx-gg-DCv"/>
@@ -1004,16 +959,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="SxG-d0-KcL" secondAttribute="trailing" constant="30" id="ieN-dk-EFP"/>
                             <constraint firstItem="Qt5-5q-aVL" firstAttribute="leading" secondItem="bIZ-nV-EZ4" secondAttribute="leadingMargin" constant="65" id="mGF-l9-5rl"/>
                             <constraint firstAttribute="centerX" secondItem="ovq-cv-Lzl" secondAttribute="centerX" id="pz7-R2-rZl"/>
-                            <constraint firstItem="n0M-0S-GVe" firstAttribute="top" secondItem="ce5-mJ-o92" secondAttribute="bottom" constant="5" id="tGw-ue-i2t"/>
                             <constraint firstItem="ovq-cv-Lzl" firstAttribute="leading" secondItem="bIZ-nV-EZ4" secondAttribute="leadingMargin" constant="20" id="ugw-AM-9qI"/>
-                            <constraint firstItem="ovq-cv-Lzl" firstAttribute="centerY" secondItem="xcf-AS-OHv" secondAttribute="centerY" id="ujU-Ew-U5C"/>
                             <constraint firstItem="SxG-d0-KcL" firstAttribute="leading" secondItem="bIZ-nV-EZ4" secondAttribute="leadingMargin" constant="30" id="wy8-r5-JuA"/>
+                            <constraint firstItem="JEL-S3-hYB" firstAttribute="top" secondItem="ce5-mJ-o92" secondAttribute="bottom" constant="60" id="zuu-0I-4W9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mGF-l9-5rl"/>
+                                <exclude reference="pz7-R2-rZl"/>
                                 <exclude reference="ugw-AM-9qI"/>
-                                <exclude reference="5cZ-k8-0rN"/>
                                 <exclude reference="ROZ-sA-1ec"/>
                                 <exclude reference="i4X-eT-72A"/>
                             </mask>
@@ -1022,9 +976,7 @@
                     <connections>
                         <outlet property="bottomLayoutConstrain" destination="ClN-Mx-eEj" id="cE7-jb-XGV"/>
                         <outlet property="changeBtn" destination="SxG-d0-KcL" id="Ztl-R4-gJC"/>
-                        <outlet property="domainLabel" destination="xcf-AS-OHv" id="Xa1-9I-cPT"/>
                         <outlet property="newDomainText" destination="ovq-cv-Lzl" id="D9Q-bs-fvX"/>
-                        <outlet property="segmentedControl" destination="pIn-gh-Pes" id="ghb-BA-gVJ"/>
                         <outlet property="titleLabel" destination="JEL-S3-hYB" id="XKE-vw-b4Z"/>
                     </connections>
                 </viewController>

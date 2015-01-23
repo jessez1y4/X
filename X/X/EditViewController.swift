@@ -11,11 +11,9 @@ import UIKit
 class EditViewController: BackgroundViewController {
 
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
     @IBOutlet weak var newDomainText: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
-    @IBOutlet weak var domainLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
@@ -30,8 +28,6 @@ class EditViewController: BackgroundViewController {
         // set round button
         changeBtn.layer.cornerRadius = 5.0
         changeBtn.layer.frame = CGRectInset(changeBtn.frame, 1, 1)
-
-        view.sendSubviewToBack(segmentedControl)
 
         // Do any additional setup after loading the view.
     }
@@ -111,24 +107,6 @@ class EditViewController: BackgroundViewController {
         }
     
     }
-    
-    @IBAction func cancelClicked(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
 
-    }
-    
-    @IBAction func valueChanged(sender: AnyObject) {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            titleLabel.text = "Enter your new school"
-            domainLabel.text = ".edu";
-        case 1:
-            titleLabel.text = "Enter your new company"
-            domainLabel.text = ".com";
-        default:
-            break; 
-        }
-    }
     
 }
