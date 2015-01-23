@@ -111,7 +111,8 @@ class VerifyViewController: BackgroundViewController {
             vc.parent = self
         }
     }
-
+    
+    
     @IBAction func cancelClicked(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
