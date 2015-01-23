@@ -15,6 +15,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     var college = User.currentUser().college
     var posts: [Post] = []
+    var upvotes: [String] = []
+    var downvotes: [String] = []
     var maskLayer: CAGradientLayer? = nil
     
     override func viewDidLoad() {
@@ -58,7 +60,22 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.view.addSubview(postBtn)
         self.view.bringSubviewToFront(postBtn)
         
-        self.reloadPosts(nil)
+        User.currentUser().getVotedPosts("upvote", callback: { (posts, error) -> Void in
+            if error == nil {
+                for post in posts {
+                    self.upvotes.append(post.objectId)
+                }
+                
+                User.currentUser().getVotedPosts("downvote", callback: { (posts, error) -> Void in
+                    for post in posts {
+                        self.downvotes.append(post.objectId)
+                    }
+                    
+                    self.reloadPosts(nil)
+                })
+            }
+        })
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -91,8 +108,22 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         if college.objectId != self.college.objectId {
             
             self.college = college
-            self.reloadPosts(nil)
             
+            User.currentUser().getVotedPosts("upvote", callback: { (posts, error) -> Void in
+                if error == nil {
+                    for post in posts {
+                        self.upvotes.append(post.objectId)
+                    }
+                    
+                    User.currentUser().getVotedPosts("downvote", callback: { (posts, error) -> Void in
+                        for post in posts {
+                            self.downvotes.append(post.objectId)
+                        }
+                        
+                        self.reloadPosts(nil)
+                    })
+                }
+            })
         }
     }
     
@@ -151,6 +182,16 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             cell.setValues(post)
             cell.avatarImageView.image = UIImage(named: "jt.jpg")
             cell.backgroundColor = UIColor.clearColor()
+            
+            cell.upvoteBtn.enabled = true
+            cell.downvoteBtn.enabled = true
+            
+            if contains(self.upvotes, post.objectId) {
+                cell.upvoteBtn.enabled = false
+            } else if contains(self.downvotes, post.objectId) {
+                cell.downvoteBtn.enabled = false
+            }
+            
             return cell
         }
         // time cell
@@ -204,6 +245,10 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                     self.reloadPosts(nil)
                 }
             }
+            
+            self.upvotes.append(post.objectId)
+            User.currentUser().addRelation(post, relation: "upvote")
+            
             cell.upvoteBtn.enabled = false
         }
     }
@@ -223,6 +268,10 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                     self.reloadPosts(nil)
                 }
             }
+            
+            self.downvotes.append(post.objectId)
+            User.currentUser().addRelation(post, relation: "downvote")
+            
             cell.downvoteBtn.enabled = false
         }
     }

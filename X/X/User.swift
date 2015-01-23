@@ -15,7 +15,7 @@ class User : PFUser {
         return super.currentUser() as User!
     }
     
-    func getPosts(callback: ([Post]!, NSError!) -> Void) -> Void {
+    func getPosts(callback: ([Post]!, NSError!) -> Void) {
         let q = Post.query()
         
         q.whereKey("user", equalTo: self)
@@ -26,5 +26,18 @@ class User : PFUser {
         q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             callback(results as? [Post], error)
         }
+    }
+    
+    func getVotedPosts(relation: String, callback: ([Post]!, NSError!) -> Void) {
+        let rel = self.relationForKey(relation)
+        rel.query().findObjectsInBackgroundWithBlock({ (results, error) -> Void in
+            callback(results as? [Post], error)
+        })
+    }
+    
+    func addRelation(post: Post, relation: String) {
+        let rel = self.relationForKey(relation)
+        rel.addObject(post)
+        self.saveEventually()
     }
 }
