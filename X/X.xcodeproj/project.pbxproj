@@ -301,8 +301,8 @@
 		0D9FCBC91A3E709000F576D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0DF24AE91A70C4B100BF30B6 /* TimelineViewController.swift */,
 				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
+				0DF24AE91A70C4B100BF30B6 /* TimelineViewController.swift */,
 				0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */,
 				0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */,
 				0D81031F1A6A217C0067389D /* PostViewController.swift */,
