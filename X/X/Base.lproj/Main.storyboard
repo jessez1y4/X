@@ -462,7 +462,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pjU-cZ-kAK" id="zl0-aS-Yk2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="naG-Ei-88j">
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon_180.png" translatesAutoresizingMaskIntoConstraints="NO" id="naG-Ei-88j">
                                                     <rect key="frame" x="265" y="0.0" width="70" height="70"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
@@ -1586,6 +1586,7 @@
         <image name="Button_like.png" width="33" height="33"/>
         <image name="Button_like_Selected.png" width="33" height="33"/>
         <image name="Empty_Photo.png" width="40" height="40"/>
+        <image name="Icon_180.png" width="180" height="180"/>
         <image name="Icon_Activities.png" width="33" height="33"/>
         <image name="Icon_Arrow.png" width="5" height="8"/>
         <image name="Icon_BG_Pic.png" width="33" height="33"/>
@@ -1595,6 +1596,6 @@
         <image name="Icon_Settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SXj-fQ-5Jc"/>
+        <segue reference="6y9-EY-ztZ"/>
     </inferredMetricsTieBreakers>
 </document>

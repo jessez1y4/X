@@ -180,7 +180,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
             
             cell.setValues(post)
-            cell.avatarImageView.image = UIImage(named: "jt.jpg")
+            cell.avatarImageView.image = UIImage(named: "Icon_1024.png")
             cell.backgroundColor = UIColor.clearColor()
             
             cell.upvoteBtn.enabled = true
