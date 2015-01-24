@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditViewController: BackgroundViewController {
+class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate {
 
 
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
@@ -18,6 +18,14 @@ class EditViewController: BackgroundViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
         
         // set border color
         newDomainText.layer.cornerRadius = 4.0
@@ -30,6 +38,10 @@ class EditViewController: BackgroundViewController {
         changeBtn.layer.frame = CGRectInset(changeBtn.frame, 1, 1)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

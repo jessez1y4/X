@@ -996,15 +996,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvL-QN-rbj">
-                                <rect key="frame" x="16" y="25" width="33" height="33"/>
-                                <state key="normal" image="Icon_Close.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelClicked:" destination="CUO-md-P9N" eventType="touchUpInside" id="TvT-XY-4f9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the 4-digit number we just sent to yuzheng@paypal.com" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFO-hx-gXC">
                                 <rect key="frame" x="46" y="120" width="508" height="22"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="16"/>
@@ -1037,22 +1028,6 @@
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-E5-UM8">
-                                        <rect key="frame" x="237" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="b7G-9r-CFH"/>
-                                            <constraint firstAttribute="width" constant="30" id="hdN-W9-DKp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="35"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="b7G-9r-CFH"/>
-                                                <exclude reference="hdN-W9-DKp"/>
-                                            </mask>
-                                        </variation>
                                     </label>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBF-LH-ezQ">
                                         <rect key="frame" x="47" y="45" width="40" height="2"/>
@@ -1133,6 +1108,22 @@
                                             <constraint firstAttribute="width" id="FgP-o8-NQv"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-E5-UM8">
+                                        <rect key="frame" x="237" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="b7G-9r-CFH"/>
+                                            <constraint firstAttribute="width" constant="30" id="hdN-W9-DKp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="b7G-9r-CFH"/>
+                                                <exclude reference="hdN-W9-DKp"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1178,12 +1169,10 @@
                         <constraints>
                             <constraint firstItem="PFO-hx-gXC" firstAttribute="leading" secondItem="EIQ-1k-AbY" secondAttribute="leadingMargin" constant="30" id="GJ3-OC-fxB"/>
                             <constraint firstAttribute="centerX" secondItem="PFO-hx-gXC" secondAttribute="centerX" id="GzX-eP-IaD"/>
-                            <constraint firstItem="uvL-QN-rbj" firstAttribute="top" secondItem="3Cr-SX-DLm" secondAttribute="bottom" constant="5" id="Mhd-Cv-8TT"/>
                             <constraint firstItem="l1x-Fy-lGE" firstAttribute="leading" secondItem="EIQ-1k-AbY" secondAttribute="leadingMargin" id="TDb-t0-ZSq"/>
                             <constraint firstItem="PFO-hx-gXC" firstAttribute="top" secondItem="3Cr-SX-DLm" secondAttribute="bottom" constant="100" id="ZNN-EO-E9F"/>
                             <constraint firstItem="l1x-Fy-lGE" firstAttribute="top" secondItem="PFO-hx-gXC" secondAttribute="bottom" constant="50" id="fxt-M3-ty8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l1x-Fy-lGE" secondAttribute="trailing" id="pMa-yv-OFT"/>
-                            <constraint firstItem="uvL-QN-rbj" firstAttribute="leading" secondItem="EIQ-1k-AbY" secondAttribute="leadingMargin" id="rMv-cW-OnW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PFO-hx-gXC" secondAttribute="trailing" constant="30" id="zvE-ia-uVv"/>
                         </constraints>
                     </view>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource {
+class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,19 +17,26 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
-
-        self.tableView.backgroundColor = UIColor.clearColor()
+        // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
-        //        self.tableView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.tableView.contentInset.bottom = 100
-        
         // Do any additional setup after loading the view.
         
         self.reloadPosts(nil)
+    }
+    
+
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

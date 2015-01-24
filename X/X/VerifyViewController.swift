@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyViewController: BackgroundViewController {
+class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
     
@@ -20,6 +20,15 @@ class VerifyViewController: BackgroundViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
+        
         
         // set border color
         emailText.layer.cornerRadius = 4.0
@@ -35,6 +44,10 @@ class VerifyViewController: BackgroundViewController {
         
         // generate code
         self.code = Int(arc4random()) % 9000 + 1000;
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {
