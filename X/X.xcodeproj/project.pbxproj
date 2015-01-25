@@ -27,7 +27,6 @@
 		0D2EBB351A7358EE00292289 /* jt.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EBB341A7358EE00292289 /* jt.png */; };
 		0D2EBB371A73597F00292289 /* jt2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2EBB361A73597F00292289 /* jt2.png */; };
 		0D33C6651A4D2B4B006800FF /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */; };
-		0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587D81A402105009AD4F0 /* DetailViewController.swift */; };
 		0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DC1A402638009AD4F0 /* MessageViewController.m */; };
 		0D5587E01A402638009AD4F0 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5587DE1A402638009AD4F0 /* MessageTableViewCell.m */; };
 		0D5D62FF1A4BFFCB00619F4C /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */; };
@@ -153,7 +152,6 @@
 		0D2EBB341A7358EE00292289 /* jt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jt.png; sourceTree = "<group>"; };
 		0D2EBB361A73597F00292289 /* jt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jt2.png; sourceTree = "<group>"; };
 		0D33C6641A4D2B4B006800FF /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
-		0D5587D81A402105009AD4F0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0D5587DB1A402638009AD4F0 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		0D5587DC1A402638009AD4F0 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		0D5587DD1A402638009AD4F0 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
@@ -327,7 +325,6 @@
 				0D81031B1A68E5900067389D /* InputViewController.swift */,
 				0D8103191A662B480067389D /* VerifyViewController.swift */,
 				9A1DCC6C1A3E6C6300075F39 /* LoginViewController.swift */,
-				0D5587D81A402105009AD4F0 /* DetailViewController.swift */,
 				0D1F2E431A43E21100C0C465 /* EditViewController.swift */,
 				9A698F501A43CF5D000314E8 /* PostDetailViewController.swift */,
 				0D5D62FE1A4BFFCB00619F4C /* BackgroundViewController.swift */,
@@ -774,7 +771,6 @@
 				9A6F0EB01A3E67BA00CE14B4 /* X.xcdatamodeld in Sources */,
 				9A6F0EAD1A3E67BA00CE14B4 /* AppDelegate.swift in Sources */,
 				0D5587DF1A402638009AD4F0 /* MessageViewController.m in Sources */,
-				0D5587D91A402105009AD4F0 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

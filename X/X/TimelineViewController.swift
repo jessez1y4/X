@@ -237,9 +237,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_post_detail") {
-            let pdvc = segue.destinationViewController as MessageViewController
-//            let idxPath = self.timelineTableView.indexPathForSelectedRow()
-//            pdvc.post = self.posts[idxPath!.row]
+            let pdvc = segue.destinationViewController as PostDetailViewController
+            let idxPath = self.timelineTableView.indexPathForSelectedRow()
+            pdvc.post = self.posts[idxPath!.row]
         }
     }
     
