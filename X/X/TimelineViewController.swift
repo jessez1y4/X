@@ -98,6 +98,11 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         if (self.refreshTimer != nil) {
             self.refreshTimer.fireDate = NSDate.distantPast() as NSDate
         }
+        
+        //disable swipe back gesture
+        if (self.navigationController?.respondsToSelector("interactivePopGestureRecognizer") != nil) {
+            self.navigationController?.interactivePopGestureRecognizer.enabled = false
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -105,6 +110,11 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         if (self.refreshTimer != nil) {
             self.refreshTimer.fireDate = NSDate.distantFuture() as NSDate
+        }
+        
+        //reenable swipe back gesture
+        if (self.navigationController?.respondsToSelector("interactivePopGestureRecognizer") != nil) {
+            self.navigationController?.interactivePopGestureRecognizer.enabled = true
         }
     }
     
