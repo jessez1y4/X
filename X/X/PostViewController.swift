@@ -21,7 +21,7 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         postButton.layer.cornerRadius = 5.0
-        postButton.layer.frame = CGRectInset(postButton.frame, 1, 1)
+        postButton.clipsToBounds = true
         
         textView.placeholder = "What happened?"
 
