@@ -94,7 +94,6 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         
         let cameraController = DBCameraViewController.initWithDelegate(self)
         cameraController.setForceQuadCrop(true)
-        cameraController.title = "avatarClicked"
         let container = DBCameraContainerViewController(delegate: self)
         container.setDBCameraViewController(cameraController)
         let nav = UINavigationController(rootViewController: container)
@@ -125,7 +124,7 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
             
             println("avatar change!")
         } else {
-            
+            Variable.backgroundImage = image
             println("background change!")
         }
         

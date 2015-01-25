@@ -129,7 +129,6 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
         cell.textLabel!.text = reply.content
         cell.textLabel!.textColor = UIColor.whiteColor()
         cell.textLabel!.font = UIFont(name: "OpenSans-light", size: 15)
-        
         return cell
 
     }
