@@ -108,10 +108,10 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     
     self.navigationItem.rightBarButtonItems = @[editItem, appendItem, typeItem];
     
-    UIImage *temp = [[UIImage alloc] init];
-    [self.navigationController.navigationBar setBackgroundImage:temp forBarMetrics:UIBarMetricsDefault];
-     self.navigationController.navigationBar.shadowImage = temp;
-     self.navigationController.navigationBar.translucent = NO;
+//    UIImage *temp = [[UIImage alloc] init];
+//    [self.navigationController.navigationBar setBackgroundImage:temp forBarMetrics:UIBarMetricsDefault];
+//     self.navigationController.navigationBar.shadowImage = temp;
+//     self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
