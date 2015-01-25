@@ -181,6 +181,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                 f()
             }
         })
+        
+        self.getActivityCount()
 
     }
     
@@ -246,7 +248,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     func postClicked() {
         let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
         
-        self.presentViewController(postViewController, animated: true, completion: nil)
+        self.presentViewController(postViewController, animated: true) { () -> Void in
+            postViewController.parent = self
+        }
     }
     
     @IBAction func upvote(sender: AnyObject) {

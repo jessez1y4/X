@@ -15,6 +15,7 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
     
+    var parent: TimelineViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +110,9 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         
         post.saveInBackgroundWithBlock { (success, err) -> Void in
             if (success) {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    self.parent.reloadPosts(nil)
+                })
             }
         }
     }
