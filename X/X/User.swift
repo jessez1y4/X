@@ -28,6 +28,21 @@ class User : PFUser {
         }
     }
     
+    func hasUnreadPosts(callback: (Bool) -> Void) {
+        let q = Post.query()
+        
+        q.whereKey("user", equalTo: self)
+        q.whereKey("unread", greaterThan: 0)
+        
+        q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            if error != nil {
+                return callback(false)
+            }
+            
+            return callback(results.count > 0)
+        }
+    }
+    
     func getVotedPosts(relation: String, callback: ([Post]!, NSError!) -> Void) {
         let rel = self.relationForKey(relation)
         rel.query().findObjectsInBackgroundWithBlock({ (results, error) -> Void in

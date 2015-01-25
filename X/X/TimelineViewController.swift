@@ -12,12 +12,14 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     @IBOutlet weak var timelineTableView: UITableView!
     @IBOutlet weak var tableMaskView: UIView!
+    @IBOutlet weak var activityBtn: UIBarButtonItem!
     
     var college = User.currentUser().college
     var posts: [Post] = []
     var upvotes: [String] = []
     var downvotes: [String] = []
     var maskLayer: CAGradientLayer? = nil
+    var refreshTimer: NSTimer! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         // set title font
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.title = User.currentUser().domain.uppercaseString
         
         // add post button
         let postBtn = UIButton(frame: CGRectMake(self.view.frame.width/2-25,self.view.frame.height-75,50,50))
@@ -70,14 +73,39 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                     }
                     
                     self.reloadPosts(nil)
+                    
+                    // set up timer
+                    self.refreshTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "getActivityCount", userInfo: nil, repeats: true)
                 })
             }
         })
 
     }
     
+    func getActivityCount() {
+        User.currentUser().hasUnreadPosts { (hasUnread) -> Void in
+            if hasUnread {
+                self.activityBtn.image = UIImage(named: "Icon_Activities_Badge.png")
+            } else {
+                self.activityBtn.image = UIImage(named: "Icon_Activities.png")
+            }
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if (self.refreshTimer != nil) {
+            self.refreshTimer.fireDate = NSDate.distantPast() as NSDate
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if (self.refreshTimer != nil) {
+            self.refreshTimer.fireDate = NSDate.distantFuture() as NSDate
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
