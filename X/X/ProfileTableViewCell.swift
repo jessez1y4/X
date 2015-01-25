@@ -14,13 +14,13 @@ class ProfileTableViewCell: UITableViewCell {
     @IBOutlet weak var verifyImageView: UIImageView!
     @IBOutlet weak var verifyBtn: UIButton!
     @IBOutlet weak var collegeBtn: UIButton!
+    @IBOutlet weak var collegeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        collegeBtn.setTitle(User.currentUser().domain.uppercaseString, forState: UIControlState.Normal)
-        
+        collegeLabel.text = User.currentUser().domain.uppercaseString        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
