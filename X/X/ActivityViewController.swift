@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource,UIGestureRecognizerDelegate {
+class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     

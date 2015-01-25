@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelegate {
+class PostDetailViewController: SLKTextViewController {
     
     var post: Post!
     var replies: [Reply] = []
@@ -71,7 +71,7 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
         var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
         self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+//        self.navigationController?.interactivePopGestureRecognizer.delegate = self
         // end
 
         
