@@ -17,7 +17,7 @@ class BackgroundViewController: UIViewController {
         super.viewDidLoad()
         
         backgroundImageView = UIImageView(frame: view.frame)
-        backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
+
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
         view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
@@ -25,7 +25,8 @@ class BackgroundViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
+        backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
     }
 
     override func didReceiveMemoryWarning() {

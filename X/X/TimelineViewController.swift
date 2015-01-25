@@ -157,6 +157,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                         }
                         
                         self.reloadPosts(nil)
+                        self.title = self.college.name.uppercaseString
                     })
                 }
             })
