@@ -24,19 +24,8 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let backgroundImage = UIImage(named: "BG.png")
-        let backgroundImageView = UIImageView(frame: view.frame)
-        backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
-        view.addSubview(backgroundImageView)
-        
-        view.sendSubviewToBack(backgroundImageView)
-        view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
-        
-        self.tableView.backgroundColor = UIColor.clearColor()
-        
-        
         
         self.bounces = true
         self.shakeToClearEnabled = true
@@ -45,7 +34,7 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
         self.inverted = false
 
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None;
-        
+        self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.registerClass(MessageTableViewCell.self, forCellReuseIdentifier: "replyCell")
         
         // add constraints for tableView
@@ -71,7 +60,35 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
         }
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        self.edgesForExtendedLayout = UIRectEdge.None
 
+        // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
+
+        
+        let backgroundImage = UIImage(named: "BG.png")
+        let backgroundImageView = UIImageView(frame: view.frame)
+        backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
+        view.addSubview(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+        view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
+        
+
+        }
+    
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     func imageWithAlpha(image: UIImage, alpha: CGFloat) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(image.size, false, 0.0)
         let context = UIGraphicsGetCurrentContext()
@@ -84,21 +101,6 @@ class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelega
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return result
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        //                // this part setting the custom back button with swiping
-        let backImage = UIImage(named: "Icon_Back@2x.png")
-        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
-        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.interactivePopGestureRecognizer.delegate = self
-        // end
-    }
-    
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
     }
 
     
