@@ -78,18 +78,9 @@ class PostDetailViewController: SLKTextViewController {
         self.textView.placeholderColor = UIColor.grayColor()
         
 
-            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
-//        self.textView.layer.borderColor = [UIColor colorWithRed:217.0/255.0 green:217.0/255.0 blue:217.0/255.0 alpha:1.0].CGColor;
-//        self.textView.pastableMediaTypes = SLKPastableMediaTypeAll|SLKPastableMediaTypePassbook;
-        
-//        [self.leftButton setImage:[UIImage imageNamed:@"icn_upload"] forState:UIControlStateNormal];
-//        [self.leftButton setTintColor:[UIColor grayColor]];
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
         
         self.rightButton.setTitle("Send", forState: UIControlState.Normal)
-        
-//        [self.textInputbar.editorTitle setTextColor:[UIColor darkGrayColor]];
-//        [self.textInputbar.editortLeftButton setTintColor:[UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1.0]];
-//        [self.textInputbar.editortRightButton setTintColor:[UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:255.0/255.0 alpha:1.0]];
         
         self.textInputbar.autoHideRightButton = true
         self.textInputbar.maxCharCount = 140

@@ -8,18 +8,24 @@
 
 import UIKit
 
-class EditViewController: BackgroundViewController {
+class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate {
 
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
     @IBOutlet weak var newDomainText: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
-    @IBOutlet weak var domainLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
         
         // set border color
         newDomainText.layer.cornerRadius = 4.0
@@ -33,21 +39,31 @@ class EditViewController: BackgroundViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        newDomainText.becomeFirstResponder()
+//        newDomainText.becomeFirstResponder()
+//        newDomainText.becomeFirstResponder()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        newDomainText.becomeFirstResponder()
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -103,24 +119,6 @@ class EditViewController: BackgroundViewController {
         }
     
     }
-    
-    @IBAction func cancelClicked(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
 
-    }
-    
-    @IBAction func valueChanged(sender: AnyObject) {
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            titleLabel.text = "Enter your new school"
-            domainLabel.text = ".edu";
-        case 1:
-            titleLabel.text = "Enter your new company"
-            domainLabel.text = ".com";
-        default:
-            break; 
-        }
-    }
     
 }

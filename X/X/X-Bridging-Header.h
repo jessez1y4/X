@@ -19,5 +19,6 @@
 #import <LoremIpsum.h>
 #import <DBCameraViewController.h>
 #import <DBCameraContainerViewController.h>
+#import <DBCameraSegueViewController.h>
 
 #endif

@@ -28,6 +28,17 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        // make the navigation bar transparent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        
+        super.viewWillAppear(animated)
+    }
+    
+    
     func tableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -70,13 +81,8 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         
     }
     
-    @IBAction func cancelClicked(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     
     @IBAction func changeSchoolClicked(sender: AnyObject) {
-        
     }
     
 
@@ -87,8 +93,10 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     @IBAction func avatarClicked(sender: UITapGestureRecognizer) {
         
         let cameraController = DBCameraViewController.initWithDelegate(self)
+        cameraController.setForceQuadCrop(true)
+        cameraController.title = "avatarClicked"
         let container = DBCameraContainerViewController(delegate: self)
-        container.setFullScreenMode()
+        container.setDBCameraViewController(cameraController)
         let nav = UINavigationController(rootViewController: container)
         nav.setNavigationBarHidden(true, animated: true)
         self.presentViewController(nav, animated: true, completion: nil)
@@ -107,10 +115,19 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
     }
     
 
-    
+    // use corp mode to determine if it's background image change or avatar change
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
         
-        // change background image to image
+        let comingCameraViewController = cameraViewController as DBCameraSegueViewController
+        
+        if comingCameraViewController.cropMode == true {
+            // avatar change
+            
+            println("avatar change!")
+        } else {
+            
+            println("background change!")
+        }
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
@@ -121,6 +138,14 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    @IBAction func cancelClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
+
+    
+    
 
 
 }
