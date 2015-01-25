@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource,UIGestureRecognizerDelegate {
+class ActivityViewController: BackgroundViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,25 +18,23 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // this part setting the custom back button with swiping
-        let backImage = UIImage(named: "Icon_Back@2x.png")
-        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
-        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController?.interactivePopGestureRecognizer.delegate = self
-        // end
-        
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
         self.tableView.contentInset.bottom = 100
         // Do any additional setup after loading the view.
         
+        // set title font
+        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
         self.reloadPosts(nil)
     }
     
-
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // make the navigation bar transparent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +87,9 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         }
     }
     
+    @IBAction func cancelClicked(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 //    @IBAction func backClicked(sender: AnyObject) {
 //        self.navigationController?.popViewControllerAnimated(true)
