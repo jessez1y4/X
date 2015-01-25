@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -47,7 +46,6 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
-            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -63,15 +61,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=".edu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXw-fk-3e3">
-                                <rect key="frame" x="365" y="196" width="34" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="QlR-wQ-Pex"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwF-cY-A5A">
                                 <rect key="frame" x="224" y="196" width="14" height="22"/>
                                 <constraints>
@@ -112,19 +101,16 @@
                         <constraints>
                             <constraint firstItem="qEq-NJ-ou8" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="76" id="BUw-PE-BCL"/>
                             <constraint firstItem="qEq-NJ-ou8" firstAttribute="centerX" secondItem="4tw-Rd-zsL" secondAttribute="centerX" id="DJW-TE-YJf"/>
-                            <constraint firstItem="wXw-fk-3e3" firstAttribute="baseline" secondItem="fwF-cY-A5A" secondAttribute="baseline" id="EwT-YF-GHr"/>
                             <constraint firstItem="fwF-cY-A5A" firstAttribute="centerY" secondItem="4tw-Rd-zsL" secondAttribute="centerY" id="LrW-dL-nya"/>
                             <constraint firstItem="M5C-oT-O5S" firstAttribute="centerX" secondItem="4tw-Rd-zsL" secondAttribute="centerX" id="Mu5-iO-4ee"/>
                             <constraint firstItem="M5C-oT-O5S" firstAttribute="top" secondItem="4tw-Rd-zsL" secondAttribute="bottom" constant="30" id="P5z-lK-sms"/>
                             <constraint firstItem="fwF-cY-A5A" firstAttribute="top" secondItem="qEq-NJ-ou8" secondAttribute="bottom" constant="90" id="Tgg-fy-8Fl"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="M5C-oT-O5S" secondAttribute="bottom" constant="300" id="XBW-Jz-Zmi"/>
                             <constraint firstItem="4tw-Rd-zsL" firstAttribute="top" secondItem="qEq-NJ-ou8" secondAttribute="bottom" constant="30" id="XNq-E4-c0z"/>
-                            <constraint firstItem="wXw-fk-3e3" firstAttribute="leading" secondItem="4tw-Rd-zsL" secondAttribute="trailing" constant="16" id="adt-Ea-Ikg"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="4tw-Rd-zsL" secondAttribute="bottom" constant="367" id="dJN-3Z-WnA"/>
                             <constraint firstAttribute="centerX" secondItem="M5C-oT-O5S" secondAttribute="centerX" id="e0j-sQ-b1h"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fwF-cY-A5A" secondAttribute="bottom" constant="372" id="frd-r9-jLu"/>
                             <constraint firstAttribute="centerX" secondItem="4tw-Rd-zsL" secondAttribute="centerX" id="jP2-6x-R5K"/>
-                            <constraint firstItem="fwF-cY-A5A" firstAttribute="firstBaseline" secondItem="wXw-fk-3e3" secondAttribute="firstBaseline" id="u81-gv-w0h"/>
                             <constraint firstItem="4tw-Rd-zsL" firstAttribute="leading" secondItem="fwF-cY-A5A" secondAttribute="trailing" constant="14" id="wGt-bp-Ccs"/>
                             <constraint firstItem="qEq-NJ-ou8" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="y2C-O4-CAG"/>
                         </constraints>
@@ -429,6 +415,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityBtn" destination="aBG-DJ-SfO" id="fow-7m-Nc4"/>
                         <outlet property="tableMaskView" destination="ZO2-Ng-JAr" id="5yN-uZ-mZq"/>
                         <outlet property="timelineTableView" destination="mse-Tu-EU6" id="qfc-58-UWi"/>
                     </connections>
@@ -480,7 +467,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xT3-ZW-bbF">
                                                     <rect key="frame" x="217" y="85" width="166" height="27"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
-                                                    <state key="normal" title="Stanford University >">
+                                                    <state key="normal" title="Stanford University &gt;">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -524,6 +511,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="avatarImageView" destination="naG-Ei-88j" id="Vs5-oH-lKr"/>
+                                            <outlet property="collegeBtn" destination="xT3-ZW-bbF" id="JOj-5B-oP2"/>
                                             <outlet property="verifyBtn" destination="0JT-UT-ghN" id="FnM-in-6Ro"/>
                                             <outlet property="verifyImageView" destination="tdW-8S-njT" id="UZ9-LP-9dr"/>
                                         </connections>
