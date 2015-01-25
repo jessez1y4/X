@@ -464,7 +464,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Badge_Non_Verified_Large.png" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-8S-njT">
                                                     <rect key="frame" x="318" y="53" width="29" height="29"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xT3-ZW-bbF">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xT3-ZW-bbF">
                                                     <rect key="frame" x="217" y="85" width="166" height="27"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                                     <state key="normal" title="Stanford University &gt;">
@@ -1587,5 +1587,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6y9-EY-ztZ"/>
+        <segue reference="Eyq-V2-6xm"/>
     </inferredMetricsTieBreakers>
 </document>
