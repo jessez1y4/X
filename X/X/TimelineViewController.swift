@@ -77,7 +77,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
                     self.reloadPosts(nil)
                     
                     // set up timer
-                    self.refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "getActivityCount", userInfo: nil, repeats: true)
+                    self.refreshTimer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: "getActivityCount", userInfo: nil, repeats: true)
                 })
             }
         })
@@ -87,9 +87,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     func getActivityCount() {
         User.currentUser().hasUnreadPosts { (hasUnread) -> Void in
             if hasUnread {
-                self.activityBtn.image = UIImage(named: "Icon_Activities.png")
-            } else {
                 self.activityBtn.image = UIImage(named: "Icon_Activities_Badge.png")
+            } else {
+                self.activityBtn.image = UIImage(named: "Icon_Activities.png")
             }
         }
     }

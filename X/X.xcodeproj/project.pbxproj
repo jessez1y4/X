@@ -36,6 +36,7 @@
 		0D8103201A6A217C0067389D /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81031F1A6A217C0067389D /* PostViewController.swift */; };
 		0D8A18B71A58A84C00B17EBB /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A18B61A58A84C00B17EBB /* ActivityTableViewCell.swift */; };
 		0D971CBA1A6E2CF200ACEA79 /* jt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D971CB91A6E2CF200ACEA79 /* jt.jpg */; };
+		0D96F3F21A6C78E60090E232 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */; };
 		0D9FCBD11A3E7E0800F576D9 /* bicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCE1A3E7E0800F576D9 /* bicon.png */; };
 		0D9FCBD21A3E7E0800F576D9 /* dark_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBCF1A3E7E0800F576D9 /* dark_circle.png */; };
 		0D9FCBD31A3E7E0800F576D9 /* light_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9FCBD01A3E7E0800F576D9 /* light_circle.png */; };
@@ -164,6 +165,7 @@
 		0D81031B1A68E5900067389D /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		0D81031F1A6A217C0067389D /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0D8A18B61A58A84C00B17EBB /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		0D96F3F11A6C78E60090E232 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0D971CB91A6E2CF200ACEA79 /* jt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jt.jpg; sourceTree = "<group>"; };
 		0D9FCBC81A3E6BD100F576D9 /* X-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "X-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D9FCBCE1A3E7E0800F576D9 /* bicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bicon.png; sourceTree = "<group>"; };

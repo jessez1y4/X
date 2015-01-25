@@ -39,7 +39,7 @@ class User : PFUser {
                 return callback(false)
             }
             
-            return callback(!(results.count == 0))
+            return callback(results.count > 0)
         }
     }
     
