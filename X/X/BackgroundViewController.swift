@@ -10,13 +10,13 @@ import UIKit
 
 class BackgroundViewController: UIViewController {
     
-//    var backgroundImageView: UIImageView!
+    var backgroundImageView: UIImageView!
 //    var backgroundView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backgroundImageView = UIImageView(frame: view.frame)
+        backgroundImageView = UIImageView(frame: view.frame)
         backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
