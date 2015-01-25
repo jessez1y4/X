@@ -315,5 +315,11 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("profile_nav_controller") as UINavigationController
         self.presentViewController(postViewController, animated: true, completion: nil)
     }
+    
+    @IBAction func activityClicked(sender: AnyObject) {
+        let activityViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("activity_nav_controller") as UINavigationController
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
 }
 

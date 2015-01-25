@@ -54,7 +54,7 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as ProfileTableViewCell
             
-            cell.avatarImageView.layer.cornerRadius = 5
+            cell.avatarImageView.layer.cornerRadius = 10
             cell.avatarImageView.clipsToBounds = true
             
             cell.verifyBtn.layer.cornerRadius = 20
