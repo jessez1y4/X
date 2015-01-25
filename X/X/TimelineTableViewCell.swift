@@ -25,6 +25,8 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         contentLabel.sizeToFit()
+//        avatarImageView.layer.cornerRadius = 5.0
+//        avatarImageView.layer.frame = CGRectInset(avatarImageView.frame, 1, 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

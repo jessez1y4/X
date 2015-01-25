@@ -53,8 +53,12 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         if indexPath.row == 0 {
             
             let cell = tableView.dequeueReusableCellWithIdentifier("ProfileCell") as ProfileTableViewCell
+            
+            cell.avatarImageView.layer.cornerRadius = 5
+            cell.avatarImageView.clipsToBounds = true
+            
             cell.verifyBtn.layer.cornerRadius = 20
-            cell.verifyBtn.layer.frame = CGRectInset(cell.verifyBtn.frame, 20, 20)
+            cell.verifyBtn.clipsToBounds = true
             return cell
             
         } else if indexPath.row == 1 {

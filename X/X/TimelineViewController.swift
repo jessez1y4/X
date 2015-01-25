@@ -218,6 +218,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
             
             cell.setValues(post)
+            cell.avatarImageView.layer.cornerRadius = 5.0
+            cell.avatarImageView.clipsToBounds = true
             cell.avatarImageView.image = UIImage(named: "Icon_1024.png")
             cell.backgroundColor = UIColor.clearColor()
             
@@ -236,7 +238,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimeCell") as TimeTableViewCell
             cell.bgView.layer.cornerRadius = 15.0
-            cell.bgView.layer.frame = CGRectInset(cell.bgView.frame, 20, 20)
+            cell.bgView.clipsToBounds = true
             cell.timeLabel.text = post.content
             cell.backgroundColor = UIColor.clearColor()
             return cell
