@@ -45,8 +45,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.timelineTableView.backgroundColor = UIColor.clearColor()
         self.timelineTableView.estimatedRowHeight = 100
         self.timelineTableView.contentInset.bottom = 100
-        // self.timelineTableView.rowHeight = UITableViewAutomaticDimension
-        // self.timelineTableView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
         
         // set title font
@@ -211,9 +209,9 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if(segue.identifier == "show_post_detail") {
-            let pdvc = segue.destinationViewController as PostDetailViewController
-            let idxPath = self.timelineTableView.indexPathForSelectedRow()
-            pdvc.post = self.posts[idxPath!.row]
+            let pdvc = segue.destinationViewController as MessageViewController
+//            let idxPath = self.timelineTableView.indexPathForSelectedRow()
+//            pdvc.post = self.posts[idxPath!.row]
         }
     }
     

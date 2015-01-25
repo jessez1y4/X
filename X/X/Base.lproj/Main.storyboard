@@ -1193,7 +1193,7 @@
         <!--Details-->
         <scene sceneID="e98-Kr-CDQ">
             <objects>
-                <viewController id="ZCf-lo-wGi" customClass="PostDetailViewController" customModule="X" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZCf-lo-wGi" customClass="MessageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CWx-3h-l7u"/>
                         <viewControllerLayoutGuide type="bottom" id="tg8-6c-be6"/>
@@ -1585,6 +1585,6 @@
         <image name="Icon_Settings.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6y9-EY-ztZ"/>
+        <segue reference="SXj-fQ-5Jc"/>
     </inferredMetricsTieBreakers>
 </document>

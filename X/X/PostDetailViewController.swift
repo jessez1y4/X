@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostDetailViewController: SLKTextViewController {
+class PostDetailViewController: SLKTextViewController, UIGestureRecognizerDelegate {
     
     var post: Post!
     var replies: [Reply] = []
@@ -26,29 +26,6 @@ class PostDetailViewController: SLKTextViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        var logoImage = UIImage(named: "bicon.png")
-//        var backCircleImage = UIImage(named: "light_circle.png")
-//        var frontCircleImage = UIImage(named: "dark_circle.png")
-//        var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
-//        
-//        self.tableView.setPullToRefreshWithHeight(10, actionHandler: { (pullToRefreshView: BMYPullToRefreshView!) -> Void in
-//            
-//            
-//            // reload data ...
-//            
-//            self.college.getPosts({ (posts, err) -> Void in
-//                if err == nil && posts.first?.objectId != self.posts.first?.objectId {
-//                    self.posts = posts
-//                    self.tableView.reloadData()
-//                }
-//                pullToRefreshView.stopAnimating()
-//                
-//            })
-//        })
-//        
-//        tableView.pullToRefreshView.preserveContentInset = true
-//        tableView.pullToRefreshView.setProgressView(progressView)
-
         let backgroundImage = UIImage(named: "BG.png")
         let backgroundImageView = UIImageView(frame: view.frame)
         backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
@@ -79,19 +56,12 @@ class PostDetailViewController: SLKTextViewController {
         
 
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
-        
         self.rightButton.setTitle("Send", forState: UIControlState.Normal)
         
         self.textInputbar.autoHideRightButton = true
         self.textInputbar.maxCharCount = 140
         self.textInputbar.counterStyle = SLKCounterStyle.Split
-        
-//        self.typingIndicatorView.canResignByTouch = YES;
-        
-//        [self.autoCompletionView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:AutoCompletionCellIdentifier];
-//        [self registerPrefixesForAutoCompletion:@[@"@", @"#", @":"]];
 
-        
         // initial load
         self.reloadReplies()
         
@@ -114,6 +84,21 @@ class PostDetailViewController: SLKTextViewController {
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return result
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        //                // this part setting the custom back button with swiping
+        let backImage = UIImage(named: "Icon_Back@2x.png")
+        var newBackButton = UIBarButtonItem(image: backImage, style: UIBarButtonItemStyle.Bordered, target: self, action: "goBack")
+        self.navigationItem.setLeftBarButtonItem(newBackButton, animated: false)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController?.interactivePopGestureRecognizer.delegate = self
+        // end
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     

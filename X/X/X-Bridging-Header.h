@@ -13,6 +13,7 @@
 #import <ParseUI.h>
 #import <BMYCircularProgressPullToRefresh.h>
 #import <SLKTextViewController.h>
+#import "MessageViewController.h"
 #import "MessageTableViewCell.h"
 #import <DateTools.h>
 #import <SAMTextView.h>
