@@ -25,7 +25,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var logoImage = UIImage(named: "bicon.png")
+        var logoImage = UIImage(named: "Icon_Pull_Refresh.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)

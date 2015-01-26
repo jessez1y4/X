@@ -73,6 +73,7 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         cell.setValues(post)
         cell.numberView.layer.cornerRadius = 10.0
         cell.numberView.layer.frame = CGRectInset(cell.numberView.frame, 20, 20)
+        cell.numberView.backgroundColor = UIColor(patternImage: UIImage(named: "Button_Share.png")!)
         
         return cell
     }
