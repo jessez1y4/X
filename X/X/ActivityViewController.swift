@@ -26,7 +26,6 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         // set title font
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        self.reloadPosts(nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,6 +34,8 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
+        
+        self.reloadPosts(nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +85,7 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
             let pdvc = segue.destinationViewController as PostDetailViewController
             let idxPath = self.tableView.indexPathForSelectedRow()
             pdvc.post = self.posts[idxPath!.row]
+            pdvc
         }
     }
     
