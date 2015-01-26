@@ -332,9 +332,9 @@
 		0D9FCBC91A3E709000F576D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
 				9A7C4C151A7367300065A2B1 /* ProfileViewController.swift */,
 				0DF24AE91A70C4B100BF30B6 /* TimelineViewController.swift */,
-				0D5587DA1A40260A009AD4F0 /* MessageViewLib */,
 				0D1F2E3D1A43DB4500C0C465 /* ActivityViewController.swift */,
 				0D81031F1A6A217C0067389D /* PostViewController.swift */,
 				0D81031B1A68E5900067389D /* InputViewController.swift */,
