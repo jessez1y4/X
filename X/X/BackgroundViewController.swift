@@ -27,6 +27,7 @@ class BackgroundViewController: UIViewController {
         super.viewWillAppear(animated)
         
         backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
+        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
     }
 
     override func didReceiveMemoryWarning() {
