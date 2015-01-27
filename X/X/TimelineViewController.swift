@@ -25,7 +25,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var logoImage = UIImage(named: "bicon.png")
+        var logoImage = UIImage(named: "Icon_Pull_Refresh.png")
         var backCircleImage = UIImage(named: "light_circle.png")
         var frontCircleImage = UIImage(named: "dark_circle.png")
         var progressView = BMYCircularProgressView(frame: CGRectMake(0, 0, 25, 25), logo: logoImage, backCircleImage: backCircleImage, frontCircleImage: frontCircleImage)
@@ -51,7 +51,6 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         
         // set title font
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName : UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName : UIColor.whiteColor()]
-        self.title = User.currentUser().domain.uppercaseString
         
         // add post button
         let postBtn = UIButton(frame: CGRectMake(self.view.frame.width/2-25,self.view.frame.height-75,50,50))
@@ -124,6 +123,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.translucent = true
+        
+        self.title = User.currentUser().domain.uppercaseString
         
         super.viewWillAppear(animated)
         

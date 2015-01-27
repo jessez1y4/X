@@ -12,7 +12,7 @@ class ActivityTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var lifeLabel: UILabel!
-    @IBOutlet weak var numberView: UIView!
+    @IBOutlet weak var numberView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -12,6 +12,7 @@ class PostDetailViewController: SLKTextViewController {
     
     var post: Post!
     var replies: [Reply] = []
+    var backgroundImageView: UIImageView!
     
     override init() {
         super.init(tableViewStyle: UITableViewStyle.Plain)
@@ -26,6 +27,11 @@ class PostDetailViewController: SLKTextViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+
+        backgroundImageView = UIImageView(frame: view.frame)
+        view.addSubview(backgroundImageView)
+        view.sendSubviewToBack(backgroundImageView)
+        view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
         
         self.bounces = true
         self.shakeToClearEnabled = true
@@ -73,15 +79,9 @@ class PostDetailViewController: SLKTextViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
 //        self.navigationController?.interactivePopGestureRecognizer.delegate = self
         // end
-
         
-        let backgroundImage = UIImage(named: "BG.png")
-        let backgroundImageView = UIImageView(frame: view.frame)
-        backgroundImageView.image = imageWithAlpha(backgroundImage!, alpha: 0.1)
-        view.addSubview(backgroundImageView)
-        view.sendSubviewToBack(backgroundImageView)
-        view.backgroundColor = UIColor(red: 43/255.0, green: 43/255.0, blue: 50/255.0, alpha: 1)
-        
+        backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
+        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
 
         }
     
