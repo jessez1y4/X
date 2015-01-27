@@ -117,9 +117,82 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         
     }
     
+    func fixrotation(image: UIImage) -> UIImage {
+        if image.imageOrientation == UIImageOrientation.Up {
+            return image;
+        }
+        
+        var transform = CGAffineTransformIdentity
+
+        transform = CGAffineTransformTranslate(transform, 0, image.size.height);
+        transform = CGAffineTransformRotate(transform, CGFloat(-M_PI_2));
+
+    
+        // Now we draw the underlying CGImage into a new context, applying the transform
+        // calculated above.
+        var ctx = CGBitmapContextCreate(nil, UInt(image.size.width), UInt(image.size.height), CGImageGetBitsPerComponent(image.CGImage), 0, CGImageGetColorSpace(image.CGImage), CGImageGetBitmapInfo(image.CGImage));
+        
+        CGContextConcatCTM(ctx, transform);
+
+        CGContextDrawImage(ctx, CGRectMake(0,0,image.size.height,image.size.width), image.CGImage);
+        
+        // And now we just create a new UIImage from the drawing context
+        let cgimg = CGBitmapContextCreateImage(ctx)
+        let img = UIImage(CGImage: cgimg)
+      
+        return img!
+    }
+    
+    func resizeImage(image: UIImage, width: CGFloat, height: CGFloat) -> UIImage {
+        let ratio = width/image.size.width
+        
+        let newSize = CGSizeMake(image.size.width*ratio,image.size.height*ratio);
+        
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.drawInRect(CGRectMake(0,0,newSize.width,newSize.height));
+        let newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        return newImage;
+    }
+    
 
     // use corp mode to determine if it's background image change or avatar change
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
+        let new_image = fixrotation(image)
+        println(new_image.size.width)
+        println(new_image.size.height)
+        println(new_image.imageOrientation.rawValue)
+        let targetWidth = UIScreen.mainScreen().bounds.size.width
+        let targetHeight = UIScreen.mainScreen().bounds.size.height
+        let targetRatio = targetWidth / targetHeight
+        
+        var cropRect: CGRect!
+        
+        let currWidth = new_image.size.width
+        let currHeight = new_image.size.height
+        let currRatio = currWidth / currHeight
+        
+        
+        
+        if currRatio > targetRatio {
+            let height = currHeight
+            let width = currHeight * targetRatio
+            let x = (currWidth - width) / 2
+            cropRect = CGRectMake(x, 0, width, height)
+            
+        } else {
+            let width = currWidth
+            let height = width / targetRatio
+            let x = (currWidth - width) / 2
+            cropRect = CGRectMake(x, 0, width, height)
+        }
+        
+        let imageRef = CGImageCreateWithImageInRect(new_image.CGImage, cropRect)
+        let cropped = UIImage(CGImage: imageRef)
+       
+        let finalImage = self.resizeImage(cropped!, width: targetWidth, height: targetHeight)
         
         let comingCameraViewController = cameraViewController as DBCameraSegueViewController
         
@@ -128,7 +201,16 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
             
             println("avatar change!")
         } else {
-            Variable.backgroundImage = image
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let documentsDirectory = paths[0] as String
+            let savedImagePath = documentsDirectory.stringByAppendingPathComponent("BG.jpg")
+            let imageData = UIImageJPEGRepresentation(finalImage, 0.9)
+            imageData.writeToFile(savedImagePath, atomically: false)
+            
+            
+            
+            Variable.backgroundImage = finalImage
             println("background change!")
         }
         
