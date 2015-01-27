@@ -16,6 +16,8 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var placeholderLabel: UILabel!
     
+    @IBOutlet weak var fbButton: UIButton!
+    @IBOutlet weak var twButton: UIButton!
     var parent: TimelineViewController!
     
     override func viewDidLoad() {
@@ -108,6 +110,13 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         super.viewDidAppear(animated)
     }
 
+    @IBAction func fbClicked(sender: AnyObject) {
+        
+    }
+    
+    
+    @IBAction func twClicked(sender: AnyObject) {
+    }
 
     @IBAction func postClicked(sender: AnyObject) {
         let post = Post.initWith(textView.text)
