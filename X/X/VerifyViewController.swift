@@ -40,7 +40,7 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
         sendButton.layer.cornerRadius = 5.0
         sendButton.layer.frame = CGRectInset(sendButton.frame, 1, 1)
         
-        domainLabel.text = "@\(User.currentUser().domain).edu"
+        domainLabel.text = "@\(User.currentUser().domain)"
         
         // generate code
         self.code = Int(arc4random()) % 9000 + 1000;
@@ -107,7 +107,8 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
             return
         }
         
-        self.email = "\(email_main)@\(User.currentUser().domain).edu"
+        self.email = "\(email_main)@\(User.currentUser().domain)"
+//        self.email = "\(email_main)"
         
         println(self.email)
         
