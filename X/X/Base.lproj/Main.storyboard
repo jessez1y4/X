@@ -465,13 +465,14 @@
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-UT-ghN">
                                                     <rect key="frame" x="200" y="132" width="200" height="40"/>
+                                                    <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="TjM-Zf-TLi"/>
                                                         <constraint firstAttribute="height" constant="40" id="vxP-X5-Ow5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                                    <state key="normal" title="Get Verified" backgroundImage="Button_Share.png">
+                                                    <state key="normal" title="Get Verified">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -786,11 +787,12 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86u-U7-gFF">
                                 <rect key="frame" x="119" y="279" width="358" height="30"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="6hk-JR-5eS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="send code" backgroundImage="Button_Share.png">
+                                <state key="normal" title="send code">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -881,7 +883,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SxG-d0-KcL">
                                 <rect key="frame" x="75" y="320" width="358" height="30"/>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.33725490200000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="sgH-T4-uEc"/>
                                 </constraints>
@@ -1281,6 +1283,7 @@
                                                             </variation>
                                                         </label>
                                                     </subviews>
+                                                    <color key="backgroundColor" red="0.99607843139999996" green="0.33725490200000002" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="oV7-tS-XZ9" secondAttribute="bottom" id="94W-mW-Cpe"/>
                                                         <constraint firstItem="oV7-tS-XZ9" firstAttribute="leading" secondItem="Soy-BO-CA4" secondAttribute="leading" id="M1F-nb-wxH"/>
@@ -1399,7 +1402,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-1k-Y3w">
                                 <rect key="frame" x="40" y="333" width="500" height="43"/>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.33725490200000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.33725490196078434" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8YG-ug-hqc"/>
                                 </constraints>
@@ -1582,7 +1585,6 @@
         <image name="Badge_Non_Verified_Large.png" width="29" height="29"/>
         <image name="Button_Dislike.png" width="33" height="33"/>
         <image name="Button_Dislike_Selected.png" width="33" height="33"/>
-        <image name="Button_Share.png" width="10" height="50"/>
         <image name="Button_like.png" width="33" height="33"/>
         <image name="Button_like_Selected.png" width="33" height="33"/>
         <image name="Empty_Photo.png" width="40" height="40"/>
