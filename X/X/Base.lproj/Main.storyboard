@@ -45,6 +45,7 @@
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
+            <string>OpenSans</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -460,7 +461,7 @@
                                                         <outletCollection property="gestureRecognizers" destination="6lF-bc-So3" appends="YES" id="brw-s9-JL7"/>
                                                     </connections>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BA510085-C440-4795-B1B4-432410C882BC" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-8S-njT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="628B4719-152E-4D94-8360-A9D17B307B91" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-8S-njT">
                                                     <rect key="frame" x="318" y="53" width="29" height="29"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-UT-ghN">
@@ -471,7 +472,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                                    <state key="normal" title="Get Verified" backgroundImage="2F8E5136-410C-4318-9AEC-284D4DABD05F">
+                                                    <state key="normal" title="Get Verified" backgroundImage="20D1320D-242B-46A1-B242-EAD33863DA70">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -790,7 +791,7 @@
                                     <constraint firstAttribute="height" constant="50" id="6hk-JR-5eS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
-                                <state key="normal" title="send code" backgroundImage="2F8E5136-410C-4318-9AEC-284D4DABD05F">
+                                <state key="normal" title="send code" backgroundImage="20D1320D-242B-46A1-B242-EAD33863DA70">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1376,15 +1377,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-Dd-H2Y" customClass="SAMTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="BGs-Dd-H2Y" customClass="SAMTextView">
                                 <rect key="frame" x="25" y="71" width="550" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="VgP-BO-KXp"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VgP-BO-KXp"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="wje-4i-BmV" id="B9O-ym-Ciz"/>
                                 </connections>
@@ -1427,18 +1434,18 @@
                                     <constraint firstAttribute="height" constant="1" id="5oV-ba-UjE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm7-4j-Uxk">
-                                <rect key="frame" x="55" y="262" width="68" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm7-4j-Uxk">
+                                <rect key="frame" x="55" y="262" width="82" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="5G1-BN-0my"/>
                                 </constraints>
-                                <state key="normal" title="Facebook">
+                                <state key="normal" image="Icon_FB_grey.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqx-xw-oXx">
-                                <rect key="frame" x="417" y="262" width="68" height="30"/>
-                                <state key="normal" title="Twitter">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eqx-xw-oXx">
+                                <rect key="frame" x="417" y="262" width="82" height="22"/>
+                                <state key="normal" image="Icon_Twitter_Grey.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -1455,6 +1462,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What happened?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMT-iA-FSU">
+                                <rect key="frame" x="40" y="71" width="97" height="21"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1464,6 +1477,7 @@
                             <constraint firstItem="ZTW-we-WYm" firstAttribute="centerY" secondItem="Eqx-xw-oXx" secondAttribute="centerY" id="CaK-uh-x5K"/>
                             <constraint firstItem="q7w-dR-Mpo" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="-16" id="DNR-qX-Hga"/>
                             <constraint firstItem="Eqx-xw-oXx" firstAttribute="height" secondItem="Cm7-4j-Uxk" secondAttribute="height" id="E5r-ub-8FH"/>
+                            <constraint firstItem="kMT-iA-FSU" firstAttribute="leading" secondItem="BGs-Dd-H2Y" secondAttribute="leading" constant="10" id="EGc-nS-qjW"/>
                             <constraint firstItem="SmQ-8T-Thb" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="14" id="Fjf-dq-xm1"/>
                             <constraint firstItem="Eqx-xw-oXx" firstAttribute="width" secondItem="Cm7-4j-Uxk" secondAttribute="width" id="Gsh-Aa-iTT"/>
                             <constraint firstItem="Q9K-1k-Y3w" firstAttribute="top" secondItem="h4A-bD-wxk" secondAttribute="bottom" constant="10" id="HdC-a5-ko9"/>
@@ -1477,8 +1491,10 @@
                             <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="p6N-4F-izG" secondAttribute="bottom" constant="10" id="RDF-6k-YDH"/>
                             <constraint firstItem="h4A-bD-wxk" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leadingMargin" constant="-16" id="RPG-VZ-4Zv"/>
                             <constraint firstItem="Cm7-4j-Uxk" firstAttribute="leading" secondItem="oev-d8-IcX" secondAttribute="leading" id="SJH-ta-YUE"/>
+                            <constraint firstItem="SmQ-8T-Thb" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="bottom" constant="10" id="T8f-o7-QHl"/>
                             <constraint firstItem="BGs-Dd-H2Y" firstAttribute="top" secondItem="oev-d8-IcX" secondAttribute="topMargin" constant="40" id="Uu0-hO-a1a"/>
                             <constraint firstItem="q7w-dR-Mpo" firstAttribute="centerX" secondItem="h4A-bD-wxk" secondAttribute="centerX" id="V45-hu-KQ9"/>
+                            <constraint firstItem="kMT-iA-FSU" firstAttribute="top" secondItem="BGs-Dd-H2Y" secondAttribute="top" constant="10" id="VIj-Di-1Dl"/>
                             <constraint firstItem="p6N-4F-izG" firstAttribute="top" secondItem="oP5-HD-1vj" secondAttribute="bottom" constant="8" id="WEH-Vs-COW"/>
                             <constraint firstItem="q7w-dR-Mpo" firstAttribute="top" secondItem="SmQ-8T-Thb" secondAttribute="bottom" constant="5" id="XNw-lb-YjT"/>
                             <constraint firstItem="h4A-bD-wxk" firstAttribute="top" secondItem="Cm7-4j-Uxk" secondAttribute="bottom" constant="15" id="XpB-Uh-zHd"/>
@@ -1510,6 +1526,7 @@
                     <connections>
                         <outlet property="bottomLayoutConstrain" destination="yKD-cr-QJR" id="Z7O-oT-jmP"/>
                         <outlet property="countLabel" destination="SmQ-8T-Thb" id="WJm-4u-piG"/>
+                        <outlet property="placeholderLabel" destination="kMT-iA-FSU" id="nSl-YT-PHC"/>
                         <outlet property="postButton" destination="Q9K-1k-Y3w" id="M4f-Vt-4sY"/>
                         <outlet property="textView" destination="BGs-Dd-H2Y" id="aCz-0t-y1O"/>
                     </connections>
@@ -1579,7 +1596,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2F8E5136-410C-4318-9AEC-284D4DABD05F" width="10" height="50">
+        <image name="20D1320D-242B-46A1-B242-EAD33863DA70" width="10" height="50">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1663,7 +1680,7 @@ HxEkES8ROBFLEU8RYhFtEXYRexGDEYYRixGaEZ4RpRGtEboRvxHBEcMRyBHQEdMR2BHgEeMR9RH4Ef0A
 AAAAAAACAQAAAAAAAABCAAAAAAAAAAAAAAAAAAAR/w
 </mutableData>
         </image>
-        <image name="BA510085-C440-4795-B1B4-432410C882BC" width="29" height="29">
+        <image name="628B4719-152E-4D94-8360-A9D17B307B91" width="29" height="29">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1782,8 +1799,10 @@ AAAAAAAAAAAAAAAAABdTA
         <image name="Icon_BG_Pic.png" width="33" height="33"/>
         <image name="Icon_Clock.png" width="12" height="17"/>
         <image name="Icon_Close.png" width="33" height="33"/>
+        <image name="Icon_FB_grey.png" width="100" height="19"/>
         <image name="Icon_Profile.png" width="33" height="33"/>
         <image name="Icon_Settings.png" width="24" height="24"/>
+        <image name="Icon_Twitter_Grey.png" width="82" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SXj-fQ-5Jc"/>

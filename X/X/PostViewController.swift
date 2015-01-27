@@ -10,10 +10,11 @@ import UIKit
 
 class PostViewController: BackgroundViewController, UITextViewDelegate {
 
-    @IBOutlet weak var textView: SAMTextView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var placeholderLabel: UILabel!
     
     var parent: TimelineViewController!
     
@@ -23,7 +24,7 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         postButton.layer.cornerRadius = 5.0
         postButton.clipsToBounds = true
         
-        textView.placeholder = "What happened?"
+//        textView.placeholder = "What happened?"
 
         // Do any additional setup after loading the view.
     }
@@ -94,6 +95,9 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
         let count = 140 - textView.text.utf16Count
         countLabel.text = "\(count) left"
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
     }
     
     func textViewDidEndEditing(textView: UITextView) {
