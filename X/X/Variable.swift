@@ -10,7 +10,7 @@ import Foundation
 
 struct Variable {
     
-    static var backgroundImage = UIImage(named: "BG.png")
+    static var backgroundImage: UIImage? = nil
 }
 
         

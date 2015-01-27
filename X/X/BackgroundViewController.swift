@@ -17,6 +17,7 @@ class BackgroundViewController: UIViewController {
         super.viewDidLoad()
         
         backgroundImageView = UIImageView(frame: view.frame)
+        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
 
         view.addSubview(backgroundImageView)
         view.sendSubviewToBack(backgroundImageView)
@@ -26,8 +27,20 @@ class BackgroundViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        if Variable.backgroundImage == nil {
+            let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+            let documentsDirectory = paths[0] as String
+            let getImagePath = documentsDirectory.stringByAppendingPathComponent("BG.jpg")
+            let img = UIImage(contentsOfFile: getImagePath)
+            
+            if img == nil {
+                Variable.backgroundImage = UIImage(named: "BG.png")
+            } else {
+                Variable.backgroundImage = img
+            }
+        }
+        
         backgroundImageView.image = imageWithAlpha(Variable.backgroundImage!, alpha: 0.1)
-        backgroundImageView.contentMode = UIViewContentMode.ScaleAspectFill
     }
 
     override func didReceiveMemoryWarning() {
