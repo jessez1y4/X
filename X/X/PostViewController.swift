@@ -26,6 +26,8 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
         postButton.layer.cornerRadius = 5.0
         postButton.clipsToBounds = true
         
+        placeholderLabel.textColor = UIColor(white: 0.702, alpha: 1.0)
+        
 //        textView.placeholder = "What happened?"
 
         // Do any additional setup after loading the view.
@@ -97,6 +99,12 @@ class PostViewController: BackgroundViewController, UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
         let count = 140 - textView.text.utf16Count
         countLabel.text = "\(count) left"
+        
+        if textView.text.utf16Count == 0 {
+            placeholderLabel.hidden = false
+        } else {
+            placeholderLabel.hidden = true
+        }
     }
     
     func textViewDidBeginEditing(textView: UITextView) {
