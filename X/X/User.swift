@@ -6,10 +6,19 @@ class User : PFUser {
     @NSManaged var college: College
     @NSManaged var domain: String
     @NSManaged var voteWeight: Int
-    @NSManaged var avatar: PFFile
+    @NSManaged var longestLife: Int
+    @NSManaged var shortestLife: Int
+    @NSManaged var mostReplies: Int
     
     override class func load() {
         self.registerSubclass()
+    }
+    
+    func setDefaultValues() {
+        self.voteWeight = 1
+        self.longestLife = 24
+        self.shortestLife = 24
+        self.mostReplies = 0
     }
     
     override class func currentUser() -> User! {
@@ -22,7 +31,6 @@ class User : PFUser {
         q.whereKey("user", equalTo: self)
         q.orderByDescending("createdAt")
         q.orderByDescending("unread")
-        
         
         q.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             callback(results as? [Post], error)

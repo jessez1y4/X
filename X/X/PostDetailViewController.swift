@@ -154,6 +154,16 @@ class PostDetailViewController: SLKTextViewController {
                     self.post.incrementKey("unread")
                     self.post.saveEventually()
                 }
+                
+                self.post.user.fetchIfNeededInBackgroundWithBlock({ (result, error) -> Void in
+                    if error == nil {
+                        let user = result as User
+                        if self.replies.count > user.mostReplies {
+                            user.mostReplies = self.replies.count
+                            user.saveEventually()
+                        }
+                    }
+                })
             }
         }
     }

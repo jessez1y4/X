@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
                     let user = User.currentUser()
                     user.college = College(withoutDataWithObjectId: id)
                     user.domain = domain
-                    user.voteWeight = 1
+                    user.setDefaultValues()
                     
                     User.currentUser().saveInBackgroundWithBlock(nil)
                     self.performSegueWithIdentifier("show_home", sender: self)
