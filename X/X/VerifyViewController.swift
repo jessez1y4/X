@@ -10,7 +10,7 @@ import UIKit
 
 class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegate {
 
-    @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var emailText: UITextField!
@@ -86,7 +86,7 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
         let convertedKeyboardEndFrame = view.convertRect(keyboardEndFrame, fromView: view.window)
         let rawAnimationCurve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as NSNumber).unsignedIntValue << 16
         let animationCurve = UIViewAnimationOptions.init(UInt(rawAnimationCurve))
-        bottomLayoutConstrain.constant = CGRectGetMaxY(view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame) + 60
+        bottomLayoutConstraint.constant = CGRectGetMaxY(view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame)
         
         UIView.animateWithDuration(0.0001, delay: 0.0, options: .BeginFromCurrentState | animationCurve, animations: {
             self.view.layoutIfNeeded()
