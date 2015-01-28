@@ -43,7 +43,6 @@ class TimelineTableViewCell: UITableViewCell {
         contentLabel.text = post.content
         timeLabel.text = post.getPostTime()
         leftHrLabel.text = post.getTTL()
-//        avatarImageView.file = User.currentUser().avatar
     }
 
 }

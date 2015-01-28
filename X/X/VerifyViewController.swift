@@ -35,13 +35,13 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
         emailText.layer.masksToBounds = true
         emailText.layer.borderColor = UIColor.grayColor().CGColor
         emailText.layer.borderWidth = 1
-
+        emailText.tintColor = UIColor.whiteColor()
+        
         // set round button
         sendButton.layer.cornerRadius = 5.0
         sendButton.layer.frame = CGRectInset(sendButton.frame, 1, 1)
         
         domainLabel.text = "@\(User.currentUser().domain)"
-        
         // generate code
         self.code = Int(arc4random()) % 9000 + 1000;
     }
@@ -96,7 +96,6 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-//        emailText.becomeFirstResponder()
     }
 
     
@@ -108,7 +107,6 @@ class VerifyViewController: BackgroundViewController, UIGestureRecognizerDelegat
         }
         
         self.email = "\(email_main)@\(User.currentUser().domain)"
-//        self.email = "\(email_main)"
         
         println(self.email)
         

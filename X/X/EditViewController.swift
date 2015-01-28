@@ -36,6 +36,8 @@ class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate 
         // set round button
         changeBtn.layer.cornerRadius = 5.0
         changeBtn.layer.frame = CGRectInset(changeBtn.frame, 1, 1)
+        
+        newDomainText.tintColor = UIColor.whiteColor()
 
         // Do any additional setup after loading the view.
     }

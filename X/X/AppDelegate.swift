@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             User.currentUser().fetch()
         }
         
+        
         return true
     }
 
