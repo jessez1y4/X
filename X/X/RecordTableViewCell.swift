@@ -10,6 +10,11 @@ import UIKit
 
 class RecordTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var longestLabel: UILabel!
+    @IBOutlet weak var shortestLabel: UILabel!
+    @IBOutlet weak var mostReplyLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
