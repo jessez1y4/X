@@ -13,7 +13,7 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var leftHrLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: PFImageView!
     @IBOutlet weak var upvoteBtn: UIButton!
     @IBOutlet weak var downvoteBtn: UIButton!
     

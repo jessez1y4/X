@@ -214,6 +214,8 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let post = self.posts[indexPath.row]
+        
+        
 
         // content cell
         if post.life != -99 {

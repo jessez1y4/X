@@ -197,7 +197,10 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
         let comingCameraViewController = cameraViewController as DBCameraSegueViewController
         
         if comingCameraViewController.cropMode == true {
+            
             // avatar change
+            let imageData = UIImageJPEGRepresentation(finalImage, 0.9)
+            User.currentUser().avatar = PFFile(data: imageData)
             
             println("avatar change!")
         } else {
