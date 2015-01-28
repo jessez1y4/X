@@ -13,7 +13,7 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var leftHrLabel: UILabel!
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: PFImageView!
     @IBOutlet weak var upvoteBtn: UIButton!
     @IBOutlet weak var downvoteBtn: UIButton!
     
@@ -43,6 +43,7 @@ class TimelineTableViewCell: UITableViewCell {
         contentLabel.text = post.content
         timeLabel.text = post.getPostTime()
         leftHrLabel.text = post.getTTL()
+//        avatarImageView.file = User.currentUser().avatar
     }
 
 }

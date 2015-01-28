@@ -16,7 +16,6 @@
 #import "MessageViewController.h"
 #import "MessageTableViewCell.h"
 #import <DateTools.h>
-#import <SAMTextView.h>
 #import <LoremIpsum.h>
 #import <DBCameraViewController.h>
 #import <DBCameraContainerViewController.h>

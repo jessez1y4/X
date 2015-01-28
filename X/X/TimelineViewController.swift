@@ -222,7 +222,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
             cell.setValues(post)
             cell.avatarImageView.layer.cornerRadius = 5.0
             cell.avatarImageView.clipsToBounds = true
-            cell.avatarImageView.image = UIImage(named: "Icon_1024.png")
+//            cell.avatarImageView.image = UIImage(named: "Icon_1024.png")
             cell.backgroundColor = UIColor.clearColor()
             
             cell.upvoteBtn.enabled = true

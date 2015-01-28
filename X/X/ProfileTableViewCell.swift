@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var avatarImageView: PFImageView!
     @IBOutlet weak var verifyImageView: UIImageView!
     @IBOutlet weak var verifyBtn: UIButton!
     @IBOutlet weak var collegeBtn: UIButton!
@@ -20,7 +20,10 @@ class ProfileTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        collegeLabel.text = User.currentUser().domain.uppercaseString        
+        collegeLabel.text = User.currentUser().domain.uppercaseString
+//        if User.currentUser().avatar == nil {
+//            avatarImageView.file = User.currentUser().avatar
+//        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -10,7 +10,6 @@ target 'X' do
     pod 'SlackTextViewController'
     pod 'OpenSans'
     pod 'DateTools'
-    pod 'SAMTextView'
     pod 'LoremIpsum', '~> 1.0'
     pod 'DBCamera', '~> 2.3'
 
