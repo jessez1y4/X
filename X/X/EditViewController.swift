@@ -11,8 +11,8 @@ import UIKit
 class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate {
 
 
-    @IBOutlet weak var bottomLayoutConstrain: NSLayoutConstraint!
     @IBOutlet weak var newDomainText: UITextField!
+    @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -90,7 +90,7 @@ class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate 
         let convertedKeyboardEndFrame = view.convertRect(keyboardEndFrame, fromView: view.window)
         let rawAnimationCurve = (notification.userInfo![UIKeyboardAnimationCurveUserInfoKey] as NSNumber).unsignedIntValue << 16
         let animationCurve = UIViewAnimationOptions.init(UInt(rawAnimationCurve))
-        bottomLayoutConstrain.constant = CGRectGetMaxY(view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame) + 60
+        bottomLayoutConstraint.constant = CGRectGetMaxY(view.bounds) - CGRectGetMinY(convertedKeyboardEndFrame) + 14
         
         UIView.animateWithDuration(0.0001, delay: 0.0, options: .BeginFromCurrentState | animationCurve, animations: {
             self.view.layoutIfNeeded()
