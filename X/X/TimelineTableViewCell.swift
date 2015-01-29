@@ -25,8 +25,8 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         contentLabel.sizeToFit()
-//        avatarImageView.layer.cornerRadius = 5.0
-//        avatarImageView.layer.frame = CGRectInset(avatarImageView.frame, 1, 1)
+        
+        avatarImageView.image = UIImage(named: "Icon_1024.png")
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -43,6 +43,14 @@ class TimelineTableViewCell: UITableViewCell {
         contentLabel.text = post.content
         timeLabel.text = post.getPostTime()
         leftHrLabel.text = post.getTTL()
+        post.user.fetchInBackgroundWithBlock { (user, error) -> Void in
+            if error == nil {
+                if user.objectForKey("avatar") != nil {
+                    self.avatarImageView.file = (user as User).avatar
+                    self.avatarImageView.loadInBackground(nil)
+                }
+            }
+        }
     }
 
 }
