@@ -16,6 +16,7 @@ class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: PFImageView!
     @IBOutlet weak var upvoteBtn: UIButton!
     @IBOutlet weak var downvoteBtn: UIButton!
+    @IBOutlet weak var verifyImageView: UIImageView!
     
     @IBOutlet weak var helperVerticalView: UIView!
     var heightConstraint: NSLayoutConstraint? = nil
@@ -27,6 +28,8 @@ class TimelineTableViewCell: UITableViewCell {
         contentLabel.sizeToFit()
         
         avatarImageView.image = UIImage(named: "Icon_1024.png")
+        self.verifyImageView.image = UIImage(named: "Badge_Non_Verified.png")
+
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -51,6 +54,10 @@ class TimelineTableViewCell: UITableViewCell {
                     self.avatarImageView.file = user.avatar
                     self.avatarImageView.loadInBackground(nil)
                 }
+            }
+            if user.verified == true {
+                println(true)
+                self.verifyImageView.image = UIImage(named: "Badge_Verified.png")
             }
         }
     }

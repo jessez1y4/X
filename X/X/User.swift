@@ -20,6 +20,7 @@ class User : PFUser {
         self.longestLife = 24
         self.shortestLife = 24
         self.mostReplies = 0
+        self.verified = false
     }
     
     override class func currentUser() -> User! {

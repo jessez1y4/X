@@ -113,6 +113,7 @@ class EditViewController: BackgroundViewController, UIGestureRecognizerDelegate 
                     let user = User.currentUser()
                     user.college = College(withoutDataWithObjectId: id)
                     user.domain = domain
+                    user.verified = false
                     
                     User.currentUser().saveInBackgroundWithBlock(nil)
                     self.dismissViewControllerAnimated(true, completion: nil)
