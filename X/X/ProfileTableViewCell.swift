@@ -18,12 +18,19 @@ class ProfileTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        println("go")
         // Initialization code
         
         collegeLabel.text = User.currentUser().domain.uppercaseString
-//        if User.currentUser().avatar == nil {
-//            avatarImageView.file = User.currentUser().avatar
-//        }
+
+        if User.currentUser().objectForKey("avatar") != nil {
+            avatarImageView.file = User.currentUser().avatar
+            avatarImageView.loadInBackground(nil)
+        }
+    }
+    
+    func loadAvatar() {
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

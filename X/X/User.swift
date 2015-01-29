@@ -6,6 +6,7 @@ class User : PFUser {
     @NSManaged var college: College
     @NSManaged var domain: String
     @NSManaged var voteWeight: Int
+    @NSManaged var avatar: PFFile
     @NSManaged var longestLife: Int
     @NSManaged var shortestLife: Int
     @NSManaged var mostReplies: Int

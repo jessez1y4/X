@@ -160,50 +160,59 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
 
     // use corp mode to determine if it's background image change or avatar change
     func camera(cameraViewController: AnyObject!, didFinishWithImage image: UIImage!, withMetadata metadata: [NSObject : AnyObject]!) {
-        let new_image = fixrotation(image)
-        println(new_image.size.width)
-        println(new_image.size.height)
-        println(new_image.imageOrientation.rawValue)
-        let targetWidth = UIScreen.mainScreen().bounds.size.width
-        let targetHeight = UIScreen.mainScreen().bounds.size.height
-        let targetRatio = targetWidth / targetHeight
-        
-        var cropRect: CGRect!
-        
-        let currWidth = new_image.size.width
-        let currHeight = new_image.size.height
-        let currRatio = currWidth / currHeight
-        
-        
-        
-        if currRatio > targetRatio {
-            let height = currHeight
-            let width = currHeight * targetRatio
-            let x = (currWidth - width) / 2
-            cropRect = CGRectMake(x, 0, width, height)
-            
-        } else {
-            let width = currWidth
-            let height = width / targetRatio
-            let x = (currWidth - width) / 2
-            cropRect = CGRectMake(x, 0, width, height)
-        }
-        
-        let imageRef = CGImageCreateWithImageInRect(new_image.CGImage, cropRect)
-        let cropped = UIImage(CGImage: imageRef)
-       
-        let finalImage = self.resizeImage(cropped!, width: targetWidth, height: targetHeight)
         
         let comingCameraViewController = cameraViewController as DBCameraSegueViewController
         
         if comingCameraViewController.cropMode == true {
             
             // avatar change
-            let imageData = UIImageJPEGRepresentation(finalImage, 0.9)
-            User.currentUser().avatar = PFFile(data: imageData)
+            let avatarImage = self.resizeImage(image, width: 100, height: 100)
+            let avatarData = UIImageJPEGRepresentation(avatarImage, 0.9)
+            User.currentUser().avatar = PFFile(data: avatarData)
+            User.currentUser().saveInBackgroundWithBlock({ (succeed, error) -> Void in
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    if succeed {
+//                        self.tableView.reloadData()
+                        self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+                    }
+                })
+            })
             
             println("avatar change!")
         } else {
+            
+            let new_image = fixrotation(image)
+            
+            let targetWidth = UIScreen.mainScreen().bounds.size.width
+            let targetHeight = UIScreen.mainScreen().bounds.size.height
+            let targetRatio = targetWidth / targetHeight
+            
+            var cropRect: CGRect!
+            
+            let currWidth = new_image.size.width
+            let currHeight = new_image.size.height
+            let currRatio = currWidth / currHeight
+            
+            
+            
+            if currRatio > targetRatio {
+                let height = currHeight
+                let width = currHeight * targetRatio
+                let x = (currWidth - width) / 2
+                cropRect = CGRectMake(x, 0, width, height)
+                
+            } else {
+                let width = currWidth
+                let height = width / targetRatio
+                let x = (currWidth - width) / 2
+                cropRect = CGRectMake(x, 0, width, height)
+            }
+            
+            let imageRef = CGImageCreateWithImageInRect(new_image.CGImage, cropRect)
+            let cropped = UIImage(CGImage: imageRef)
+            
+            let finalImage = self.resizeImage(cropped!, width: targetWidth, height: targetHeight)
+
             
             let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
             let documentsDirectory = paths[0] as String
@@ -215,9 +224,9 @@ class ProfileViewController: BackgroundViewController, DBCameraViewControllerDel
             
             Variable.backgroundImage = finalImage
             println("background change!")
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
         
-        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     

@@ -12,7 +12,7 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
 
     @IBOutlet weak var tableView: UITableView!
     
-    var user = User.currentUser()
+    var user: User = User.currentUser()
     var posts: [Post] = []
     
     override func viewDidLoad() {
@@ -46,11 +46,27 @@ class ActivityViewController: BackgroundViewController, UITableViewDelegate, UIT
     func reloadPosts(afterLoad: (() -> Void)?) {
         
         self.user.getPosts({ (posts, err) -> Void in
-            self.posts = posts
-            self.tableView.reloadData()
-            
-            if let f = afterLoad {
-                f()
+            if err == nil {
+                self.posts = posts
+
+                
+                self.user.getVotedPosts("replied", callback: { (repliedPosts, error) -> Void in
+                    if error == nil {
+                        for post: Post in repliedPosts {
+                            if contains(self.posts, post) {
+                                return
+                            }
+                            post.unread = 0
+                            self.posts.append(post)
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                        if let f = afterLoad {
+                            f()
+                        }
+                    }
+                })
             }
         })
         

@@ -18,6 +18,18 @@ class RecordTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        longestLabel.text = String(User.currentUser().longestLife)
+        shortestLabel.text = String(User.currentUser().shortestLife)
+        mostReplyLabel.text = String(User.currentUser().mostReplies)
+        
+        User.currentUser().fetchInBackgroundWithBlock { (user, error) -> Void in
+            if error == nil {
+                self.longestLabel.text = String(User.currentUser().longestLife)
+                self.shortestLabel.text = String(User.currentUser().shortestLife)
+                self.mostReplyLabel.text = String(User.currentUser().mostReplies)
+            }
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

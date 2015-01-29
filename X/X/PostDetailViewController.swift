@@ -152,8 +152,25 @@ class PostDetailViewController: SLKTextViewController {
                 
                 if self.post.user.objectId != User.currentUser().objectId {
                     self.post.incrementKey("unread")
-                    self.post.saveEventually()
+
+                    
+                    let relation = User.currentUser().relationForKey("replied")
+                    let query = relation.query()
+                    query.whereKey("objectId", equalTo: self.post.objectId)
+                    
+                    query.countObjectsInBackgroundWithBlock({ (count, error) -> Void in
+                        if error == nil && count == 0 {
+                            self.post.incrementKey("life", byAmount: User.currentUser().voteWeight)
+                            User.currentUser().addRelation(self.post, relation: "replied")
+                            User.currentUser().saveEventually()
+                        }
+                        
+                        self.post.saveEventually()
+                    })
+
                 }
+                
+
                 
                 self.post.user.fetchIfNeededInBackgroundWithBlock({ (result, error) -> Void in
                     if error == nil {
