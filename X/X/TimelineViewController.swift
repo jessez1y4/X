@@ -261,6 +261,15 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         }
     }
     
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if(segue.identifier == "show_post_detail") {
+//            let vc = segue.destinationViewController as PostDetailViewController
+//            vc.code = self.code
+//            vc.email = self.email
+//            vc.parent = self
+//        }
+//？    }
+    
     func postClicked() {
         let postViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("post_view_controller") as PostViewController
         
