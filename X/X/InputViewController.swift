@@ -87,6 +87,10 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
                 user.verified = true
                 user.saveEventually()
                 
+                println("input")
+                println(user.objectId)
+                println(user.verified)
+
                 // pop 2 view to profileViewController
                 let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
                 self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);

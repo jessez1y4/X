@@ -26,10 +26,6 @@ class TimelineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         contentLabel.sizeToFit()
-        
-        avatarImageView.image = UIImage(named: "Icon_1024.png")
-        self.verifyImageView.image = UIImage(named: "Badge_Non_Verified.png")
-
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -53,11 +49,19 @@ class TimelineTableViewCell: UITableViewCell {
                 if user.objectForKey("avatar") != nil {
                     self.avatarImageView.file = user.avatar
                     self.avatarImageView.loadInBackground(nil)
+                } else {
+                    // default set
+                    self.avatarImageView.image = UIImage(named: "Icon_1024.png")
                 }
             }
+            
+            println("timeline")
+            println(user.objectId)
+            println(user.verified)
             if user.verified == true {
-                println(true)
                 self.verifyImageView.image = UIImage(named: "Badge_Verified.png")
+            } else {
+                self.verifyImageView.image = UIImage(named: "Badge_Non_Verified.png")
             }
         }
     }

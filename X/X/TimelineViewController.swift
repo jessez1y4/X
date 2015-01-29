@@ -220,7 +220,7 @@ class TimelineViewController: BackgroundViewController, UITableViewDelegate, UIT
         // content cell
         if post.life != -99 {
             let cell = tableView.dequeueReusableCellWithIdentifier("TimelineCell") as TimelineTableViewCell
-            
+
             cell.setValues(post)
             cell.avatarImageView.layer.cornerRadius = 5.0
             cell.avatarImageView.clipsToBounds = true
