@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vTn-H1-Qdv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -203,7 +203,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-e9-8M4">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Empty_Photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ReX-e9-8M4" customClass="PFImageView">
                                                             <rect key="frame" x="28" y="45" width="40" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="2ec-Ch-Ceu"/>
@@ -461,7 +461,7 @@
                                                         <outletCollection property="gestureRecognizers" destination="6lF-bc-So3" appends="YES" id="brw-s9-JL7"/>
                                                     </connections>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="AD58F542-563E-4554-AFB3-AEF0378AC76C" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-8S-njT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="EE6FFA04-B7D8-4FBD-8B9F-27BBCA286989" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-8S-njT">
                                                     <rect key="frame" x="318" y="53" width="29" height="29"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JT-UT-ghN">
@@ -473,7 +473,7 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                                     <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                                    <state key="normal" title="Get Verified" backgroundImage="E1A091A5-F640-4236-9305-A9C27F30680B">
+                                                    <state key="normal" title="Get Verified" backgroundImage="201F8B58-12F5-409A-8969-3120514883C9">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -677,7 +677,7 @@
                                                         <constraint firstAttribute="height" constant="24" id="nCg-3F-dy5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glH-bQ-MeW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glH-bQ-MeW">
                                                     <rect key="frame" x="67" y="10" width="79" height="30"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="22"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -828,7 +828,7 @@
                                             <constraint firstAttribute="height" constant="50" id="6hk-JR-5eS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
-                                        <state key="normal" title="send code" backgroundImage="E1A091A5-F640-4236-9305-A9C27F30680B">
+                                        <state key="normal" title="send code" backgroundImage="201F8B58-12F5-409A-8969-3120514883C9">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1282,7 +1282,7 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="22hrs left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-jo-aiG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22hrs left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5D-jo-aiG">
                                                     <rect key="frame" x="120" y="61" width="66.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1638,7 +1638,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AD58F542-563E-4554-AFB3-AEF0378AC76C" width="10" height="50">
+        <image name="201F8B58-12F5-409A-8969-3120514883C9" width="10" height="50">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1727,7 +1727,7 @@ AAAAAAACAQAAAAAAAABCAAAAAAAAAAAAAAAAAAAR/w
         <image name="Button_Dislike_Selected.png" width="33" height="33"/>
         <image name="Button_like.png" width="33" height="33"/>
         <image name="Button_like_Selected.png" width="33" height="33"/>
-        <image name="E1A091A5-F640-4236-9305-A9C27F30680B" width="10" height="50">
+        <image name="EE6FFA04-B7D8-4FBD-8B9F-27BBCA286989" width="10" height="50">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

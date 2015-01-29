@@ -43,10 +43,12 @@ class TimelineTableViewCell: UITableViewCell {
         contentLabel.text = post.content
         timeLabel.text = post.getPostTime()
         leftHrLabel.text = post.getTTL()
-        post.user.fetchInBackgroundWithBlock { (user, error) -> Void in
+        post.user.fetchInBackgroundWithBlock { (result, error) -> Void in
+            let user = result as User
+            
             if error == nil {
                 if user.objectForKey("avatar") != nil {
-                    self.avatarImageView.file = (user as User).avatar
+                    self.avatarImageView.file = user.avatar
                     self.avatarImageView.loadInBackground(nil)
                 }
             }
