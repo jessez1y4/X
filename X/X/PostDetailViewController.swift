@@ -13,6 +13,7 @@ class PostDetailViewController: SLKTextViewController {
     var post: Post!
     var replies: [Reply] = []
     var backgroundImageView: UIImageView!
+
     
     override init() {
         super.init(tableViewStyle: UITableViewStyle.Plain)
@@ -118,17 +119,23 @@ class PostDetailViewController: SLKTextViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.replies.count
+        return self.replies.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("replyCell") as MessageTableViewCell
         cell.backgroundColor = UIColor.clearColor()
-        let reply = self.replies[indexPath.row]
-        
-        cell.textLabel!.text = reply.content
         cell.textLabel!.textColor = UIColor.whiteColor()
         cell.textLabel!.font = UIFont(name: "OpenSans-light", size: 15)
+        
+        if indexPath.row == 0 {
+            cell.textLabel!.text = post.content
+            
+        } else {
+            let reply = self.replies[indexPath.row - 1]
+            cell.textLabel!.text = reply.content
+
+        }
         return cell
 
     }
