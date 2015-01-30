@@ -55,9 +55,6 @@ class TimelineTableViewCell: UITableViewCell {
                 }
             }
             
-            println("timeline")
-            println(user.objectId)
-            println(user.verified)
             if user.verified == true {
                 self.verifyImageView.image = UIImage(named: "Badge_Verified.png")
             } else {

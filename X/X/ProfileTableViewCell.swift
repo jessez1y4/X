@@ -27,8 +27,15 @@ class ProfileTableViewCell: UITableViewCell {
             avatarImageView.file = User.currentUser().avatar
             avatarImageView.loadInBackground(nil)
         }
+        
+        if User.currentUser().verified {
+            verifyBtn.hidden = true
+            self.verifyImageView.image = UIImage(named: "Badge_Verified_Large.png")
+        } else {
+            self.verifyImageView.image = UIImage(named: "Badge_Non_Verified_Large.png")
+        }
     }
-    
+
     func loadAvatar() {
         
     }

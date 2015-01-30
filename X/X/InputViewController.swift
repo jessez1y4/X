@@ -85,15 +85,13 @@ class InputViewController: BackgroundViewController, UITextFieldDelegate {
                 let user = User.currentUser()
                 user.email = self.email
                 user.verified = true
-                user.saveEventually()
-                
-                println("input")
-                println(user.objectId)
-                println(user.verified)
-
-                // pop 2 view to profileViewController
-                let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
-                self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+                user.saveInBackgroundWithBlock({ (succeed, error) -> Void in
+                    if succeed {
+                        // pop 2 view to profileViewController
+                        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController];
+                        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true);
+                    }
+                })
                 
             } else {
                 println("wrong code")
